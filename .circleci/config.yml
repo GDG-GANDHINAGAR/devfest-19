@@ -16,5 +16,5 @@ jobs:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
               - node_modules
-      - run: ng build --prod --base-href "https://GDG-GANDHINAGAR.github.io/devfest-19/"
+      - run: yarn ng build --prod --base-href "https://GDG-GANDHINAGAR.github.io/devfest-19/"
       - run: npx angular-cli-ghpages --dir=dist/devfest-19

@@ -8,7 +8,6 @@ jobs:
       key: dependency-cache-{{ checksum "package.json" }}
     steps:
       - checkout
-      - run: sudo npm i -g  @angular/cli
       - run: npm i --silent
       - run: npm i angular-cli-ghpages --save-dev
       - save_cache:

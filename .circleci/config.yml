@@ -20,5 +20,5 @@ jobs:
       - run: yarn ng build --prod --base-href "https://GDG-GANDHINAGAR.github.io/devfest-19/"
       - run: git config --global user.email "parthjansari@outlook.com"
       - run: git config --global user.name "parth181195"
-      - run: npx ngh angular-cli-ghpages --dir=/dist/devfest-site
+      - run: npx ngh angular-cli-ghpages --dir=/dist/devfest-site --no-silent
 

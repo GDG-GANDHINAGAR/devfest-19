@@ -1,3 +1,26 @@
-<p>
-  speaker-card works!
-</p>
+<div matRipple matRippleColor='#00000040' class="ripple-container">
+  <div class="picture-wrapper">
+    <img [src]="config.image" alt="">
+  </div>
+  <div class="session-name center-align">
+    {{config.session}}
+  </div>
+  <div class="speaker-name center-align">
+    {{config.name}}
+  </div>
+  <div class="job-title center-align">
+    {{config.session}}
+  </div>
+  <div class="icons-row center-align">
+    <div class="icon-wrapper" *ngFor="let item of config.socialMediaLinks">
+      <div [ngSwitch]="item.kind">
+        <div *ngSwitchCase="'github'">
+          <a [href]="item.link"><span class='icon'>icon</span></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- basic speaker card component -->

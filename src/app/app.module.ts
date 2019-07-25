@@ -5,9 +5,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
-import { MatRippleModule } from '@angular/material/core';
+import { MatRippleModule, RippleGlobalOptions, MAT_RIPPLE_GLOBAL_OPTIONS } from '@angular/material/core';
 import { SpeakerCardComponent } from './elements/speaker-card/speaker-card.component';
 import { PreviousSpeakerCardComponent } from './elements/previous-speaker-card/previous-speaker-card.component';
+
+import { globalRippleConfig } from './mat-config';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { PreviousSpeakerCardComponent } from './elements/previous-speaker-card/p
     MatCardModule,
     MatRippleModule
   ],
-  providers: [],
+  providers: [
+    { provide: MAT_RIPPLE_GLOBAL_OPTIONS, useValue: globalRippleConfig }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -9,8 +9,8 @@ jobs:
     steps:
       - checkout
       - run:
-        name: install-dependencies
-        command: yarn install
+          name: install-dependencies
+          command: yarn install
       - run: npm i angular-cli-ghpages --save-dev
       - save_cache:
           key: dependency-cache-{{ checksum "package.json" }}

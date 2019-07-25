@@ -4,17 +4,18 @@ jobs:
 
     docker:
       - image: circleci/node:10-browsers
-    restore_cache:
-      key: dependency-cache-{{ checksum "package.json" }}
     steps:
       - checkout
+      - restore_cache:
+          key: dependency-cache-{{ checksum "yarn.lock" }}
       - run:
           name: install-dependencies
           command: yarn install
       - run: npm i angular-cli-ghpages --save-dev
       - save_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
+          key: dependency-cache-{{ checksum "yarn.lock" }}
           paths:
-              - node_modules
+            - ~/.cache/yarn
+            - ./node_modules
       - run: yarn ng build --prod --base-href "https://GDG-GANDHINAGAR.github.io/devfest-19/"
-      - run: npx angular-cli-ghpages --dir=dist/devfest-19
+      - run: npx angular-cli-ghpages --dir=devfest-19/dist/devfest-19

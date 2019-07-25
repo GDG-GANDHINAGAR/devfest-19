@@ -1,18 +1,19 @@
 version: 2
 jobs:
   build:
+
     docker:
       - image: circleci/node:10
-    steps:
-      - checkout
-    - restore_cache:
+    restore_cache:
       key: dependency-cache-{{ checksum "package.json" }}
-    - run: npm i --silent
-    - run: npm i -g  @angular/cli
-    - run: npm i angular-cli-ghpages --save-dev
-    - save_cache:
+    - steps:
+      - checkout
+      - run: npm i --silent
+      - run: npm i -g  @angular/cli
+      - run: npm i angular-cli-ghpages --save-dev
+      - save_cache:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
-            - node_modules
-    - run: ng build --prod --base-href "https://GDG-GANDHINAGAR.github.io/devfest-19/
-    - run: npx angular-cli-ghpages --dir=dist/devfest-19
+              - node_modules
+      - run: ng build --prod --base-href "https://GDG-GANDHINAGAR.github.io/devfest-19/
+      - run: npx angular-cli-ghpages --dir=dist/devfest-19

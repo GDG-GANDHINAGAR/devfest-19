@@ -10,12 +10,14 @@ import { SpeakerCardComponent } from './elements/speaker-card/speaker-card.compo
 import { PreviousSpeakerCardComponent } from './elements/previous-speaker-card/previous-speaker-card.component';
 
 import { globalRippleConfig } from './mat-config';
+import { HomePageComponent } from './components/home-page/home-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SpeakerCardComponent,
-    PreviousSpeakerCardComponent
+    PreviousSpeakerCardComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,

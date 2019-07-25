@@ -1,10 +1,6 @@
 version: 2
 jobs:
   build:
-    environment:
-      GITHUB_NAME: parth181195
-      GITHUB_EMAIL: parthjansari@outlook.com
-      NAME: devfest-19
     docker:
       - image: circleci/node:10
     steps:

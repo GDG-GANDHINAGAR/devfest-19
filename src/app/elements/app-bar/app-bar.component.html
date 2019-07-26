@@ -1,0 +1,24 @@
+<div class="toolbar-wrapper">
+  <mat-toolbar class="mat-toolbar" [ngClass]="{'isScrolled': isScrolled}">
+    <div class="container">
+      <div class="content-wrapper">
+        <div class="logo-wrppper">
+          <img src="assets/images/logo.svg" alt="" *ngIf='isScrolled;else whiteLogo'>
+          <ng-template #whiteLogo>
+            <img src="assets/images/logo_white.svg" alt="">
+          </ng-template>
+        </div>
+        <span class="spacer"></span>
+        <div class="links-wrapper">
+          <ul>
+            <li><a [ngClass]="{'isScrolled': isScrolled}" href="">link</a></li>
+            <li><a [ngClass]="{'isScrolled': isScrolled}" href="">link</a></li>
+            <li><a [ngClass]="{'isScrolled': isScrolled}" href="">link</a></li>
+            <li><a [ngClass]="{'isScrolled': isScrolled}" href="">link</a></li>
+            <li><a [ngClass]="{'isScrolled': isScrolled}" href="">link</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </mat-toolbar>
+</div>

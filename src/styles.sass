@@ -1,3 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+@import ./variables.sass
+
 .center-align
-  text-align: center
+    text-align: center
+
+.container
+    margin: 0 auto
+    max-width: 1280px
+    width: 90%
+
+    @media #{$medium-and-up}
+        width: 85%
+
+    @media #{$large-and-up}
+        width: 70%

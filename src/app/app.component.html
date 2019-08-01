@@ -1,4 +1,46 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<app-app-bar></app-app-bar>
-<app-speaker-card></app-speaker-card>
-<router-outlet></router-outlet>
+<div class="toolbar-wrapper">
+  <mat-toolbar class="mat-toolbar" [ngClass]="{'isScrolled': isScrolled}">
+    <div class="container">
+      <div class="content-wrapper">
+        <mat-icon aria-hidden="false" aria-label="home icon" class="mat-icon" *ngIf="isMobile" (click)="opened = !opened">menu</mat-icon>
+        <!-- <span class="spacer" *ngIf="isMobile"></span> -->
+        <div class="logo-wrppper" [ngClass]="{'center': isMobile}">
+          <img src="assets/images/logo_white.svg" alt="">
+        </div>
+        <span class="spacer" *ngIf="!isMobile"></span>
+        <div class="links-wrapper" *ngIf="!isMobile">
+          <ul>
+            <li><a [ngClass]="{'isScrolled': isScrolled}" href="">link</a></li>
+            <li><a [ngClass]="{'isScrolled': isScrolled}" href="">link</a></li>
+            <li><a [ngClass]="{'isScrolled': isScrolled}" href="">link</a></li>
+            <li><a [ngClass]="{'isScrolled': isScrolled}" href="">link</a></li>
+            <li><a [ngClass]="{'isScrolled': isScrolled}" href="">link</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </mat-toolbar>
+</div>
+
+
+<mat-sidenav-container class="example-container">
+  <mat-sidenav #sidenav  mode="side" *ngIf="isMobile" [(opened)]="opened" >Sidenav content</mat-sidenav>
+  <mat-sidenav-content (scroll)="onScroll($event)">
+    <router-outlet></router-outlet>
+    <div class='row center-lg center-xs center-md' style='display: flex;'>
+      <div class="col-sm12 col-md6 col-lg4">
+        <app-speaker-card></app-speaker-card>
+      </div>
+      <div class="col-sm12 col-md6 col-lg4">
+        <app-speaker-card></app-speaker-card>
+      </div>
+      <div class="col-sm12 col-md6 col-lg4">
+        <app-speaker-card></app-speaker-card>
+      </div>
+      <div class="col-sm12 col-md6 col-lg4">
+        <app-speaker-card></app-speaker-card>
+      </div>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

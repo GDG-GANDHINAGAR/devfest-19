@@ -1,15 +1,47 @@
+@import ./flexgrid.css
 @import ./variables.sass
+@import '~@angular/material/theming'
+@include mat-core()
 
+$dark-primary: mat-palette($mat-blue-grey)
+$dark-accent:  mat-palette($mat-amber, A200, A100, A400)
+$dark-warn:    mat-palette($mat-deep-orange)
+$dark-theme:   mat-dark-theme($dark-primary, $dark-accent, $dark-warn)
+
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($dark-theme)
+
+
+
+.row
+  margin: 0
+
+body
+  background: #222 !important
 .center-align
-    text-align: center
+   text-align: center
 
 .container
-    margin: 0 auto
-    max-width: 1280px
-    width: 90%
+  margin: 0 auto
+  max-width: 1280px
+  width: 90%
 
-    @media #{$medium-and-up}
-        width: 85%
+  @media #{$medium-and-up}
+    width: 85%
 
-    @media #{$large-and-up}
-        width: 70%
+  @media #{$large-and-up}
+    width: 70%
+
+.mat-dialog
+  mat-dialog-container
+    color: #ffffff
+    border-radius: 15px
+    background: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,1)), url('/assets/images/bg.png') !important
+    background-size: cover
+    padding: 50px
+    display: flex
+    flex-direction: column
+

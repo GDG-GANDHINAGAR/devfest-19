@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { config } from 'rxjs';
-import { SpeakerConfig } from 'src/app/models/speaker.model';
+import { SpeakerConfig, SocialMediaKind } from 'src/app/models/speaker.model';
+import { MatDialog } from '@angular/material/dialog';
+import { SpeakerDialogueComponent } from '../speaker-dialogue/speaker-dialogue.component';
 
 @Component({
   selector: 'app-speaker-card',
@@ -9,15 +11,44 @@ import { SpeakerConfig } from 'src/app/models/speaker.model';
 })
 export class SpeakerCardComponent implements OnInit {
   @Input() config: SpeakerConfig = {
-    name: 'speaker-name',
-    session: 'session-name',
-    JobTitle: 'job-title',
-    socialMediaLinks: [{ kind: 'github', link: '#' }],
-    image: 'https://st4.depositphotos.com/9998432/22597/v/450/depositphotos_225976914-stock-illustration-person-gray-photo-placeholder-man.jpg'
+    name: 'Parth Jansari',
+    session: 'Flutter Animations: Motion Awakens',
+    JobTitle: 'Organizer',
+    company: 'GDG Gandhinagar',
+    socialMediaLinks: [{ kind: SocialMediaKind.github, link: '#' }],
+    image:
+      'https://st4.depositphotos.com/9998432/22597/v/450/depositphotos_225976914-stock-illustration-person-gray-photo-placeholder-man.jpg',
+    sessionData: `lets learn how to animate things in flutter with a pinch of darkside.`,
+    bio: `Parth is a guy who is trying to grow up and do mature stuff and work but ends
+    up designing, playing games(most of the time) or watching Movies/Tv Series.Parth has
+    five years of experience in designing and two years experience in front-end
+     development. Parth uses Angular for Creating frontend, ionic and Flutter to
+      create hybrid apps. Parth has mastery over most of the adobe creative suite apps.
+       Currently, Parth is exploring Flutter as he believes it can be a replacement for
+        ionic 2 and all other hybrid app frameworks.
+    `
   };
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(SpeakerDialogueComponent, {
+      width: '95%',
+      height: '80%',
+      panelClass: 'mat-dialog',
+      maxWidth: '1000px',
+      minWidth: '300px',
+      data: { ...this.config }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      // this.animal = result;
+    });
+  }
+
 
   ngOnInit() {
+    this.openDialog();
   }
 
 }

@@ -1,0 +1,97 @@
+// $grad1: linear-gradient(180deg, , rgba(98.4%, 73.7%, 1.6%, 0))
+$grad2: radial-gradient(farthest-side at 0 0, rgba(#FF1400, .8), rgba(#FF1400, 0)),
+$grad4: radial-gradient(farthest-side at 35% 0, rgba(#FBBC04, .8), rgba(#FBBC04, 0))
+$grad3: radial-gradient(farthest-side at 50% 0, rgba(#0F9D58, .8), rgba(#0F9D58, 0)),
+$grad5: radial-gradient(farthest-side at 80% 0, rgba(#0085FC, .8), rgba(#0085FC, 0)),
+
+.bg
+    z-index: 10
+    border-radius: 15px 15px 0 0
+    // background: linear-gradient(180deg, rgba(250, 250, 250, 0.2) 0%, rgba(15, 21, 25, 1) 95%, rgba(19, 26, 32, 1) 100%),
+    background:     $grad2, $grad4, $grad3, $grad5
+    position: absolute
+    top:  -50px
+    left: -50px
+    width: calc(100% + 100px)
+    height: 100px
+.mat-title
+  position: relative
+  padding-top: 10px
+  .title-wrapper
+    position: relative
+    z-index: 15
+    display: flex
+    align-items: center
+    .img-wrapper
+      width: 120px
+      padding: 0
+      height: 120px
+      min-width: 120px
+      border-radius: 120px
+      margin-right: 20px
+      overflow: hidden
+      border: 4px solid #fff
+      img
+        height: 100%
+        width: 100%
+        object-fit: cover
+    .name
+      font-size: 2em
+.mat-dialog-content
+  position: relative
+  max-height: 100%
+  overflow: visible
+
+  &:after
+    // opacity: 0.41
+    position: absolute
+    // z-index: -1
+    top: 0
+    lef: 0
+    width: 100%
+    height: 100%
+    content: ''
+    background-size: cover
+
+  .modal-content
+    .about
+      margin-top: 20px
+      .job-title
+        line-height: 30px
+        font-size: 1.5em
+      .work-place
+        line-height: 30px
+        font-size: 1.3em
+        margin-bottom: 20px
+        margin-top: 10px
+        font-weight: lighter
+      .bio,.session
+        .title
+          line-height: 30px
+          font-size: 1.5em
+        .session-title
+          line-height: 30px
+          font-size: 1.3em
+        .bio-text,.session-text
+          // line-height: 30px
+          font-size: 1m
+          margin-bottom: 20px
+          margin-top: 10px
+          font-weight: lighter
+      .links
+        margin: 30px 0
+        a
+          font-size: 30px
+          color: #7446C4
+          display: inline-block
+          height: 50px
+          padding: 10px
+          border-radius: 25px
+          width: 50px
+
+          &:hover
+            box-shadow: 0 0 25px 3px #cccccc
+
+          i
+            font-size: 30px
+            vertical-align: top

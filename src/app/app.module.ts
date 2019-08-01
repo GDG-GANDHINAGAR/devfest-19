@@ -1,17 +1,23 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
-import { MatRippleModule, RippleGlobalOptions, MAT_RIPPLE_GLOBAL_OPTIONS } from '@angular/material/core';
-import { SpeakerCardComponent } from './elements/speaker-card/speaker-card.component';
-import { PreviousSpeakerCardComponent } from './elements/previous-speaker-card/previous-speaker-card.component';
+import { MatDialogModule } from '@angular/material/dialog';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatRippleModule, RippleGlobalOptions, MAT_RIPPLE_GLOBAL_OPTIONS } from '@angular/material/core';
 import { globalRippleConfig } from './mat-config';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+
+import { PreviousSpeakerCardComponent } from './elements/previous-speaker-card/previous-speaker-card.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
+
+import { SpeakerCardComponent } from './elements/speaker-card/speaker-card.component';
 import { AppBarComponent } from './elements/app-bar/app-bar.component';
+import { SpeakerDialogueComponent } from './elements/speaker-dialogue/speaker-dialogue.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +25,8 @@ import { AppBarComponent } from './elements/app-bar/app-bar.component';
     SpeakerCardComponent,
     PreviousSpeakerCardComponent,
     HomePageComponent,
-    AppBarComponent
+    AppBarComponent,
+    SpeakerDialogueComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +34,12 @@ import { AppBarComponent } from './elements/app-bar/app-bar.component';
     BrowserAnimationsModule,
     MatCardModule,
     MatRippleModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatDialogModule,
+    MatButtonModule,
+  ],
+  entryComponents: [
+    SpeakerDialogueComponent
   ],
   providers: [
     { provide: MAT_RIPPLE_GLOBAL_OPTIONS, useValue: globalRippleConfig }

@@ -8,10 +8,13 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatRippleModule, RippleGlobalOptions, MAT_RIPPLE_GLOBAL_OPTIONS } from '@angular/material/core';
 import { globalRippleConfig } from './mat-config';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatIconModule } from '@angular/material/icon';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
 
+import { AppComponent } from './app.component';
 import { PreviousSpeakerCardComponent } from './elements/previous-speaker-card/previous-speaker-card.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
 
@@ -37,6 +40,9 @@ import { SpeakerDialogueComponent } from './elements/speaker-dialogue/speaker-di
     MatToolbarModule,
     MatDialogModule,
     MatButtonModule,
+    MatSidenavModule,
+    LayoutModule,
+    MatIconModule,
   ],
   entryComponents: [
     SpeakerDialogueComponent

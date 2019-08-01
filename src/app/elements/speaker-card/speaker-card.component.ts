@@ -3,6 +3,7 @@ import { config } from 'rxjs';
 import { SpeakerConfig, SocialMediaKind } from 'src/app/models/speaker.model';
 import { MatDialog } from '@angular/material/dialog';
 import { SpeakerDialogueComponent } from '../speaker-dialogue/speaker-dialogue.component';
+import { ScrollStrategy } from '@angular/cdk/overlay';
 
 @Component({
   selector: 'app-speaker-card',
@@ -36,6 +37,7 @@ export class SpeakerCardComponent implements OnInit {
       height: '80%',
       panelClass: 'mat-dialog',
       maxWidth: '1000px',
+      autoFocus: false,
       minWidth: '300px',
       data: { ...this.config }
     });
@@ -48,7 +50,7 @@ export class SpeakerCardComponent implements OnInit {
 
 
   ngOnInit() {
-    this.openDialog();
+    // this.openDialog();
   }
 
 }

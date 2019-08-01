@@ -1,4 +1,5 @@
 import { Component, OnInit, HostListener, Inject } from '@angular/core';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-app-bar',
@@ -6,7 +7,9 @@ import { Component, OnInit, HostListener, Inject } from '@angular/core';
   styleUrls: ['./app-bar.component.sass']
 })
 export class AppBarComponent implements OnInit {
-  isScrolled = false;
+
+  isScrolled;
+  isMobile: boolean;
   @HostListener('window:scroll', ['$event'])
   onWindowScroll(e) {
     if (e.target['scrollingElement'].scrollTop >= 200) {
@@ -15,10 +18,19 @@ export class AppBarComponent implements OnInit {
       this.isScrolled = false;
     }
     // console.log(e.target['scrollingElement'].scrollTop);
+  } constructor(breakpointObserver: BreakpointObserver) {
+    breakpointObserver.observe([
+      Breakpoints.Handset,
+      Breakpoints.Tablet
+    ]).subscribe(result => {
+      if (result.matches) {
+        this.isMobile = true;
+      }
+    });
   }
-  constructor() { }
-
   ngOnInit() {
+    this.isScrolled = window.pageYOffset >= 200;
+    console.log(window.pageYOffset);
   }
 
 }

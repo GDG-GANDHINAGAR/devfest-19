@@ -1,23 +1,23 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div class="toolbar-wrapper">
   <mat-toolbar class="mat-toolbar" [ngClass]="{'isScrolled': isScrolled}">
-    <div class="container">
-      <div class="content-wrapper">
-        <mat-icon aria-hidden="false" aria-label="home icon" class="mat-icon" *ngIf="isMobile" (click)="opened = !opened">menu</mat-icon>
-        <!-- <span class="spacer" *ngIf="isMobile"></span> -->
-        <div class="logo-wrppper" [ngClass]="{'center': isMobile}">
-          <img src="assets/images/logo_white.svg" alt="">
-        </div>
-        <span class="spacer" *ngIf="!isMobile"></span>
-        <div class="links-wrapper" *ngIf="!isMobile">
-          <ul>
-            <li><a [ngClass]="{'isScrolled': isScrolled}" href="">link</a></li>
-            <li><a [ngClass]="{'isScrolled': isScrolled}" href="">link</a></li>
-            <li><a [ngClass]="{'isScrolled': isScrolled}" href="">link</a></li>
-            <li><a [ngClass]="{'isScrolled': isScrolled}" href="">link</a></li>
-            <li><a [ngClass]="{'isScrolled': isScrolled}" href="">link</a></li>
-          </ul>
-        </div>
+    <div class="content-wrapper" [ngClass]="{'container': !isMobile}">
+      <mat-icon aria-hidden="false" aria-label="home icon" class="mat-icon" *ngIf="isMobile" (click)="opened = !opened">
+        menu</mat-icon>
+      <!-- <span class="spacer" *ngIf="isMobile"></span> -->
+      <div class="logo-wrppper" [ngClass]="{'center': isMobile}">
+        <img src="assets/images/logo_white.svg" alt="">
+      </div>
+      <span class="spacer" *ngIf="!isMobile"></span>
+      <div class="links-wrapper" *ngIf="!isMobile">
+        <ul>
+          <li><a [ngClass]="{'isScrolled': isScrolled}" [routerLink]='["home"]' routerLinkActive="active">Home</a></li>
+          <li><a [ngClass]="{'isScrolled': isScrolled}" [routerLink]='["speakers"]'
+              routerLinkActive="active">Speakers</a></li>
+          <li><a [ngClass]="{'isScrolled': isScrolled}" [routerLink]='["team"]' routerLinkActive="active">Team</a></li>
+          <li><a [ngClass]="{'isScrolled': isScrolled}" [routerLink]='["about"]' routerLinkActive="active">About</a>
+          </li>
+        </ul>
       </div>
     </div>
   </mat-toolbar>
@@ -25,7 +25,23 @@
 
 
 <mat-sidenav-container class="example-container">
-  <mat-sidenav #sidenav  mode="side" *ngIf="isMobile" [(opened)]="opened" >Sidenav content</mat-sidenav>
+  <mat-sidenav #sidenav mode="over" *ngIf="isMobile" class="sidenav" [(opened)]="opened">
+    <div class="image-container">
+      <img src="assets/images/logo_white.svg" alt="">
+    </div>
+    <mat-list>
+      <mat-list-item [routerLink]='["home"]' routerLinkActive="active"> <a
+          [ngClass]="{'isScrolled': isScrolled}">Home</a> </mat-list-item>
+      <mat-list-item [routerLink]='["speakers"]' routerLinkActive="active"> <a
+          [ngClass]="{'isScrolled': isScrolled}">Speakers</a>
+      </mat-list-item>
+      <mat-list-item [routerLink]='["team"]' routerLinkActive="active"> <a
+          [ngClass]="{'isScrolled': isScrolled}">Team</a> </mat-list-item>
+      <mat-list-item [routerLink]='["about"]' routerLinkActive="active"> <a
+          [ngClass]="{'isScrolled': isScrolled}">About</a> </mat-list-item>
+    </mat-list>
+
+  </mat-sidenav>
   <mat-sidenav-content (scroll)="onScroll($event)">
     <router-outlet></router-outlet>
     <div class='row center-lg center-xs center-md' style='display: flex;'>

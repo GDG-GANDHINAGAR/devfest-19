@@ -1,7 +1,7 @@
 <div class="wrapper">
   <div matRipple matRippleColor='#ffffff40' class="card-container" (click)="openDialog()">
     <div class="picture-wrapper">
-      <img [src]="config.image" alt="">
+      <app-profile-icon [src]='config.image' width='150'></app-profile-icon>
     </div>
     <div class="session-name center-align">
       {{config.session}}

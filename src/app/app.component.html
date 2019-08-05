@@ -1,7 +1,6 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div class="toolbar-wrapper">
   <mat-toolbar class="mat-toolbar" [ngClass]="{'isScrolled': isScrolled}">
-<<<<<<< HEAD
     <div class="content-wrapper" [ngClass]="{'container': !isMobile}">
       <mat-icon aria-hidden="false" aria-label="home icon" class="mat-icon" *ngIf="isMobile" (click)="opened = !opened">
         menu</mat-icon>
@@ -19,25 +18,6 @@
           <li><a [ngClass]="{'isScrolled': isScrolled}" [routerLink]='["about"]' routerLinkActive="active">About</a>
           </li>
         </ul>
-=======
-    <div class="container">
-      <div class="content-wrapper">
-        <mat-icon aria-hidden="false" aria-label="home icon" class="mat-icon" *ngIf="isMobile" (click)="opened = !opened">menu</mat-icon>
-        <!-- <span class="spacer" *ngIf="isMobile"></span> -->
-        <div class="logo-wrppper" [ngClass]="{'center': isMobile}">
-          <img src="assets/images/logo_white.svg" alt="">
-        </div>
-        <span class="spacer" *ngIf="!isMobile"></span>
-        <div class="links-wrapper" *ngIf="!isMobile">
-          <ul>
-            <li><a [ngClass]="{'isScrolled': isScrolled}" href="">link</a></li>
-            <li><a [ngClass]="{'isScrolled': isScrolled}" href="">link</a></li>
-            <li><a [ngClass]="{'isScrolled': isScrolled}" href="">link</a></li>
-            <li><a [ngClass]="{'isScrolled': isScrolled}" href="">link</a></li>
-            <li><a [ngClass]="{'isScrolled': isScrolled}" href="">link</a></li>
-          </ul>
-        </div>
->>>>>>> 51e6e6b0037cb9033a23ea946bb8eeb0a90babee
       </div>
     </div>
   </mat-toolbar>
@@ -45,7 +25,6 @@
 
 
 <mat-sidenav-container class="example-container">
-<<<<<<< HEAD
   <mat-sidenav #sidenav mode="over" *ngIf="isMobile" class="sidenav" [(opened)]="opened">
     <div class="image-container">
       <img src="assets/images/logo_white.svg" alt="">
@@ -66,24 +45,5 @@
   <mat-sidenav-content (scroll)="onScroll($event)">
     <router-outlet></router-outlet>
 
-=======
-  <mat-sidenav #sidenav  mode="side" *ngIf="isMobile" [(opened)]="opened" >Sidenav content</mat-sidenav>
-  <mat-sidenav-content (scroll)="onScroll($event)">
-    <router-outlet></router-outlet>
-    <div class='row center-lg center-xs center-md' style='display: flex;'>
-      <div class="col-sm12 col-md6 col-lg4">
-        <app-speaker-card></app-speaker-card>
-      </div>
-      <div class="col-sm12 col-md6 col-lg4">
-        <app-speaker-card></app-speaker-card>
-      </div>
-      <div class="col-sm12 col-md6 col-lg4">
-        <app-speaker-card></app-speaker-card>
-      </div>
-      <div class="col-sm12 col-md6 col-lg4">
-        <app-speaker-card></app-speaker-card>
-      </div>
-    </div>
->>>>>>> 51e6e6b0037cb9033a23ea946bb8eeb0a90babee
   </mat-sidenav-content>
 </mat-sidenav-container>

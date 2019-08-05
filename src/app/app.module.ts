@@ -25,6 +25,7 @@ import { ProfileIconComponent } from './elements/profile-icon/profile-icon.compo
 import { TeamPageComponent } from './components/team-page/team-page.component';
 import { AboutPageComponent } from './components/about-page/about-page.component';
 import { SpeakersPageComponent } from './components/speakers-page/speakers-page.component';
+import { DataIconComponent } from './elements/data-icon/data-icon.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { SpeakersPageComponent } from './components/speakers-page/speakers-page.
     ProfileIconComponent,
     TeamPageComponent,
     AboutPageComponent,
-    SpeakersPageComponent
+    SpeakersPageComponent,
+    DataIconComponent
   ],
   imports: [
     BrowserModule,

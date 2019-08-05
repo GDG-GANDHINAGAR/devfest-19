@@ -1,29 +1,31 @@
 import { Component, OnInit, Input, ViewChild, ElementRef, Renderer2, AfterViewInit } from '@angular/core';
 
 @Component({
-  selector: 'app-profile-icon',
-  templateUrl: './profile-icon.component.html',
-  styleUrls: ['./profile-icon.component.sass']
+  selector: 'app-data-icon',
+  templateUrl: './data-icon.component.html',
+  styleUrls: ['./data-icon.component.sass']
 })
-export class ProfileIconComponent implements OnInit, AfterViewInit {
-  @Input() src: String;
-  @Input() width: number;
+export class DataIconComponent implements OnInit {
+  @Input() data: String;
+  @Input() title: String;
   @ViewChild('square', { static: true }) square: ElementRef;
   @ViewChild('circle', { static: true }) circle: ElementRef;
   @ViewChild('wrapper', { static: false }) wrapper: ElementRef;
   @ViewChild('circleWrapper', { static: false }) circleWrapper: ElementRef;
   circleR = 100;
+  width: number;
   constructor(private renderer: Renderer2) { }
 
   ngOnInit() {
   }
   ngAfterViewInit() {
-    // console.log(this.width);
+    this.width = this.circleWrapper.nativeElement.clientHeight;
+    console.log(this.width);
     this.circleR = this.width / 2;
-    this.renderer.setStyle(this.wrapper.nativeElement, 'width', `${this.width + 8}px`);
-    this.renderer.setStyle(this.wrapper.nativeElement, 'height', `${this.width + 8}px`);
-    this.renderer.setStyle(this.circleWrapper.nativeElement, 'width', `${this.width}px`);
-    this.renderer.setStyle(this.circleWrapper.nativeElement, 'height', `${this.width}px`);
+    // this.renderer.setStyle(this.wrapper.nativeElement, 'width', `${this.width + 8}px`);
+    // this.renderer.setStyle(this.wrapper.nativeElement, 'height', `${this.width + 8}px`);
+    // this.renderer.setStyle(this.circleWrapper.nativeElement, 'width', `${this.width}px`);
+    // this.renderer.setStyle(this.circleWrapper.nativeElement, 'height', `${this.width}px`);
     this.getcoordinates();
   }
 

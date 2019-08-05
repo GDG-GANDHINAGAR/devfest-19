@@ -37,7 +37,10 @@ export class SpeakerCardComponent implements OnInit {
       height: '80%',
       panelClass: 'mat-dialog',
       maxWidth: '1000px',
+<<<<<<< HEAD
       maxHeight: '600px',
+=======
+>>>>>>> 51e6e6b0037cb9033a23ea946bb8eeb0a90babee
       autoFocus: false,
       minWidth: '300px',
       data: { ...this.config }

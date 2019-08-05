@@ -21,10 +21,13 @@ import { HomePageComponent } from './components/home-page/home-page.component';
 import { SpeakerCardComponent } from './elements/speaker-card/speaker-card.component';
 import { AppBarComponent } from './elements/app-bar/app-bar.component';
 import { SpeakerDialogueComponent } from './elements/speaker-dialogue/speaker-dialogue.component';
+<<<<<<< HEAD
 import { ProfileIconComponent } from './elements/profile-icon/profile-icon.component';
 import { TeamPageComponent } from './components/team-page/team-page.component';
 import { AboutPageComponent } from './components/about-page/about-page.component';
 import { SpeakersPageComponent } from './components/speakers-page/speakers-page.component';
+=======
+>>>>>>> 51e6e6b0037cb9033a23ea946bb8eeb0a90babee
 
 @NgModule({
   declarations: [
@@ -33,11 +36,15 @@ import { SpeakersPageComponent } from './components/speakers-page/speakers-page.
     PreviousSpeakerCardComponent,
     HomePageComponent,
     AppBarComponent,
+<<<<<<< HEAD
     SpeakerDialogueComponent,
     ProfileIconComponent,
     TeamPageComponent,
     AboutPageComponent,
     SpeakersPageComponent
+=======
+    SpeakerDialogueComponent
+>>>>>>> 51e6e6b0037cb9033a23ea946bb8eeb0a90babee
   ],
   imports: [
     BrowserModule,

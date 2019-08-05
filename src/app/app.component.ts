@@ -20,8 +20,12 @@ export class AppComponent implements OnInit {
       this.isScrolled = false;
     }
     // console.log(e.target['scrollingElement'].scrollTop);
+<<<<<<< HEAD
   }
   constructor(private breakpointObserver: BreakpointObserver) {
+=======
+  } constructor(private breakpointObserver: BreakpointObserver) {
+>>>>>>> 51e6e6b0037cb9033a23ea946bb8eeb0a90babee
     const layoutChanges = breakpointObserver.observe([
       '(orientation: portrait)',
       '(orientation: landscape)',

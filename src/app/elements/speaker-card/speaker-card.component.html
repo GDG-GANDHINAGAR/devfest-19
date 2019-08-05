@@ -9,10 +9,10 @@
     <div class="speaker-name center-align">
       {{config.name}}
     </div>
-    <div class="job-title center-align">
+    <div class="job-title center-align" *ngIf="!isHomePage">
       {{config.session}}
     </div>
-    <div class="icons-row center-align">
+    <div class="icons-row center-align" *ngIf="!isHomePage">
       <div class="icon-wrapper" *ngFor="let item of config.socialMediaLinks">
         <div [ngSwitch]="item.kind">
           <div *ngSwitchCase="'Github'">

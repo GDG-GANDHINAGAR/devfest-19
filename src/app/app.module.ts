@@ -26,6 +26,7 @@ import { TeamPageComponent } from './components/team-page/team-page.component';
 import { AboutPageComponent } from './components/about-page/about-page.component';
 import { SpeakersPageComponent } from './components/speakers-page/speakers-page.component';
 import { DataIconComponent } from './elements/data-icon/data-icon.component';
+import { HomepageTitleComponent } from './elements/homepage-title/homepage-title.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { DataIconComponent } from './elements/data-icon/data-icon.component';
     TeamPageComponent,
     AboutPageComponent,
     SpeakersPageComponent,
-    DataIconComponent
+    DataIconComponent,
+    HomepageTitleComponent
   ],
   imports: [
     BrowserModule,

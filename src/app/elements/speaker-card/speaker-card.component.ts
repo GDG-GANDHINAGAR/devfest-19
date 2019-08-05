@@ -11,6 +11,7 @@ import { ScrollStrategy } from '@angular/cdk/overlay';
   styleUrls: ['./speaker-card.component.sass']
 })
 export class SpeakerCardComponent implements OnInit {
+  @Input() isHomePage = false;
   @Input() config: SpeakerConfig = {
     name: 'Parth Jansari',
     session: 'Flutter Animations: Motion Awakens',

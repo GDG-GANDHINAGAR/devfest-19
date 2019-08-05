@@ -7,7 +7,7 @@ import { Component, OnInit, Input, ViewChild, ElementRef, Renderer2, AfterViewIn
 })
 export class ProfileIconComponent implements OnInit, AfterViewInit {
   @Input() src: String;
-  @Input() width: number;
+  @Input() width;
   @ViewChild('square', { static: true }) square: ElementRef;
   @ViewChild('circle', { static: true }) circle: ElementRef;
   @ViewChild('wrapper', { static: false }) wrapper: ElementRef;
@@ -18,8 +18,9 @@ export class ProfileIconComponent implements OnInit, AfterViewInit {
   ngOnInit() {
   }
   ngAfterViewInit() {
-    // console.log(this.width);
-    this.circleR = this.width / 2;
+    console.log(this.width);
+    this.width = parseInt(this.width, 0);
+    this.circleR = parseInt(this.width, 0) / 2;
     this.renderer.setStyle(this.wrapper.nativeElement, 'width', `${this.width + 8}px`);
     this.renderer.setStyle(this.wrapper.nativeElement, 'height', `${this.width + 8}px`);
     this.renderer.setStyle(this.circleWrapper.nativeElement, 'width', `${this.width}px`);
@@ -35,10 +36,10 @@ export class ProfileIconComponent implements OnInit, AfterViewInit {
     let scale = Math.random();
     scale = scale < 0.4 ? (scale + 0.4) : scale;
     randomAngle2 = Math.abs(randomAngle1 - randomAngle2) > 180 ? randomAngle2 : randomAngle1 + 180;
-    circle.x = (this.circleR * Math.sin(randomAngle1)) + this.circleR + 10;
-    circle.y = (this.circleR * Math.cos(randomAngle1)) + this.circleR + 10;
-    square.x = (this.circleR * Math.sin(randomAngle2)) + this.circleR + 10;
-    square.y = (this.circleR * Math.cos(randomAngle2)) + this.circleR + 10;
+    circle.x = ((this.circleR * Math.sin(randomAngle1)) + this.circleR) < this.circleR ? ((this.circleR * Math.sin(randomAngle1)) + this.circleR) - 5 : ((this.circleR * Math.sin(randomAngle1)) + this.circleR) + 5;
+    circle.y = ((this.circleR * Math.cos(randomAngle1)) + this.circleR) < this.circleR ? ((this.circleR * Math.cos(randomAngle1)) + this.circleR) - 5 : ((this.circleR * Math.cos(randomAngle1)) + this.circleR) + 5;
+    square.x = ((this.circleR * Math.sin(randomAngle2)) + this.circleR) < this.circleR ? ((this.circleR * Math.sin(randomAngle2)) + this.circleR) - 5 : ((this.circleR * Math.sin(randomAngle2)) + this.circleR) + 5;
+    square.y = ((this.circleR * Math.cos(randomAngle2)) + this.circleR) < this.circleR ? ((this.circleR * Math.cos(randomAngle2)) + this.circleR) - 5 : ((this.circleR * Math.cos(randomAngle2)) + this.circleR) + 5;
     // console.log(this.circleR);
     // console.log(circle);
     // console.log(square);

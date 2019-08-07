@@ -1,21 +1,24 @@
+<!--The content below is only a placeholder and can be replaced.-->
 <div class="toolbar-wrapper">
   <mat-toolbar class="mat-toolbar" [ngClass]="{'isScrolled': isScrolled}">
     <div class="container">
       <div class="content-wrapper">
-        <div class="logo-wrppper">
+        <mat-icon aria-hidden="false" aria-label="home icon" class="mat-icon" *ngIf="isMobile"
+          (click)="opened = !opened">menu</mat-icon>
+        <!-- <span class="spacer" *ngIf="isMobile"></span> -->
+        <div class="logo-wrppper" [ngClass]="{'center': isMobile}">
           <img src="assets/images/logo_white.svg" alt="">
         </div>
-        <span class="spacer"></span>
-        <div class="links-wrapper">
+        <span class="spacer" *ngIf="!isMobile"></span>
+        <div class="links-wrapper" *ngIf="!isMobile">
           <ul>
-            <li><a [ngClass]="{'isScrolled': isScrolled}" href="">link</a></li>
-            <li><a [ngClass]="{'isScrolled': isScrolled}" href="">link</a></li>
-            <li><a [ngClass]="{'isScrolled': isScrolled}" href="">link</a></li>
-            <li><a [ngClass]="{'isScrolled': isScrolled}" href="">link</a></li>
-            <li><a [ngClass]="{'isScrolled': isScrolled}" href="">link</a></li>
+            <li><a [ngClass]="{'isScrolled': isScrolled}" href="" routerLink="/home">Home</a></li>
+            <li><a [ngClass]="{'isScrolled': isScrolled}" href="" routerLink="/speakers">Speakers</a></li>
+            <li><a [ngClass]="{'isScrolled': isScrolled}" href="" routerLink="/team">Team</a></li>
           </ul>
         </div>
       </div>
     </div>
   </mat-toolbar>
 </div>
+<router-outlet></router-outlet>

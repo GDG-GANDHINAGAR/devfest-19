@@ -21,6 +21,7 @@ import { HomePageComponent } from './components/home-page/home-page.component';
 import { SpeakerCardComponent } from './elements/speaker-card/speaker-card.component';
 import { AppBarComponent } from './elements/app-bar/app-bar.component';
 import { SpeakerDialogueComponent } from './elements/speaker-dialogue/speaker-dialogue.component';
+import { SpeakersPageComponent } from './components/speakers-page/speakers-page.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { SpeakerDialogueComponent } from './elements/speaker-dialogue/speaker-di
     PreviousSpeakerCardComponent,
     HomePageComponent,
     AppBarComponent,
-    SpeakerDialogueComponent
+    SpeakerDialogueComponent,
+    SpeakersPageComponent
   ],
   imports: [
     BrowserModule,

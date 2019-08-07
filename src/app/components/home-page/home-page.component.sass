@@ -1,3 +1,9 @@
+.sub-title
+  font-family: 'Product Sans'
+  font-size: 2em
+  font-weight: lighter
+  @media screen and (max-width: 930px)
+    font-size: 1.5em
 #header
   width: 100vw
   height: calc(100vh - 64px )
@@ -10,13 +16,7 @@
     transform: translate(-50%,-50%)
     font-size: 3em
 #about
-  .previous-speaker-title
-    font-family: 'Product Sans'
-    font-size: 2em
-    margin-bottom: 20px
-    font-weight: lighter
-    @media screen and (max-width: 930px)
-      font-size: 1.5em
+
   .wrapper
     .title
       font-family: 'Product Sans'
@@ -40,3 +40,8 @@
         background: #EE2A7B
       .section
         margin-bottom: 20px
+#speakers
+    margin: 100px 0
+    .sub-title
+      &.previous
+        margin-bottom: 80px

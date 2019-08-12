@@ -49,3 +49,6 @@ Thumbs.db
 #Firebase Patch
 .runtimeconfig.json
 .firebase/
+
+# Firebase Config - Add Firebase configuration to this file
+/src/app/environments/environmentConfig.ts

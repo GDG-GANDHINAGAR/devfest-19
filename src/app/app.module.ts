@@ -22,6 +22,11 @@ import { SpeakerCardComponent } from './elements/speaker-card/speaker-card.compo
 import { AppBarComponent } from './elements/app-bar/app-bar.component';
 import { SpeakerDialogueComponent } from './elements/speaker-dialogue/speaker-dialogue.component';
 
+import { environment } from '../environments/environment';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,6 +48,9 @@ import { SpeakerDialogueComponent } from './elements/speaker-dialogue/speaker-di
     MatSidenavModule,
     LayoutModule,
     MatIconModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule, // imports firebase/firestore, only needed for database features
+    AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
   ],
   entryComponents: [
     SpeakerDialogueComponent

@@ -1,5 +1,8 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { AngularFirestore } from '@angular/fire/firestore';
+
+export interface Item { name: string; }
 
 @Component({
   selector: 'app-root',

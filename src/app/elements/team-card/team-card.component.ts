@@ -4,13 +4,13 @@ import { SpeakerConfig, SocialMediaKind } from 'src/app/models/speaker.model';
 import { MatDialog } from '@angular/material/dialog';
 import { SpeakerDialogueComponent } from '../speaker-dialogue/speaker-dialogue.component';
 import { ScrollStrategy } from '@angular/cdk/overlay';
-
 @Component({
-  selector: 'app-speaker-card',
-  templateUrl: './speaker-card.component.html',
-  styleUrls: ['./speaker-card.component.sass']
+  selector: 'app-team-card',
+  templateUrl: './team-card.component.html',
+  styleUrls: ['./team-card.component.sass']
 })
-export class SpeakerCardComponent implements OnInit {
+export class TeamCardComponent implements OnInit {
+
   @Input() isHomePage = false;
   @Input() config: SpeakerConfig = {
     name: 'Parth Jansari',
@@ -32,6 +32,7 @@ export class SpeakerCardComponent implements OnInit {
     `,
 
   };
+  availableFilters = ['mobile', 'web'];
 
   constructor(public dialog: MatDialog) { }
 
@@ -56,8 +57,6 @@ export class SpeakerCardComponent implements OnInit {
 
   ngOnInit() {
     // this.openDialog();
+    this.availableFilters
   }
-
 }
-
-

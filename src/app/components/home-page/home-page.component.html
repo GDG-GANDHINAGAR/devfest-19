@@ -110,10 +110,13 @@
         <app-gallery-image src='assets/images/g{{item}}.JPG'></app-gallery-image>
       </div>
       <div class="col-xs-12" style='margin-top: 50px'>
-          <a mat-raised-button isRoundButton='true' target="_blank" href='https://photos.app.goo.gl/CojnpJaXwuLuqeV66' color='#2BB673'>View More</a>
+        <a mat-raised-button isRoundButton='true' target="_blank" href='https://photos.app.goo.gl/CojnpJaXwuLuqeV66'
+          color='#2BB673'>View More</a>
       </div>
     </div>
   </div>
+
+
   <div id="tickets">
     <div class='row center-lg center-xs center-md middle-lg middle-md middle-sm middle-xs'>
       <div class="col-xs-12">
@@ -124,42 +127,63 @@
           Tickets🎫 Comming Soon!
         </div>
       </div>
-      <!-- <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" *ngIf="true">
-        <app-tickets></app-tickets>
-      </div>
-      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" *ngIf="true">
-        <app-tickets></app-tickets>
-      </div>
-      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" *ngIf="true">
-        <app-tickets></app-tickets>
-      </div> -->
-      <!-- <div class="col-xs-12" style='height: 250px'>
-        <button mat-raised-button isRoundButton='true' color='#2BB673'>Subscribe</button>
-      </div> -->
     </div>
   </div>
-  <div id="about">
+
+
+
+  <div id="team">
     <div class='row center-lg center-xs center-md middle-lg middle-md middle-sm middle-xs'>
-      <div class="col-xs-12">
-        <app-homepage-title title='Subscription' color='#F9BC15'></app-homepage-title>
+      <div class="col-xs-12 ">
+        <app-homepage-title title='Who we are?' color='#F9BC15'></app-homepage-title>
       </div>
-      <div class="col-xs-12" style='height: 250px'>
-        <div class="sub-title" style='line-height:250px;font-size: 2.5em'>
-          Get notified about important conference updates
+      <div class="col-xs-12 col-md-12 col-lg-6">
+        <div class='team-image'>
+          <img src="assets/images/t1.JPG" alt="">
         </div>
       </div>
-      <div class="col-xs-12">
-        <button mat-raised-button isRoundButton='true' color='#2BB673'>Subscribe</button>
+      <div class="col-xs-12 col-md-12 col-lg-6">
+        <div class="row left-xs left-lg left-sm left-md middle-lg middle-md middle-sm middle-xs">
+          <div class="col-xs-122">
+
+            <div class='organizer section'>
+              <div class='organizer-title section-title'>
+                Organizers
+              </div>
+              <div class='organizer-details section-details'>
+                GDG Gandhinagar with support of many geeks from all around Gandhinagar is proud organizer of DevFest
+                Gandhinagar
+              </div>
+              <div class="btn">
+                <a mat-raised-button isRoundButton='true' target="_blank" [routerLink]="['/team']"
+                  routerLinkActive="router-link-active" color='#2BB673'>View More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12">
+
+            <div class='gdg section'>
+              <div class='gdg-title section-title'>
+                What is Gdg Gandhinagar?
+              </div>
+              <div class='gdg-details section-details'>
+                Google Developers Group (GDG) - is open and volunteer geek community who create exciting projects and
+                share experience about Google technologies with a passion
+              </div>
+              <div class="btn">
+                <a mat-raised-button isRoundButton='true' target="_blank" [routerLink]="['/team']"
+                  routerLinkActive="router-link-active" color='#2BB673'>View More</a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
   <div id="subscribe">
     <div class='row center-lg center-xs center-md middle-lg middle-md middle-sm middle-xs'>
-      <div class="col-xs-12">
-        <app-homepage-title title='Subscription' color='#F9BC15'></app-homepage-title>
-      </div>
-      <div class="col-xs-12" style='height: 250px'>
-        <div class="sub-title" style='line-height:250px;font-size: 2.5em'>
+      <div class="col-xs-12 col-md-12" style='height: 150px'>
+        <div class="sub-title" style='line-height:150px;font-size: 2em'>
           Get notified about important conference updates
         </div>
       </div>
@@ -168,16 +192,4 @@
       </div>
     </div>
   </div>
-  <!-- <div id="venue">
-    <div class='row center-lg center-xs center-md middle-lg middle-md middle-sm middle-xs'>
-      <div class="col-xs-12">
-        <app-homepage-title title='Venue' color='#00AEEF'></app-homepage-title>
-      </div>
-      <div class="col-xs-12" style='height: 250px'>
-        <div class="sub-title" style='line-height:250px;font-size: 2.5em'>
-          Tickets🎫 Comming Soon!
-        </div>
-      </div>
-    </div>
-  </div> -->
 </div>

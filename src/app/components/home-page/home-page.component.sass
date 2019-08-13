@@ -1,0 +1,42 @@
+#header
+  width: 100vw
+  height: calc(100vh - 64px )
+  position: relative
+  &:after
+    content: 'header'
+    position: absolute
+    left: 50%
+    top: 50%
+    transform: translate(-50%,-50%)
+    font-size: 3em
+#about
+  .previous-speaker-title
+    font-family: 'Product Sans'
+    font-size: 2em
+    margin-bottom: 20px
+    font-weight: lighter
+    @media screen and (max-width: 930px)
+      font-size: 1.5em
+  .wrapper
+    .title
+      font-family: 'Product Sans'
+      font-size: 2.5em
+      margin-bottom: 20px
+      @media screen and (max-width: 930px)
+        font-size: 2em
+    .about-text
+      font-family: 'Product Sans'
+      font-size: 1.1em
+      padding-left: 10px
+      position: relative
+      &:after
+        content: ''
+        position: absolute
+        left: 0
+        top: 0
+        width: 3px
+        border-radius: 10px
+        height: 100%
+        background: #EE2A7B
+      .section
+        margin-bottom: 20px

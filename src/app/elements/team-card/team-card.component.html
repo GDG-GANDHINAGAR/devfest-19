@@ -1,19 +1,14 @@
 <div class="wrapper">
-  <div matRipple matRippleColor='#ffffff40' class="card-container" (click)="openDialog()">
+  <div matRipple matRippleColor='#ffffff40' class="card-container">
     <div class="picture-wrapper">
       <app-profile-icon [src]='config.image' width='150'></app-profile-icon>
     </div>
-    <div class="session-name center-align">
-      {{config.session}}
-    </div>
+
     <div class="team-name center-align">
       {{config.name}}
     </div>
     <div class="tag center-align">
-      {{config.tag}}
-    </div>
-    <div class="job-title center-align" *ngIf="!isHomePage">
-      {{config.session}}
+      {{config.role}}
     </div>
     <div class="icons-row center-align" *ngIf="!isHomePage">
       <div class="icon-wrapper" *ngFor="let item of config.socialMediaLinks">

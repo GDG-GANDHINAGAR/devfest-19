@@ -1,0 +1,34 @@
+.wrapper
+  cursor: pointer
+  position: relative
+  padding: 0.5em 0
+  border-radius: 15px
+  overflow: hidden
+  width: 100%
+  height: 250px
+  &:hover
+    a
+      height: calc(100% - 1em)
+      width: 100%
+      background: #00AEEF50
+  a
+    border-radius: 15px
+    overflow: hidden
+    position: absolute
+    display: inline-block
+    top: 50%
+    left: 50%
+    transform: translate(-50%,-50%)
+    z-index: 10
+    background: trnasparent
+    height: 0
+    width: 0
+    transition: all ease 0.3s
+  img
+    position: relative
+    z-index: 9
+    border-radius: 15px
+    overflow: hidden
+    width: 100%
+    object-fit: cover
+    height: 100%

@@ -15,7 +15,7 @@ export class TeamCardComponent implements OnInit {
   @Input() config: TeamConfig = {
     name: 'Parth Jansari',
     role: 'Full stack developer',
-    socialMediaLinks: [{ kind: SocialMediaKind.github, link: '#' }],
+    socialMediaLinks: [{ kind: SocialMediaKind.github, link: '#', icon: '' }],
     image:
       'https://avatars2.githubusercontent.com/u/17850142?s=460&v=4',
 

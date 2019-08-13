@@ -9,6 +9,7 @@ export interface TeamConfig {
 export interface SocialMediaObject {
     link: String;
     kind: SocialMediaKind;
+    icon: string;
 }
 
 export enum SocialMediaKind {

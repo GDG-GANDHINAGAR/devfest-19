@@ -29,6 +29,8 @@ import { DataIconComponent } from './elements/data-icon/data-icon.component';
 import { HomepageTitleComponent } from './elements/homepage-title/homepage-title.component';
 import { TeamCardComponent } from './elements/team-card/team-card.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { TicketsComponent } from './elements/tickets/tickets.component';
+import { GalleryImageComponent } from './elements/gallery-image/gallery-image.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,9 @@ import { FooterComponent } from './components/footer/footer.component';
     DataIconComponent,
     HomepageTitleComponent,
     TeamCardComponent,
-    FooterComponent
+    FooterComponent,
+    TicketsComponent,
+    GalleryImageComponent
   ],
   imports: [
     BrowserModule,

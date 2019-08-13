@@ -31,15 +31,15 @@ export class ProfileIconComponent implements OnInit, AfterViewInit {
   getcoordinates() {
     const circle = { x: 0, y: 0 };
     const square = { x: 0, y: 0 };
-    const randomAngle1 = Math.round(Math.random() * 360);
-    let randomAngle2 = Math.round(Math.random() * 360);
+    const randomAngle1 = Math.round(0.1667 * 360);
+    let randomAngle2 = Math.round(.01667 * 360);
     let scale = Math.random();
     scale = scale < 0.4 ? (scale + 0.4) : scale;
     randomAngle2 = Math.abs(randomAngle1 - randomAngle2) > 180 ? randomAngle2 : randomAngle1 + 180;
-    circle.x = ((this.circleR * Math.sin(randomAngle1)) + this.circleR) < this.circleR ? ((this.circleR * Math.sin(randomAngle1)) + this.circleR) - 5 : ((this.circleR * Math.sin(randomAngle1)) + this.circleR) + 5;
-    circle.y = ((this.circleR * Math.cos(randomAngle1)) + this.circleR) < this.circleR ? ((this.circleR * Math.cos(randomAngle1)) + this.circleR) - 5 : ((this.circleR * Math.cos(randomAngle1)) + this.circleR) + 5;
-    square.x = ((this.circleR * Math.sin(randomAngle2)) + this.circleR) < this.circleR ? ((this.circleR * Math.sin(randomAngle2)) + this.circleR) - 5 : ((this.circleR * Math.sin(randomAngle2)) + this.circleR) + 5;
-    square.y = ((this.circleR * Math.cos(randomAngle2)) + this.circleR) < this.circleR ? ((this.circleR * Math.cos(randomAngle2)) + this.circleR) - 5 : ((this.circleR * Math.cos(randomAngle2)) + this.circleR) + 5;
+    circle.x = ((this.circleR * Math.sin(randomAngle1)) + this.circleR) < this.circleR ? ((this.circleR * Math.sin(randomAngle1)) + this.circleR) - 5 : ((this.circleR * Math.sin(randomAngle1)) + this.circleR) + 10;
+    circle.y = ((this.circleR * Math.cos(randomAngle1)) + this.circleR) < this.circleR ? ((this.circleR * Math.cos(randomAngle1)) + this.circleR) - 5 : ((this.circleR * Math.cos(randomAngle1)) + this.circleR) + 10;
+    square.x = ((this.circleR * Math.sin(randomAngle2)) + this.circleR) < this.circleR ? ((this.circleR * Math.sin(randomAngle2)) + this.circleR) - 5 : ((this.circleR * Math.sin(randomAngle2)) + this.circleR) + 10;
+    square.y = ((this.circleR * Math.cos(randomAngle2)) + this.circleR) < this.circleR ? ((this.circleR * Math.cos(randomAngle2)) + this.circleR) - 5 : ((this.circleR * Math.cos(randomAngle2)) + this.circleR) + 10;
     // console.log(this.circleR);
     // console.log(circle);
     // console.log(square);

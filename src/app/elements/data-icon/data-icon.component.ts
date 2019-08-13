@@ -6,8 +6,9 @@ import { Component, OnInit, Input, ViewChild, ElementRef, Renderer2, AfterViewIn
   styleUrls: ['./data-icon.component.sass']
 })
 export class DataIconComponent implements OnInit, AfterViewInit {
-  @Input() data: String;
-  @Input() title: String;
+  @Input() data: string;
+  @Input() color: string;
+  @Input() title: string;
   @ViewChild('square', { static: true }) square: ElementRef;
   @ViewChild('circle', { static: true }) circle: ElementRef;
   @ViewChild('wrapper', { static: false }) wrapper: ElementRef;

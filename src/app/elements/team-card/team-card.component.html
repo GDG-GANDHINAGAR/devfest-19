@@ -14,7 +14,7 @@
       <div class="icon-wrapper" *ngFor="let item of config.socialMediaLinks">
         <div [ngSwitch]="item.kind">
           <div *ngSwitchCase="'Github'">
-            <a [href]="item.link"><span class='icon'>icon</span></a>
+            <a [href]="item.link"><span class='icon'>{{item.icon}}</span></a>
           </div>
         </div>
       </div>

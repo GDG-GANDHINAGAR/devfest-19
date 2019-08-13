@@ -28,29 +28,26 @@
       <div class="wrapper">
         <div class="row middle-sm center-sm middle-md  center-md middle-lg center-lg">
           <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-            <app-data-icon title='Attendees' data='150+'></app-data-icon>
+            <app-data-icon title='Attendees' color='#D7DF23' data='150+'></app-data-icon>
           </div>
           <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-            <app-data-icon title='Attendees' data='150+'></app-data-icon>
+            <app-data-icon title='Attendees' color='#1B75BC' data='150+'></app-data-icon>
           </div>
           <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-            <app-data-icon title='Attendees' data='150+'></app-data-icon>
+            <app-data-icon title='Attendees' color='#2BB673' data='150+'></app-data-icon>
           </div>
           <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-            <app-data-icon title='Attendees' data='150+'></app-data-icon>
+            <app-data-icon title='Attendees' color='#FFC927' data='150+'></app-data-icon>
           </div>
 
         </div>
-      </div>
-      <div class="col-xs">
-
       </div>
     </div>
   </div>
   <div id="speakers">
     <div class='row center-lg center-xs center-md middle-lg middle-md middle-sm middle-xs'>
       <div class="col-xs-12">
-        <app-homepage-title title='Rockstar Speakers' color='#ff4545'></app-homepage-title>
+        <app-homepage-title title='Rockstar Speakers' color='#2BB673'></app-homepage-title>
       </div>
       <div class="col-xs-12" style='height: 250px'>
         <div class="sub-title" style='line-height:250px;font-size: 2.5em'>
@@ -65,6 +62,9 @@
       </div>
       <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" *ngIf="false">
         <app-speaker-card [isHomePage]='true'></app-speaker-card>
+      </div>
+      <div class="col-xs-12">
+        <button mat-raised-button isRoundButton='true' color='#2BB673'>See More</button>
       </div>
     </div>
     <div class='row center-lg center-xs center-md'>
@@ -99,3 +99,85 @@
       </div>
     </div>
   </div>
+
+
+  <div id="gallery">
+    <div class='row center-lg center-xs center-md middle-lg middle-md middle-sm middle-xs'>
+      <div class="col-xs-12">
+        <app-homepage-title title='Gallery' color='#00AEEF'></app-homepage-title>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" *ngFor="let item of [1,2,3,4,5,6]">
+        <app-gallery-image src='assets/images/g{{item}}.JPG'></app-gallery-image>
+      </div>
+      <div class="col-xs-12" style='margin-top: 50px'>
+          <a mat-raised-button isRoundButton='true' target="_blank" href='https://photos.app.goo.gl/CojnpJaXwuLuqeV66' color='#2BB673'>View More</a>
+      </div>
+    </div>
+  </div>
+  <div id="tickets">
+    <div class='row center-lg center-xs center-md middle-lg middle-md middle-sm middle-xs'>
+      <div class="col-xs-12">
+        <app-homepage-title title='Tickets' color='#00AEEF'></app-homepage-title>
+      </div>
+      <div class="col-xs-12" style='height: 250px'>
+        <div class="sub-title" style='line-height:250px;font-size: 2.5em'>
+          Tickets🎫 Comming Soon!
+        </div>
+      </div>
+      <!-- <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" *ngIf="true">
+        <app-tickets></app-tickets>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" *ngIf="true">
+        <app-tickets></app-tickets>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" *ngIf="true">
+        <app-tickets></app-tickets>
+      </div> -->
+      <!-- <div class="col-xs-12" style='height: 250px'>
+        <button mat-raised-button isRoundButton='true' color='#2BB673'>Subscribe</button>
+      </div> -->
+    </div>
+  </div>
+  <div id="about">
+    <div class='row center-lg center-xs center-md middle-lg middle-md middle-sm middle-xs'>
+      <div class="col-xs-12">
+        <app-homepage-title title='Subscription' color='#F9BC15'></app-homepage-title>
+      </div>
+      <div class="col-xs-12" style='height: 250px'>
+        <div class="sub-title" style='line-height:250px;font-size: 2.5em'>
+          Get notified about important conference updates
+        </div>
+      </div>
+      <div class="col-xs-12">
+        <button mat-raised-button isRoundButton='true' color='#2BB673'>Subscribe</button>
+      </div>
+    </div>
+  </div>
+  <div id="subscribe">
+    <div class='row center-lg center-xs center-md middle-lg middle-md middle-sm middle-xs'>
+      <div class="col-xs-12">
+        <app-homepage-title title='Subscription' color='#F9BC15'></app-homepage-title>
+      </div>
+      <div class="col-xs-12" style='height: 250px'>
+        <div class="sub-title" style='line-height:250px;font-size: 2.5em'>
+          Get notified about important conference updates
+        </div>
+      </div>
+      <div class="col-xs-12">
+        <button mat-raised-button isRoundButton='true' color='#2BB673'>Subscribe</button>
+      </div>
+    </div>
+  </div>
+  <!-- <div id="venue">
+    <div class='row center-lg center-xs center-md middle-lg middle-md middle-sm middle-xs'>
+      <div class="col-xs-12">
+        <app-homepage-title title='Venue' color='#00AEEF'></app-homepage-title>
+      </div>
+      <div class="col-xs-12" style='height: 250px'>
+        <div class="sub-title" style='line-height:250px;font-size: 2.5em'>
+          Tickets🎫 Comming Soon!
+        </div>
+      </div>
+    </div>
+  </div> -->
+</div>

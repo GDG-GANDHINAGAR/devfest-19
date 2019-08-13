@@ -29,6 +29,7 @@ import { DataIconComponent } from './elements/data-icon/data-icon.component';
 import { HomepageTitleComponent } from './elements/homepage-title/homepage-title.component';
 import { TicketsComponent } from './elements/tickets/tickets.component';
 import { GalleryImageComponent } from './elements/gallery-image/gallery-image.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { GalleryImageComponent } from './elements/gallery-image/gallery-image.co
     DataIconComponent,
     HomepageTitleComponent,
     TicketsComponent,
-    GalleryImageComponent
+    GalleryImageComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

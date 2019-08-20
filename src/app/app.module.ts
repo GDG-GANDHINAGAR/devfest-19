@@ -31,6 +31,7 @@ import { TicketsComponent } from './elements/tickets/tickets.component';
 import { GalleryImageComponent } from './elements/gallery-image/gallery-image.component';
 import { PartnerImageComponent } from './elements/partner-image/partner-image.component';
 import { FooterComponent } from './elements/footer/footer.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,8 @@ import { FooterComponent } from './elements/footer/footer.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
     BrowserAnimationsModule,
     MatListModule,
     MatCardModule,

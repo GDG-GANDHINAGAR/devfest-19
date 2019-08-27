@@ -27,6 +27,11 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 
+import { CoreModule } from './core/core.module';
+import { UserProfileComponent } from './components/user-profile/user-profile.component'
+
+import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +39,8 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
     PreviousSpeakerCardComponent,
     HomePageComponent,
     AppBarComponent,
-    SpeakerDialogueComponent
+    SpeakerDialogueComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -51,13 +57,17 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
+    CoreModule
   ],
   entryComponents: [
     SpeakerDialogueComponent
   ],
   providers: [
-    { provide: MAT_RIPPLE_GLOBAL_OPTIONS, useValue: globalRippleConfig }
+    { provide: MAT_RIPPLE_GLOBAL_OPTIONS, useValue: globalRippleConfig },
+    AngularFireAuthGuard
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }

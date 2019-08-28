@@ -32,6 +32,7 @@ import { GalleryImageComponent } from './elements/gallery-image/gallery-image.co
 import { PartnerImageComponent } from './elements/partner-image/partner-image.component';
 import { FooterComponent } from './elements/footer/footer.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { HomePageHeaderComponent } from './elements/home-page-header/home-page-header.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     TicketsComponent,
     GalleryImageComponent,
     PartnerImageComponent,
-    FooterComponent
+    FooterComponent,
+    HomePageHeaderComponent
   ],
   imports: [
     BrowserModule,

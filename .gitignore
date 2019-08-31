@@ -52,3 +52,4 @@ Thumbs.db
 
 # Firebase Config - Add Firebase configuration to this file
 /util/keyConfig.ts
+.vscode/

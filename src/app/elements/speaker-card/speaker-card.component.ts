@@ -11,6 +11,7 @@ import { ScrollStrategy } from '@angular/cdk/overlay';
   styleUrls: ['./speaker-card.component.sass']
 })
 export class SpeakerCardComponent implements OnInit {
+  @Input() isHomePage = false;
   @Input() config: SpeakerConfig = {
     name: 'Parth Jansari',
     session: 'Flutter Animations: Motion Awakens',
@@ -18,7 +19,7 @@ export class SpeakerCardComponent implements OnInit {
     company: 'GDG Gandhinagar',
     socialMediaLinks: [{ kind: SocialMediaKind.github, link: '#' }],
     image:
-      'https://st4.depositphotos.com/9998432/22597/v/450/depositphotos_225976914-stock-illustration-person-gray-photo-placeholder-man.jpg',
+      'https://avatars2.githubusercontent.com/u/17850142?s=460&v=4',
     sessionData: `lets learn how to animate things in flutter with a pinch of darkside.`,
     bio: `Parth is a guy who is trying to grow up and do mature stuff and work but ends
     up designing, playing games(most of the time) or watching Movies/Tv Series.Parth has
@@ -37,6 +38,7 @@ export class SpeakerCardComponent implements OnInit {
       height: '80%',
       panelClass: 'mat-dialog',
       maxWidth: '1000px',
+      maxHeight: '600px',
       autoFocus: false,
       minWidth: '300px',
       data: { ...this.config }

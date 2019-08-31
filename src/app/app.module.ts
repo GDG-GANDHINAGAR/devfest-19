@@ -33,7 +33,6 @@ import { PartnerImageComponent } from './elements/partner-image/partner-image.co
 import { FooterComponent } from './elements/footer/footer.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HomePageHeaderComponent } from './elements/home-page-header/home-page-header.component';
-
 import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';

@@ -1,7 +1,7 @@
 import {
   Component, OnInit, AfterViewInit, ViewChild, ViewChildren, ElementRef, QueryList, Renderer2
 } from '@angular/core';
-import anime from 'animejs/lib/anime.es.js';
+import anime from 'animejs/lib/anime.es.js'
 
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 @Component({

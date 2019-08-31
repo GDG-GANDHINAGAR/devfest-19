@@ -1,34 +1,27 @@
 
 .wrapper
   padding: 10px
+  font-family:'Open Sans',sans-serif
   .card-container
     position: relative
     padding: 10px
     border-radius: 20px
-    transition: box-shadow 0.4s ease
     max-width: 1000px
+    margin: 10px
     border: 4px solid transparent
     transition: all 0.2s ease
-    &:hover
-      border: 4px solid #ffffff40
     .picture-wrapper
       width: 200px
       height: 200px
       overflow: visibile
       margin: auto
-    .session-name
-      // margin-top: 30px
-      font-size: 1.1em
-      font-weight: lighter
-      padding: 5px 0
-      color: #fff
-    .speaker-name
-      font-size: 1.3em
-      font-weight: lighter
+    .team-name
+      font-size: 1.2em
+      font-weight: bold
       padding: 5px 0
       color: #fff
     .tag
-      font-size: 1.3em
+      font-size: 1.2em
       font-weight: lighter
       padding: 5px 0
       color: #fff
@@ -48,11 +41,3 @@
         a
           text-decoration: none
           color: #fff
-.expanded-speaker-card
-  position: absolute
-  top: 50%
-  left: 50%
-  height: 60%
-  width: 50%
-  background: #ff4545
-  transform: translate(-50%,-50%)

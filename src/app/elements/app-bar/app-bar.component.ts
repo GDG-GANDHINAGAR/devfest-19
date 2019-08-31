@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener, Inject } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
 @Component({
@@ -30,7 +30,7 @@ export class AppBarComponent implements OnInit {
   }
   ngOnInit() {
     this.isScrolled = window.pageYOffset >= 200;
-    console.log(window.pageYOffset);
+    // console.log(window.pageYOffset);
   }
 
 }

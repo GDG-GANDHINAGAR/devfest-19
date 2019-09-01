@@ -1,5 +1,6 @@
 @import ./flexgrid.css
 @import ./variables.sass
+@import ../node_modules/font-awesome/scss/font-awesome
 @import '~@angular/material/theming'
 @include mat-core()
 $dark-primary: mat-palette($mat-blue-grey)
@@ -34,13 +35,13 @@ body
 
 .mat-dialog
   mat-dialog-container
-  color: #ffffff
-  border-radius: 15px
-  background: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,1)), url('/assets/images/bg.png') !important
-  background-size: cover
-  padding: 0px
-  display: flex
-  flex-direction: column
+    color: #ffffff
+    border-radius: 15px
+    background: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,1)), url('/assets/images/bg.png') !important
+    background-size: cover
+    padding: 0px
+    display: flex
+    flex-direction: column
 
 ::-webkit-scrollbar
   width: 10px

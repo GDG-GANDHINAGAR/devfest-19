@@ -18,8 +18,6 @@ export class TeamCardComponent implements OnInit {
     socialMediaLinks: [{ kind: SocialMediaKind.github, link: '#', icon: '' }],
     image:
       'https://avatars2.githubusercontent.com/u/17850142?s=460&v=4',
-
-
   };
   availableFilters = ['mobile', 'web'];
 

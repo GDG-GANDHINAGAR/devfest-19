@@ -34,6 +34,15 @@ import { PartnerImageComponent } from './elements/partner-image/partner-image.co
 import { FooterComponent } from './elements/footer/footer.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HomePageHeaderComponent } from './elements/home-page-header/home-page-header.component';
+import { environment } from '../environments/environment';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+
+import { CoreModule } from './core/core.module';
+import { UserProfileComponent } from './components/user-profile/user-profile.component'
+
+import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
 
 @NgModule({
   declarations: [
@@ -43,6 +52,7 @@ import { HomePageHeaderComponent } from './elements/home-page-header/home-page-h
     HomePageComponent,
     AppBarComponent,
     SpeakerDialogueComponent,
+    UserProfileComponent,
     ProfileIconComponent,
     TeamPageComponent,
     AboutPageComponent,
@@ -71,13 +81,20 @@ import { HomePageHeaderComponent } from './elements/home-page-header/home-page-h
     MatSidenavModule,
     LayoutModule,
     MatIconModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule, // imports firebase/firestore, only needed for database features
+    AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
+    CoreModule
   ],
   entryComponents: [
     SpeakerDialogueComponent
   ],
   providers: [
-    { provide: MAT_RIPPLE_GLOBAL_OPTIONS, useValue: globalRippleConfig }
+    { provide: MAT_RIPPLE_GLOBAL_OPTIONS, useValue: globalRippleConfig },
+    AngularFireAuthGuard
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }

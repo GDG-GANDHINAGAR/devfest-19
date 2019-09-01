@@ -1,0 +1,93 @@
+.sub-title
+  font-family: "Open Sans"
+  font-size: 2em
+  font-weight: lighter
+
+  @media screen and (max-width: 930px)
+    font-size: 1.5em
+
+#header
+  width: 100vw
+  height: calc(100vh - 64px )
+  position: relative
+  margin-bottom: 100px
+
+  &:after
+    font-family: "Open Sans"
+    content: "header"
+    position: absolute
+    left: 50%
+    top: 50%
+    transform: translate(-50%, -50%)
+    font-size: 3em
+
+#about
+  .wrapper
+    .title
+      font-family: "Open Sans"
+      font-size: 2.5em
+      margin-bottom: 20px
+
+      @media screen and (max-width: 930px)
+        font-size: 2em
+      @media screen and (max-width: 610px)
+        margin-bottom: 30px
+
+    .about-text
+      font-family: "Open Sans"
+      font-size: 1.1em
+      padding-left: 10px
+      position: relative
+      @media screen and (max-width: 610px)
+        margin-bottom: 50px
+      &:after
+        content: ""
+        position: absolute
+        left: 0
+        top: 0
+        width: 3px
+        border-radius: 10px
+        height: 100%
+        background: #EE2A7B
+
+      .section
+        margin-bottom: 20px
+
+#speakers
+  margin: 100px 0
+
+  .sub-title
+    &.previous
+      margin-bottom: 80px
+
+#team
+  text-align: left
+  .team-image
+    width: calc(100% - 60px)
+    height: 350px
+    margin: 15px
+    border-radius: 15px
+    padding: 15px
+    border: 4px solid #ffffff
+
+    img
+      // border-radius: 15px
+      overflow: hidden
+      width: 100%
+      height: 100%
+      object-fit: cover
+  .section-title
+    padding: 5px
+    font-family: "Open Sans"
+    font-size: 1.8em
+    font-weight: lighter
+    text-align: left
+  .btn
+    text-align: left
+    margin: 10px
+  .section-details
+    padding: 10px
+    text-align: left
+    font-family: "Open Sans"
+    font-size: 1em
+    font-weight: lighter

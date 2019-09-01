@@ -11,7 +11,6 @@ export class SpeakersPageComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-
   }
 
 }

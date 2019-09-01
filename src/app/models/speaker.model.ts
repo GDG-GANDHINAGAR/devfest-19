@@ -18,9 +18,9 @@ export interface SocialMediaObject {
 }
 
 export enum SocialMediaKind {
-  github = 'Github',
-  linkedin = 'Linked In',
-  insta = 'InstaGram',
+  github = 'GitHub',
+  linkedin = 'LinkedIn',
+  insta = 'Instagram',
   fb = 'Facebook',
   twitter = 'Twitter',
   Stackoverflow = 'Stackoverflow'

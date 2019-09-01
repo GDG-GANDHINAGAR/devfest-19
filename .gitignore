@@ -22,7 +22,7 @@ speed-measure-plugin.json
 *.sublime-workspace
 
 # IDE - VSCode
-.vscode/*
+.vscode/
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
@@ -42,4 +42,13 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
-.vscode/
+
+# Firebase
+**/.firebaserc
+
+#Firebase Patch
+.runtimeconfig.json
+.firebase/
+
+# Firebase Config - Add Firebase configuration to this file
+/util/keyConfig.ts

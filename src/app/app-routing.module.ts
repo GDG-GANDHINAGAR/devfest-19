@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomePageComponent } from './components/home-page/home-page.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
 import { TeamPageComponent } from './components/team-page/team-page.component';
 import { SpeakersPageComponent } from './components/speakers-page/speakers-page.component';
 import { AboutPageComponent } from './components/about-page/about-page.component';

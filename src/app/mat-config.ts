@@ -1,4 +1,4 @@
-import { RippleGlobalOptions } from "@angular/material/core";
+import { RippleGlobalOptions } from '@angular/material/core';
 
 export const globalRippleConfig: RippleGlobalOptions = {
   disabled: false,

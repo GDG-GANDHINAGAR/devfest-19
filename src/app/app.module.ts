@@ -53,7 +53,8 @@ import { HomePageHeaderComponent } from './elements/home-page-header/home-page-h
     TicketsComponent,
     GalleryImageComponent,
     PartnerImageComponent,
-    HomePageHeaderComponent
+    HomePageHeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

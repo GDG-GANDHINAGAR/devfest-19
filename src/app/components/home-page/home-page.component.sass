@@ -10,6 +10,7 @@
   width: 100vw
   height: calc(100vh - 64px )
   position: relative
+  margin-bottom: 100px
 
   &:after
     content: "header"
@@ -28,13 +29,16 @@
 
       @media screen and (max-width: 930px)
         font-size: 2em
+      @media screen and (max-width: 610px)
+        margin-bottom: 30px
 
     .about-text
       font-family: "Product Sans"
       font-size: 1.1em
       padding-left: 10px
       position: relative
-
+      @media screen and (max-width: 610px)
+        margin-bottom: 50px
       &:after
         content: ""
         position: absolute

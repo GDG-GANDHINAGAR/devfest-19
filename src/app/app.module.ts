@@ -31,6 +31,10 @@ import { TeamCardComponent } from './elements/team-card/team-card.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { TicketsComponent } from './elements/tickets/tickets.component';
 import { GalleryImageComponent } from './elements/gallery-image/gallery-image.component';
+import { PartnerImageComponent } from './elements/partner-image/partner-image.component';
+import { FooterComponent } from './elements/footer/footer.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { HomePageHeaderComponent } from './elements/home-page-header/home-page-header.component';
 
 @NgModule({
   declarations: [
@@ -49,11 +53,16 @@ import { GalleryImageComponent } from './elements/gallery-image/gallery-image.co
     TeamCardComponent,
     FooterComponent,
     TicketsComponent,
-    GalleryImageComponent
+    GalleryImageComponent,
+    PartnerImageComponent,
+    FooterComponent,
+    HomePageHeaderComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
     BrowserAnimationsModule,
     MatListModule,
     MatCardModule,

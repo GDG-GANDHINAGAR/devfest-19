@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
   isMobile: boolean;
   @HostListener('scroll', ['$event'])
   onScroll(e) {
-    console.log(e.target);
+    // console.log(e.target);
     if (e.target.scrollTop >= 200) {
       this.isScrolled = true;
     } else {

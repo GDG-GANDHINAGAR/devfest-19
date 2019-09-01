@@ -1,6 +1,11 @@
-<!-- <div id="header">
+<div id="header">
+  <div class="content">
 
-</div> -->
+  </div>
+  <div class="bg">
+    <app-home-page-header></app-home-page-header>
+  </div>
+</div>
 <div id='about' class='container'>
   <div class="row middle-lg middle-md middle-sm">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
@@ -192,4 +197,28 @@
       </div>
     </div>
   </div>
+  <div id='partners'>
+    <div class='row center-lg center-xs center-md middle-lg middle-md middle-sm middle-xs'>
+      <div class="col-xs-12">
+        <app-homepage-title title='Partners' color='#00AEEF'></app-homepage-title>
+      </div>
+      <div class="col-xs-12 col-md-12" >
+        <div class="sub-title" style='line-height:50px;font-size: 1.5em;margin-bottom: 20px'>
+          General Partner
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+        <app-partner-image
+          src='https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1280px-Google_2015_logo.svg.png'>
+        </app-partner-image>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+        <app-partner-image src='https://miro.medium.com/max/1200/1*H1r9wQa95TIYBZalJeSA5A.png'></app-partner-image>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+        <app-partner-image src='https://developers.google.com/community/gdg/images/gdg_lockup.png'></app-partner-image>
+      </div>
+    </div>
+  </div>
 </div>
+<app-footer></app-footer>

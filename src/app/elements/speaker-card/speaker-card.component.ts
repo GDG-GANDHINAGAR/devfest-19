@@ -16,6 +16,7 @@ export class SpeakerCardComponent implements OnInit {
     name: 'Parth Jansari',
     session: 'Flutter Animations: Motion Awakens',
     JobTitle: 'Organizer',
+    tag: 'Mobile',
     company: 'GDG Gandhinagar',
     socialMediaLinks: [{ kind: SocialMediaKind.github, link: '#' }],
     image:
@@ -28,8 +29,10 @@ export class SpeakerCardComponent implements OnInit {
       create hybrid apps. Parth has mastery over most of the adobe creative suite apps.
        Currently, Parth is exploring Flutter as he believes it can be a replacement for
         ionic 2 and all other hybrid app frameworks.
-    `
+    `,
+
   };
+
   constructor(public dialog: MatDialog) { }
 
   openDialog(): void {

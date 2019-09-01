@@ -9,6 +9,7 @@ export interface SpeakerConfig {
   bio?: string;
   sessionData?: string;
   isFeatured?: boolean;
+  tag: string;
 }
 
 export interface SocialMediaObject {

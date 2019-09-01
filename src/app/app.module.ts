@@ -27,6 +27,7 @@ import { AboutPageComponent } from './components/about-page/about-page.component
 import { SpeakersPageComponent } from './components/speakers-page/speakers-page.component';
 import { DataIconComponent } from './elements/data-icon/data-icon.component';
 import { HomepageTitleComponent } from './elements/homepage-title/homepage-title.component';
+import { TeamCardComponent } from './elements/team-card/team-card.component';
 import { TicketsComponent } from './elements/tickets/tickets.component';
 import { GalleryImageComponent } from './elements/gallery-image/gallery-image.component';
 import { PartnerImageComponent } from './elements/partner-image/partner-image.component';
@@ -48,6 +49,7 @@ import { HomePageHeaderComponent } from './elements/home-page-header/home-page-h
     SpeakersPageComponent,
     DataIconComponent,
     HomepageTitleComponent,
+    TeamCardComponent,
     TicketsComponent,
     GalleryImageComponent,
     PartnerImageComponent,

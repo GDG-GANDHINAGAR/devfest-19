@@ -13,7 +13,7 @@
     <div class="icons-row center-align" *ngIf="!isHomePage">
       <div class="icon-wrapper" *ngFor="let item of config.socialMediaLinks">
         <div [ngSwitch]="item.kind">
-          <div *ngSwitchCase="'Github'">
+          <div *ngSwitchCase="'GitHub'">
             <a [href]="item.link"><span class='icon'>{{item.icon}}</span></a>
           </div>
         </div>

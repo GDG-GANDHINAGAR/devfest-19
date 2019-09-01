@@ -18,7 +18,7 @@ export class ProfileIconComponent implements OnInit, AfterViewInit {
   ngOnInit() {
   }
   ngAfterViewInit() {
-    console.log(this.width);
+    // console.log(this.width);
     this.width = parseInt(this.width, 0);
     this.circleR = parseInt(this.width, 0) / 2;
     this.renderer.setStyle(this.wrapper.nativeElement, 'width', `${this.width + 8}px`);

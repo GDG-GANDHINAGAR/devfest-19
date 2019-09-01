@@ -1,0 +1,22 @@
+.section-title-wrapper
+  position: relative
+  display: flex
+  justify-content: center
+  align-items: center
+  margin: 40px 0
+  .title
+    font-family: "Open Sans"
+    font-size: 2.5em
+    white-space: nowrap
+    @media screen and (max-width: 610px)
+        font-size: 1.8em
+  .after,.before
+    // position: absolute
+    width: 100%
+    height: 4px
+    border-radius: 4px
+    // top: 50%
+    &.after
+      margin-left: 20px
+    &.before
+      margin-right: 20px

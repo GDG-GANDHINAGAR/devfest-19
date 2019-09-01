@@ -5,7 +5,7 @@
       <mat-icon aria-hidden="false" aria-label="home icon" class="mat-icon" *ngIf="isMobile" (click)="opened = !opened">
         menu</mat-icon>
       <!-- <span class="spacer" *ngIf="isMobile"></span> -->
-      <div class="logo-wrppper" [ngClass]="{'center': isMobile}">
+      <div [routerLink]='["home"]' class="logo-wrppper" [ngClass]="{'center': isMobile}">
         <img src="assets/images/logo_white.svg" alt="">
       </div>
       <span class="spacer" *ngIf="!isMobile"></span>
@@ -26,7 +26,7 @@
 
 <mat-sidenav-container class="example-container">
   <mat-sidenav #sidenav mode="over" *ngIf="isMobile" class="sidenav" [(opened)]="opened">
-    <div class="image-container">
+    <div [routerLink]='["home"]' class="image-container">
       <img src="assets/images/logo_white.svg" alt="">
     </div>
     <mat-list>

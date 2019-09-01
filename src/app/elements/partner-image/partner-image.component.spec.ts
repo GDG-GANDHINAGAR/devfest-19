@@ -8,9 +8,9 @@ describe('PartnerImageComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PartnerImageComponent ]
+      declarations: [PartnerImageComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

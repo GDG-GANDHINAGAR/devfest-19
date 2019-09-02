@@ -49,6 +49,3 @@ Thumbs.db
 #Firebase Patch
 .runtimeconfig.json
 .firebase/
-
-# Firebase Config - Add Firebase configuration to this file
-/util/keyConfig.ts

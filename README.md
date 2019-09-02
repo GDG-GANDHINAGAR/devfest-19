@@ -2,22 +2,6 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.3.
 
-## Adding Firebase Config
-
-Add the Firebase Configuration to `util/keyConfig.ts`. You can find your project configuration in [the Firebase Console](https://console.firebase.google.com/). From the project overview page, click **Add Firebase** to your web app.
-
-```ts
-export const config = {
-    apiKey: "<your-key>",
-    authDomain: "<your-project-authdomain>",
-    databaseURL: "<your-database-URL>",
-    projectId: "<your-project-id>",
-    storageBucket: "<your-storage-bucket>",
-    messagingSenderId: "<your-messaging-sender-id>",
-    appId: "<your-app-id>"
-  }
-
-```
 
 ## Development server
 

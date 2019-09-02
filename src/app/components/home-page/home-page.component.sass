@@ -4,7 +4,7 @@
   font-weight: lighter
 
   @media screen and (max-width: 930px)
-  font-size: 1.5em
+    font-size: 1.5em
 
 #header
   width: 99vw
@@ -105,6 +105,8 @@
     display: inline-grid
     width: 100%
     grid-auto-flow: column
+    @media screen and (max-width: 610px)
+      display: list-item
   .design-partner
     padding-top: 4rem
   .design-image
@@ -132,7 +134,10 @@
   background-color:#55acee!important
   margin-right: 30px
 
-  
+p
+  @media screen and (max-width: 610px)
+    line-height: 30px
+    font-size: 1em
 iframe 
   position: relative
   overflow: hidden
@@ -140,4 +145,7 @@ iframe
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16)
   -webkit-border-radius: 20px
   -o-border-radius: 20px
+  @media screen and (max-width: 610px)
+    width: 300px 
+    height: 200px
 

@@ -10,6 +10,9 @@
     <div class="tag center-align">
       {{config.role}}
     </div>
+    <a mat-icon-button class="btn-linkedin" href="#"><i class="fa fa-linkedin fa-lg"></i></a>
+    <a mat-icon-button class="btn-facebook" href="#"><i class="fa fa-facebook-f fa-lg"></i></a>
+    <a mat-icon-button class="btn-twitter" href="#"><i class="fa fa-twitter fa-lg"></i></a>
     <div class="icons-row center-align" *ngIf="!isHomePage">
       <div class="icon-wrapper" *ngFor="let item of config.socialMediaLinks">
         <div [ngSwitch]="item.kind">

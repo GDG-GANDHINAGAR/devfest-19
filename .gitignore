@@ -49,3 +49,4 @@ Thumbs.db
 #Firebase Patch
 .runtimeconfig.json
 .firebase/
+/util/keyConfig.ts

@@ -1,9 +1,12 @@
-
 export interface TeamConfig {
     name: String;
-    role: String;
-    socialMediaLinks: SocialMediaObject[];
-    image: string;
+    contribution: String;
+    desc: String;
+    image: String;
+    github_url : String;
+    linkedin_url : String;
+    fb_url : String;
+    twitter_url : String;
 }
 
 export interface SocialMediaObject {
@@ -13,10 +16,8 @@ export interface SocialMediaObject {
 }
 
 export enum SocialMediaKind {
-    github = 'GitHub',
-    linkedin = 'LinkedIn',
-    insta = 'Instagram',
-    fb = 'Facebook',
-    twitter = 'Twitter',
-    Stackoverflow = 'Stackoverflow'
+    github_url = 'GitHub',
+    linkedin_url = 'LinkedIn',
+    fb_url = 'Facebook',
+    twitter_url = 'Twitter',
 }

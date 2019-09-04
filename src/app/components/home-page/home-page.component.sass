@@ -13,13 +13,16 @@
   position: relative
   margin-bottom: 100px
 
-  &:after
-    content: "DevFest 2019"
-    position: absolute
-    left: 50%
-    top: 50%
-    transform: translate(-50%, -50%)
-    font-size: 3em
+  .content
+    display: flex
+    height: 100%
+  
+  .gdg-image 
+    height: 12rem
+    margin: auto
+    font-family: "Product Sans"
+    @media screen and (max-width: 930px)
+        height: 9rem
 
 #about
   .wrapper

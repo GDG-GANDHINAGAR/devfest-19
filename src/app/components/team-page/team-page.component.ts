@@ -13,7 +13,7 @@ export class TeamPageComponent implements OnInit {
   team$: Observable<TeamConfig[]>;
 
   constructor( private afs: AngularFirestore ) {
-    this.teamCollectionRef = this.afs.collection<TeamConfig>('team');
+    this.teamCollectionRef = this.afs.collection<TeamConfig>('team.data');
     this.team$ = this.teamCollectionRef.valueChanges();
   }
   ngOnInit() {

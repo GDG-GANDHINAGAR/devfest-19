@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { HomepageConfig } from 'src/app/models/homepage.model';
+import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-home-page',
@@ -7,8 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePageComponent implements OnInit {
   $email = 'gdggandhinagar@gmail.com'
-  constructor() { }
+  homepageDocRef: AngularFirestoreDocument<HomepageConfig>;
+  homepage: Observable<HomepageConfig>;
 
+
+  constructor( private afs: AngularFirestore ) {
+    this.homepageDocRef = this.afs.doc<HomepageConfig>('homepage/event-details');
+    this.homepage = this.homepageDocRef.valueChanges();
+  }
   ngOnInit() {
 
   }

@@ -33,18 +33,18 @@
       <div class="wrapper">
       <br> <br>
         <div class="row middle-sm center-sm middle-md center-md middle-lg
-          center-lg">
+          center-lg" >
           <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 diagram">
-            <app-data-icon title='Attendees' color='#D7DF23' data='250+'></app-data-icon>
+            <app-data-icon title='Attendees' color='#D7DF23' data={{homepage.attendees}}></app-data-icon>
           </div>
           <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 diagram">
-            <app-data-icon title='Sessions' color='#1B75BC' data='12+'></app-data-icon>
+            <app-data-icon title='Sessions' color='#1B75BC' data={{homepage.sessions}}></app-data-icon>
           </div>
           <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 diagram">
-            <app-data-icon title='Speakers' color='#2BB673' data='10+'></app-data-icon>
+            <app-data-icon title='Speakers' color='#2BB673' data={{homepage.speakers}}></app-data-icon>
           </div>
           <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 diagram">
-            <app-data-icon title='Tracks' color='#FFC927' data='3+'></app-data-icon>
+            <app-data-icon title='Tracks' color='#FFC927' data={{homepage.tracks}}></app-data-icon>
           </div>
 
         </div>
@@ -247,7 +247,7 @@
           Contact Us
         </div>
         <div class="sub-title" style='line-height:70px;font-size: 1.4em'>
-          <a href="mailto:gdggandhinagar@gmail.com" style="color: #fff">gdggandhinagar@gmail.com</a>
+          <a target="_blank" href="mailto:gdggandhinagar@gmail.com" style="color: #fff">gdggandhinagar@gmail.com</a>
         </div>
         <div class="sub-title" style='line-height:70px;font-size: 2.2em'>
           Subscribe for Updates
@@ -256,19 +256,20 @@
           <button mat-raised-button isRoundButton='true' color='#2BB673'>Subscribe</button>
         </div>
         <div style="text-align:center">
-          <a mat-icon-button class="btn-meetup"
+          <a mat-icon-button class="btn-meetup" target="_blank"
             href="https://www.meetup.com/GDG-Gandhinagar/"><i
               class="fa fa-meetup fa-lg"></i></a>
-          <a mat-icon-button class="btn-slack"
+          <a mat-icon-button class="btn-slack" target="_blank"
             href="https://gdg-gandhinagar.slack.com/"><i
               class="fa fa-slack fa-lg"></i></a>
-          <a mat-icon-button class="btn-facebook"
+          <a mat-icon-button class="btn-facebook" target="_blank"
             href="https://www.facebook.com/GDGGandhinagar/"><i
               class="fa fa-facebook-f fa-lg"></i></a>
-          <a mat-icon-button class="btn-twitter"
-            href="https://twitter.com/GDG_Gandhinagar?s=08"><i
+          <a mat-icon-button class="btn-twitter" target="_blank"
+            href="https://twitter.com/GDG_Gandhinagar"><i
               class="fa fa-twitter fa-lg"></i></a>
-          <a mat-icon-button class="btn-youtube" href="mailto:$email"><i
+          <a mat-icon-button class="btn-youtube" target="_blank"
+            href="mailto:$email"><i
               class="fa fa-envelope fa-lg"></i></a>
 
         </div>

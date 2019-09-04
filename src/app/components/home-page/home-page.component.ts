@@ -6,9 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home-page.component.sass']
 })
 export class HomePageComponent implements OnInit {
+  $email = 'gdggandhinagar@gmail.com'
   constructor() { }
 
   ngOnInit() {
+
   }
 
 }

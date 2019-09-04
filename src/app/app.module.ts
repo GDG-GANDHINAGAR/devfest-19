@@ -38,7 +38,7 @@ import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-
+import { GoTopButtonModule } from 'ng2-go-top-button';
 import { CoreModule } from './core/core.module';
 import { UserProfileComponent } from './components/user-profile/user-profile.component'
 
@@ -84,7 +84,8 @@ import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
-    CoreModule
+    CoreModule,
+    GoTopButtonModule
   ],
   entryComponents: [
     SpeakerDialogueComponent

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { TeamConfig, SocialMediaKind } from 'src/app/models/team.model';
+import { TeamConfig } from 'src/app/models/team.model';
 import { MatDialog } from '@angular/material/dialog';
 import { SpeakerDialogueComponent } from '../speaker-dialogue/speaker-dialogue.component';
 @Component({
@@ -10,12 +10,7 @@ import { SpeakerDialogueComponent } from '../speaker-dialogue/speaker-dialogue.c
 export class TeamCardComponent implements OnInit {
 
   @Input() isHomePage = false;
-  @Input() config: TeamConfig = {
-    name: 'Parth Jansari',
-    contribution: 'Organiser',
-    desc: 'Full Stack Developer',
-    image: 'https://avatars2.githubusercontent.com/u/17850142?s=460&v=4',
-  };
+  @Input() config: TeamConfig;
 
   constructor(public dialog: MatDialog) { }
 

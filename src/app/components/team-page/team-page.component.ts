@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TeamConfig, SocialMediaKind } from 'src/app/models/team.model';
+import { TeamConfig } from 'src/app/models/team.model';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { Observable } from 'rxjs/Observable';
 

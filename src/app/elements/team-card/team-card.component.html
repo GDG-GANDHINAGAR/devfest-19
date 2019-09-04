@@ -10,20 +10,9 @@
     <div class="job-title center-align">
       {{config.contribution}}
     </div>
-    <a mat-icon-button class="btn-linkedin" href="{{config.linkedin_url}}"><i class="fa fa-linkedin fa-lg"></i></a>
-    <a mat-icon-button class="btn-facebook" href="{{config.fb_url}}"><i class="fa fa-facebook-f fa-lg"></i></a>
-    <a mat-icon-button class="btn-twitter" href={{config.twitter_url}}><i class="fa fa-twitter fa-lg"></i></a>
-    <a mat-icon-button class="btn-github" href="{{config.github_url}}"><i class="fa fa-github fa-lg"></i></a>
-    <div class="icons-row center-align" *ngIf="!isHomePage">
-      <div class="icon-wrapper" *ngFor="let item of config.socialMediaLinks">
-        <div [ngSwitch]="item.kind">
-          <div *ngSwitchCase="'GitHub'">
-            <a [href]="item.link"><span class='icon'>{{item.icon}}</span></a>
-          </div>
-        </div>
-      </div>
-    </div>
+    <a *ngIf="config.linkedin_url" mat-icon-button class="btn-linkedin" href="{{config.linkedin_url}}"><i class="fa fa-linkedin fa-lg"></i></a>
+    <a *ngIf="config.fb_url" mat-icon-button class="btn-facebook" href="{{config.fb_url}}"><i class="fa fa-facebook-f fa-lg"></i></a>
+    <a *ngIf="config.twitter_url" mat-icon-button class="btn-twitter" href={{config.twitter_url}}><i class="fa fa-twitter fa-lg"></i></a>
+    <a *ngIf="config.twitter_url" mat-icon-button class="btn-github" href="{{config.github_url}}"><i class="fa fa-github fa-lg"></i></a>
   </div>
 </div>
-
-<!-- basic speaker card component -->

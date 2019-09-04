@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
-import { config } from 'util/keyConfig';
-import { Observable } from 'rxjs';
-import { HomePageData, PreviousSpeakers, Speakers } from 'src/app/models/interfaces';
+import { HomepageConfig } from 'src/app/models/homepage.model';
+import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-home-page',
@@ -10,25 +9,16 @@ import { HomePageData, PreviousSpeakers, Speakers } from 'src/app/models/interfa
   styleUrls: ['./home-page.component.sass']
 })
 export class HomePageComponent implements OnInit {
-  homePageData: HomePageData = <HomePageData>{};
-  previousSpeakers: PreviousSpeakers = <PreviousSpeakers>{};
-  speakers: Speakers = <Speakers>{};
-  constructor(private db: AngularFirestore) {
-    console.log(this.homePageData);
-    db.doc<HomePageData>('homepage/data').valueChanges().subscribe(data => {
-      this.homePageData = data;
-    });
-    db.doc<PreviousSpeakers>('previous_speakers/data').valueChanges().subscribe(data => {
-      this.previousSpeakers = data;
-    });
-    db.doc<Speakers>('speakers/data').valueChanges().subscribe(data => {
-      this.speakers = data;
-    });
+  $email = 'gdggandhinagar@gmail.com'
+  homepageDocRef: AngularFirestoreDocument<HomepageConfig>;
+  homepage: Observable<HomepageConfig>;
 
+  constructor(private afs: AngularFirestore) {
+    this.homepageDocRef = this.afs.doc<HomepageConfig>('homepage/event-details');
+    this.homepage = this.homepageDocRef.valueChanges();
   }
   ngOnInit() {
 
   }
 
 }
-

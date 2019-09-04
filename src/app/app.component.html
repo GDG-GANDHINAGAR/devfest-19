@@ -3,7 +3,8 @@
   <mat-toolbar class="mat-toolbar" [ngClass]="{'isScrolled': isScrolled}">
     <div class="content-wrapper" [ngClass]="{'container': !isMobile}">
       <mat-icon aria-hidden="false" aria-label="home icon" class="mat-icon" *ngIf="isMobile" (click)="opened = !opened">
-        menu</mat-icon>
+        <img style="height: 1rem" src="assets/images/Group-62.svg" alt="">
+      </mat-icon>
       <!-- <span class="spacer" *ngIf="isMobile"></span> -->
       <div [routerLink]='["home"]' class="logo-wrppper" [ngClass]="{'center': isMobile}">
         <img src="assets/images/logo_white.svg" alt="">

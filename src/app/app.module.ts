@@ -83,6 +83,7 @@ import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
     MatIconModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
+    AngularFirestoreModule.enablePersistence(),
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
     CoreModule
   ],

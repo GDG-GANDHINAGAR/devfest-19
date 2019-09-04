@@ -33,7 +33,7 @@
       <div class="wrapper">
         <br> <br>
         <div class="row middle-sm center-sm middle-md center-md middle-lg
-          center-lg" >
+          center-lg">
           <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 diagram">
             <app-data-icon title='Attendees' color='#D7DF23' data='{{homePageData?.event_details?.attendees }}'>
             </app-data-icon>
@@ -47,7 +47,8 @@
             </app-data-icon>
           </div>
           <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 diagram">
-            <app-data-icon title='Tracks' color='#FFC927' data='{{homePageData?.event_details?.tracks }}'></app-data-icon>
+            <app-data-icon title='Tracks' color='#FFC927' data='{{homePageData?.event_details?.tracks }}'>
+            </app-data-icon>
           </div>
 
         </div>
@@ -56,14 +57,14 @@
   </div>
 
   <div id="speakers">
-    <img src="/assets/images/Path 46.png" class='Path-46'>
-    <img src="/assets/images/Path 47.png" class='Path-47'>
+    <img src="/assets/images/Path 46.png" class='yellowtriangle'>
+    <img src="/assets/images/Path 47.png" class='zigzag'>
     <div class='row center-lg center-xs center-md middle-lg middle-md middle-sm
       middle-xs'>
       <div class="col-xs-12">
         <app-homepage-title title='Rockstar Speakers' color='#2BB673'></app-homepage-title>
       </div>
-      <div class="col-xs-12"   *ngIf="!(speakers.enabled && speakers.enabled.value)">
+      <div class="col-xs-12" *ngIf="!(speakers.enabled && speakers.enabled.value)">
         <div class="sub-title" style='line-height:250px;font-size: 2.5em'>
           <p> Rockstars🤘 are on the way! </p>
         </div>
@@ -78,7 +79,8 @@
         <app-speaker-card [isHomePage]='true'></app-speaker-card>
       </div>
       <div class="col-xs-12">
-        <button mat-raised-button isRoundButton='true' color='#2BB673' *ngIf="(speakers.enabled && speakers.enabled.value)">See More</button>
+        <button mat-raised-button isRoundButton='true' color='#2BB673'
+          *ngIf="(speakers.enabled && speakers.enabled.value)">See More</button>
       </div>
     </div>
     <div class='row center-lg center-xs center-md'>
@@ -98,7 +100,7 @@
 
 
   <div id="gallery" class="section-block">
-    <img src="/assets/images/Path 48.png" class='Path-48'>
+    <img src="/assets/images/Path 48.png" class='bluerectangle'>
     <div class='row center-lg center-xs center-md middle-lg middle-md middle-sm
       middle-xs'>
       <div class="col-xs-12">
@@ -115,7 +117,7 @@
     </div>
   </div>
 
-  <img src="/assets/images/Path 49.png" class='Path-49'>
+  <img src="/assets/images/Path 49.png" class='greenbuck'>
   <div id="tickets" class="section-block" style="margin-bottom: 0">
     <div class='row center-lg center-xs center-md middle-lg middle-md middle-sm
       middle-xs'>
@@ -129,7 +131,7 @@
       </div>
     </div>
   </div>
-  <img src="/assets/images/Ellipse 27.png" class='e-27'>
+  <img src="/assets/images/Ellipse 27.png" class='purple_ellipse'>
   <div id="venue" class="section-block" style="margin-bottom: 0">
     <div class='row center-lg center-xs center-md middle-lg middle-md middle-sm
       middle-xs'>
@@ -155,7 +157,7 @@
   </div>
 
 
-  <img src="/assets/images/Path 50.png" class='Path-50'>
+  <img src="/assets/images/Path 50.png" class='pink_tri'>
   <div id="team" class="section-block">
     <div class='row center-lg center-xs center-md middle-lg middle-md middle-sm
       middle-xs'>
@@ -209,7 +211,7 @@
       </div>
     </div>
   </div>
-  <img src="/assets/images/Ellipse 26.png" class='e-26'>
+  <img src="/assets/images/Ellipse 26.png" class='ellipse_small '>
   <div id="subscribe" class="section-block">
     <div class='row center-lg center-xs center-md middle-lg middle-md middle-sm
       middle-xs'>
@@ -229,20 +231,15 @@
           <button mat-raised-button isRoundButton='true' color='#2BB673'>Subscribe</button>
         </div>
         <div style="text-align:center">
-          <a mat-icon-button class="btn-meetup" target="_blank"
-            href="https://www.meetup.com/GDG-Gandhinagar/"><i
+          <a mat-icon-button class="btn-meetup" target="_blank" href="https://www.meetup.com/GDG-Gandhinagar/"><i
               class="fa fa-meetup fa-lg"></i></a>
-          <a mat-icon-button class="btn-slack" target="_blank"
-            href="https://gdg-gandhinagar.slack.com/"><i
+          <a mat-icon-button class="btn-slack" target="_blank" href="https://gdg-gandhinagar.slack.com/"><i
               class="fa fa-slack fa-lg"></i></a>
-          <a mat-icon-button class="btn-facebook" target="_blank"
-            href="https://www.facebook.com/GDGGandhinagar/"><i
+          <a mat-icon-button class="btn-facebook" target="_blank" href="https://www.facebook.com/GDGGandhinagar/"><i
               class="fa fa-facebook-f fa-lg"></i></a>
-          <a mat-icon-button class="btn-twitter" target="_blank"
-            href="https://twitter.com/GDG_Gandhinagar"><i
+          <a mat-icon-button class="btn-twitter" target="_blank" href="https://twitter.com/GDG_Gandhinagar"><i
               class="fa fa-twitter fa-lg"></i></a>
-          <a mat-icon-button class="btn-youtube" target="_blank"
-            href="mailto:$email"><i
+          <a mat-icon-button class="btn-youtube" target="_blank" href="mailto:$email"><i
               class="fa fa-envelope fa-lg"></i></a>
 
         </div>
@@ -250,8 +247,8 @@
 
     </div>
   </div>
-  <img src="/assets/images/Group 50.png" class='Path-51'>
-  <img src="/assets/images/Path 23.png" class='Path-23'>
+  <img src="/assets/images/Group 50.png" class='overlap_tri'>
+  <img src="/assets/images/Path 23.png" class='purple_tri'>
   <div id='partners' class="section-block">
     <div class='row center-lg center-xs center-md middle-lg middle-md middle-sm
       middle-xs'>

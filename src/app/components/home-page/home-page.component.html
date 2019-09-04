@@ -31,20 +31,23 @@
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
       <div class="wrapper">
-      <br> <br>
+        <br> <br>
         <div class="row middle-sm center-sm middle-md center-md middle-lg
           center-lg">
           <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 diagram">
-            <app-data-icon title='Attendees' color='#D7DF23' data='250+'></app-data-icon>
+            <app-data-icon title='Attendees' color='#D7DF23' data='{{homePageData?.event_details?.attendees }}'>
+            </app-data-icon>
           </div>
           <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 diagram">
-            <app-data-icon title='Sessions' color='#1B75BC' data='12+'></app-data-icon>
+            <app-data-icon title='Sessions' color='#1B75BC' data='{{homePageData?.event_details?.sessions }}'>
+            </app-data-icon>
           </div>
           <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 diagram">
-            <app-data-icon title='Speakers' color='#2BB673' data='10+'></app-data-icon>
+            <app-data-icon title='Speakers' color='#2BB673' data='{{homePageData?.event_details?.speakers }}'>
+            </app-data-icon>
           </div>
           <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 diagram">
-            <app-data-icon title='Tracks' color='#FFC927' data='3+'></app-data-icon>
+            <app-data-icon title='Tracks' color='#FFC927' data='{{homePageData?.event_details?.tracks }}'></app-data-icon>
           </div>
 
         </div>
@@ -60,22 +63,22 @@
       <div class="col-xs-12">
         <app-homepage-title title='Rockstar Speakers' color='#2BB673'></app-homepage-title>
       </div>
-      <div class="col-xs-12" style='height: 250px'>
+      <div class="col-xs-12"   *ngIf="!(speakers.enabled && speakers.enabled.value)">
         <div class="sub-title" style='line-height:250px;font-size: 2.5em'>
           <p> Rockstars🤘 are on the way! </p>
         </div>
       </div>
-      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" *ngIf="false">
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" *ngIf="speakers.enabled && speakers.enabled.value">
         <app-speaker-card [isHomePage]='true'></app-speaker-card>
       </div>
-      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" *ngIf="false">
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" *ngIf="speakers.enabled && speakers.enabled.value">
         <app-speaker-card [isHomePage]='true'></app-speaker-card>
       </div>
-      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" *ngIf="false">
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" *ngIf="speakers.enabled && speakers.enabled.value">
         <app-speaker-card [isHomePage]='true'></app-speaker-card>
       </div>
       <div class="col-xs-12">
-        <button mat-raised-button isRoundButton='true' color='#2BB673'>See More</button>
+        <button mat-raised-button isRoundButton='true' color='#2BB673' *ngIf="(speakers.enabled && speakers.enabled.value)">See More</button>
       </div>
     </div>
     <div class='row center-lg center-xs center-md'>
@@ -86,34 +89,8 @@
       </div>
     </div>
     <div class='row center-lg center-xs center-md'>
-      <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-        <app-profile-icon width=100
-          src='https://avatars2.githubusercontent.com/u/17850142?s=460&v=4'>
-        </app-profile-icon>
-      </div>
-      <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-        <app-profile-icon width=100
-          src='https://avatars2.githubusercontent.com/u/17850142?s=460&v=4'>
-        </app-profile-icon>
-      </div>
-      <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-        <app-profile-icon width=100
-          src='https://avatars2.githubusercontent.com/u/17850142?s=460&v=4'>
-        </app-profile-icon>
-      </div>
-      <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-        <app-profile-icon width=100
-          src='https://avatars2.githubusercontent.com/u/17850142?s=460&v=4'>
-        </app-profile-icon>
-      </div>
-      <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-        <app-profile-icon width=100
-          src='https://avatars2.githubusercontent.com/u/17850142?s=460&v=4'>
-        </app-profile-icon>
-      </div>
-      <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-        <app-profile-icon width=100
-          src='https://avatars2.githubusercontent.com/u/17850142?s=460&v=4'>
+      <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" *ngFor='let data of previousSpeakers?.data'>
+        <app-profile-icon width=100 [src]='data.image'>
         </app-profile-icon>
       </div>
     </div>
@@ -132,8 +109,7 @@
         <app-gallery-image src='assets/images/g{{item}}.JPG'></app-gallery-image>
       </div>
       <div class="col-xs-12" style='margin-top: 50px'>
-        <a mat-raised-button isRoundButton='true' target="_blank"
-          href='https://photos.app.goo.gl/CojnpJaXwuLuqeV66'
+        <a mat-raised-button isRoundButton='true' target="_blank" href='https://photos.app.goo.gl/CojnpJaXwuLuqeV66'
           color='#2BB673'>View More</a>
       </div>
     </div>
@@ -164,8 +140,7 @@
         <div class='map-wrapper'>
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3667.497127784073!2d72.62684071493652!3d23.18854688486926!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395c2a3c9618d2c5%3A0xc54de484f986b1fa!2sDhirubhai%20Ambani%20Institute%20of%20Information%20and%20Communication%20Technology!5e0!3m2!1sen!2sin!4v1567362841953!5m2!1sen!2sin"
-            width="850" height="350" frameborder="0" style="border:0;"
-            allowfullscreen=""></iframe>
+            width="850" height="350" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
         </div>
         <div class="sub-title" style='line-height:50px;font-size: 1.5em'>
           <p>
@@ -207,8 +182,7 @@
                 Gandhinagar
               </div>
               <div class="btn">
-                <a mat-raised-button isRoundButton='true' target="_blank"
-                  [routerLink]="['/team']"
+                <a mat-raised-button isRoundButton='true' target="_blank" [routerLink]="['/team']"
                   routerLinkActive="router-link-active" color='#2BB673'>View
                   More</a>
               </div>
@@ -225,8 +199,7 @@
                 share experience about Google technologies with a passion
               </div>
               <div class="btn">
-                <a mat-raised-button isRoundButton='true' target="_blank"
-                  [routerLink]="['/about']"
+                <a mat-raised-button isRoundButton='true' target="_blank" [routerLink]="['/about']"
                   routerLinkActive="router-link-active" color='#2BB673'>View
                   More</a>
               </div>
@@ -256,20 +229,15 @@
           <button mat-raised-button isRoundButton='true' color='#2BB673'>Subscribe</button>
         </div>
         <div style="text-align:center">
-          <a mat-icon-button class="btn-meetup"
-            href="https://www.meetup.com/GDG-Gandhinagar/"><i
+          <a mat-icon-button class="btn-meetup" href="https://www.meetup.com/GDG-Gandhinagar/"><i
               class="fa fa-meetup fa-lg"></i></a>
-          <a mat-icon-button class="btn-slack"
-            href="https://gdg-gandhinagar.slack.com/"><i
+          <a mat-icon-button class="btn-slack" href="https://gdg-gandhinagar.slack.com/"><i
               class="fa fa-slack fa-lg"></i></a>
-          <a mat-icon-button class="btn-facebook"
-            href="https://www.facebook.com/GDGGandhinagar/"><i
+          <a mat-icon-button class="btn-facebook" href="https://www.facebook.com/GDGGandhinagar/"><i
               class="fa fa-facebook-f fa-lg"></i></a>
-          <a mat-icon-button class="btn-twitter"
-            href="https://twitter.com/GDG_Gandhinagar?s=08"><i
+          <a mat-icon-button class="btn-twitter" href="https://twitter.com/GDG_Gandhinagar?s=08"><i
               class="fa fa-twitter fa-lg"></i></a>
-          <a mat-icon-button class="btn-youtube" href="mailto:$email"><i
-              class="fa fa-envelope fa-lg"></i></a>
+          <a mat-icon-button class="btn-youtube" href="mailto:$email"><i class="fa fa-envelope fa-lg"></i></a>
 
         </div>
       </div>

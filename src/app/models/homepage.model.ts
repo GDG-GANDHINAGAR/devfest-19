@@ -1,6 +1,6 @@
 export interface HomepageConfig {
-    attendees: Object;
-    speakers: Object;
-    sessions: Object;
-    tracks: Object;
+    attendees: String;
+    speakers: String;
+    sessions: String;
+    tracks: String;
 }

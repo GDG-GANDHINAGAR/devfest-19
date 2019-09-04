@@ -16,32 +16,8 @@
         or just have some random questions, feel free to reach any of us on social media.
         We'd love to help! </p>
 
-      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
-        <app-team-card [isHomePage]='false'></app-team-card>
-      </div>
-      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
-        <app-team-card [isHomePage]='false'></app-team-card>
-      </div>
-      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
-        <app-team-card [isHomePage]='false'></app-team-card>
-      </div>
-      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
-        <app-team-card [isHomePage]='false'></app-team-card>
-      </div>
-      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
-        <app-team-card [isHomePage]='false'></app-team-card>
-      </div>
-      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
-        <app-team-card [isHomePage]='false'></app-team-card>
-      </div>
-      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
-        <app-team-card [isHomePage]='false'></app-team-card>
-      </div>
-      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
-        <app-team-card [isHomePage]='false'></app-team-card>
-      </div>
-      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
-        <app-team-card [isHomePage]='false'></app-team-card>
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" *ngFor="let member of team$ | async">
+        <app-team-card [isHomePage]='false' [config]='member'></app-team-card>
       </div>
     </div>
   </div>

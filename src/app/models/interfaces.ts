@@ -101,8 +101,6 @@ export interface Enabled {
   value: boolean;
 }
 
-
-
 export interface Speakers {
   data?: any;
   enabled: Enabled;

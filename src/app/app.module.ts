@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { MatGridListModule } from '@angular/material/grid-list';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -38,14 +38,8 @@ import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-<<<<<<< HEAD
-import { GoTopButtonModule } from 'ng2-go-top-button';
-import { CoreModule } from './core/core.module';
-import { UserProfileComponent } from './components/user-profile/user-profile.component'
-=======
 
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
->>>>>>> b3613a33ea602e1a4eacd9c762c13594f7d0f84e
 
 import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
 
@@ -78,6 +72,7 @@ import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
     FormsModule,
     BrowserAnimationsModule,
     MatListModule,
+    MatGridListModule,
     MatCardModule,
     MatRippleModule,
     MatToolbarModule,
@@ -90,11 +85,6 @@ import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFirestoreModule.enablePersistence(),
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
-<<<<<<< HEAD
-    CoreModule,
-    GoTopButtonModule
-=======
->>>>>>> b3613a33ea602e1a4eacd9c762c13594f7d0f84e
   ],
   entryComponents: [
     SpeakerDialogueComponent

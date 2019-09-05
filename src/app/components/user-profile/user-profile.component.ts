@@ -7,6 +7,10 @@ import { Component } from '@angular/core';
 })
 export class UserProfileComponent {
 
-  constructor() { }
+  name = 'Arif'
+  description = "Hi my name is arif and I'm a Web developer"
+  date = '6 September 2019'
+  constructor() {
+  }
 
 }

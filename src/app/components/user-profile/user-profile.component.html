@@ -1,5 +1,5 @@
 <!-- <div *ngIf="auth.user | async; then authenticated else guest"> -->
-        <!-- template will replace this div -->
+<!-- template will replace this div -->
 <!-- </div> -->
 
 <!-- User NOT logged in -->
@@ -22,3 +22,37 @@
         <button (click)="auth.signOut()">Logout</button>
     </div>
 </ng-template> -->
+
+<div class="container" fxLayout="row" fxLayout.sm="column" fxLayout.xs="column"
+  fxLayoutAlign.gt-md="space-around center" fxLayoutGap="10px" fxLayoutGap.xs="0">
+
+  <div fxFlex="40">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>
+          <h3>{{name | uppercase}}</h3>
+        </mat-card-title>
+      </mat-card-header>
+      <img mat-card-image src="\assets\images\Speakers\Arif.jpg" alt={{name}}>
+
+    </mat-card>
+
+  </div>
+
+  <div fxFlex="50">
+    <mat-list>
+      <mat-list-item>
+        <mat-card-actions>
+          <br><button mat-raised-button isRoundButton='true'>Subscribe</button>
+
+        </mat-card-actions>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-card-actions>
+          <br>
+          <button mat-raised-button isRoundButton='true'> Logout </button>
+        </mat-card-actions>
+      </mat-list-item>
+    </mat-list>
+  </div>
+</div>

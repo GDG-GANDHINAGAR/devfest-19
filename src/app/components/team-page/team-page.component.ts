@@ -13,16 +13,11 @@ export class TeamPageComponent implements OnInit {
   team: TeamModel;
 
   constructor(private afs: AngularFirestore) {
-<<<<<<< HEAD
-    this.teamCollectionRef = this.afs.collection<TeamConfig>('team');
-    this.team$ = this.teamCollectionRef.valueChanges();
-=======
     this.teamDocRef = this.afs.doc<TeamModel>('team/data');
     this.teamDocRef.valueChanges().subscribe(data => {
       this.team = data;
       console.log(this.team);
     });
->>>>>>> b3613a33ea602e1a4eacd9c762c13594f7d0f84e
   }
   ngOnInit() {
   }

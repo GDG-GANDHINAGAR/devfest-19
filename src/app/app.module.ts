@@ -39,8 +39,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 
-import { CoreModule } from './core/core.module';
-import { UserProfileComponent } from './components/user-profile/user-profile.component'
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
 
 import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
 
@@ -85,7 +84,6 @@ import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFirestoreModule.enablePersistence(),
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
-    CoreModule
   ],
   entryComponents: [
     SpeakerDialogueComponent

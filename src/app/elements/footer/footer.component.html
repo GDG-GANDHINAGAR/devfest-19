@@ -126,19 +126,16 @@
       </div> -->
 <footer>
   <div class="container">
-    <div class="links row">
-      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
-        <div class="col-title">
-          About
+    <div class="links row"  >
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" *ngFor='let row of footerData'>
+        <div class="col-title" style='text-transform: capitalize'>
+          {{row.key.replace('_',' ')}}
         </div>
         <ul class="col-list">
-          <li><a href="https://www.meetup.com/GDG-Gandhinagar/">GDG Gandhinagar</a></li>
-          <li><a href="https://developers.google.com/programs/community/gdg/">Google
-              Developers Group</a></li>
-          <li><a [routerLink]="['/team']">Meet the Team</a></li>
+          <li *ngFor='let link of row.data'><a [href]="link.url">{{link.text}}</a></li>
         </ul>
       </div>
-      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+      <!-- <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
         <div class="second-col">
           <div class="col-title">
             Event Resources
@@ -160,7 +157,7 @@
             <li><a href="https://www.linkedin.com/company/dsciiitv/">DSC IIITV</a></li>
           </ul>
         </div>
-      </div>
+      </div> -->
 
     </div>
   </div>

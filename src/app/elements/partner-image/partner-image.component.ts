@@ -7,6 +7,8 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class PartnerImageComponent implements OnInit {
   @Input() src: String;
+  @Input() url: String;
+  @Input() name: String;
   constructor() { }
 
   ngOnInit() {

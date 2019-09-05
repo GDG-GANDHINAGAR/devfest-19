@@ -35,6 +35,9 @@ body
   @media #{$large-and-up}
   width: 70%
 
+.mat-drawer-content
+  overflow-x: hidden !important
+
 .mat-dialog
   mat-dialog-container
     color: #ffffff
@@ -46,16 +49,16 @@ body
     flex-direction: column
     overflow-x: hidden
 
-::-webkit-scrollbar
-  width: 10px
-::-webkit-scrollbar-track
-  background: #000
-::-webkit-scrollbar-thumb
-  background: #888
-  &:hover
-    background: #555
+// ::-webkit-scrollbar
+//   width: 10px
+// ::-webkit-scrollbar-track
+//   background: #000
+// ::-webkit-scrollbar-thumb
+//   background: #888
+//   &:hover
+//     background: #555
 
-.mat-raised-button 
+.mat-raised-button
   font-family: 'Open Sans', 'Arial', sans-serif
   font-weight: bold
-  text-transform: uppercase 
+  text-transform: uppercase

@@ -33,7 +33,7 @@
       <div class="wrapper">
         <br> <br>
         <div class="row middle-sm center-sm middle-md center-md middle-lg
-          center-lg" >
+          center-lg">
           <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 diagram">
             <app-data-icon title='Attendees' color='#D7DF23' data='{{homePageData?.event_details?.attendees }}'>
             </app-data-icon>
@@ -47,7 +47,8 @@
             </app-data-icon>
           </div>
           <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 diagram">
-            <app-data-icon title='Tracks' color='#FFC927' data='{{homePageData?.event_details?.tracks }}'></app-data-icon>
+            <app-data-icon title='Tracks' color='#FFC927' data='{{homePageData?.event_details?.tracks }}'>
+            </app-data-icon>
           </div>
 
         </div>
@@ -63,7 +64,7 @@
       <div class="col-xs-12">
         <app-homepage-title title='Rockstar Speakers' color='#2BB673'></app-homepage-title>
       </div>
-      <div class="col-xs-12"   *ngIf="!(speakers.enabled && speakers.enabled.value)">
+      <div class="col-xs-12" *ngIf="!(speakers.enabled && speakers.enabled.value)">
         <div class="sub-title" style='line-height:250px;font-size: 2.5em'>
           <p> Rockstars🤘 are on the way! </p>
         </div>
@@ -78,7 +79,8 @@
         <app-speaker-card [isHomePage]='true'></app-speaker-card>
       </div>
       <div class="col-xs-12">
-        <button mat-raised-button isRoundButton='true' color='#2BB673' *ngIf="(speakers.enabled && speakers.enabled.value)">See More</button>
+        <button mat-raised-button isRoundButton='true' color='#2BB673'
+          *ngIf="(speakers.enabled && speakers.enabled.value)">See More</button>
       </div>
     </div>
     <div class='row center-lg center-xs center-md'>
@@ -226,24 +228,20 @@
           Subscribe for Updates
         </div>
         <div class="col-xs-12" style='line-height:70px'>
-          <button mat-raised-button isRoundButton='true' color='#2BB673'>Subscribe</button>
+          <button mat-raised-button isRoundButton='true' (click)='usersub()' color='#2BB673'>Subscribe</button>
         </div>
         <div style="text-align:center">
-          <a mat-icon-button class="btn-meetup" target="_blank"
-            href="https://www.meetup.com/GDG-Gandhinagar/"><i
-              class="fa fa-meetup fa-lg"></i></a>
-          <a mat-icon-button class="btn-slack" target="_blank"
-            href="https://gdg-gandhinagar.slack.com/"><i
+          <a mat-icon-button *ngFor='let icon of homePageData?.meta?.social'
+            class="{{'btn-'+icon.name+ ' mat-icon-button'}}" target="_blank" [href]="icon.url"><i
+              [class]="icon.icon"></i></a>
+          <!-- <a mat-icon-button class="btn-slack" target="_blank" href="https://gdg-gandhinagar.slack.com/"><i
               class="fa fa-slack fa-lg"></i></a>
-          <a mat-icon-button class="btn-facebook" target="_blank"
-            href="https://www.facebook.com/GDGGandhinagar/"><i
+          <a mat-icon-button class="btn-facebook" target="_blank" href="https://www.facebook.com/GDGGandhinagar/"><i
               class="fa fa-facebook-f fa-lg"></i></a>
-          <a mat-icon-button class="btn-twitter" target="_blank"
-            href="https://twitter.com/GDG_Gandhinagar"><i
+          <a mat-icon-button class="btn-twitter" target="_blank" href="https://twitter.com/GDG_Gandhinagar"><i
               class="fa fa-twitter fa-lg"></i></a>
-          <a mat-icon-button class="btn-youtube" target="_blank"
-            href="mailto:$email"><i
-              class="fa fa-envelope fa-lg"></i></a>
+          <a mat-icon-button class="btn-youtube" target="_blank" href="mailto:$email"><i
+              class="fa fa-envelope fa-lg"></i></a> -->
 
         </div>
       </div>
@@ -259,41 +257,18 @@
         <app-homepage-title title='Partners' color='#00AEEF'></app-homepage-title>
       </div>
       <div>
-        <div class="col-xs-12 col-md-12">
-          <div class="sub-title" style='line-height:50px;font-size:
-            1.5em;margin-bottom: 20px'>
-            General Partners
+        <div *ngFor='let partners of sponsors' class='row around-lg around-xs around-md'>
+          <div class="col-xs-12 col-md-12">
+            <div class="sub-title" style='line-height:50px;font-size:
+              1.5em;margin-bottom: 20px; text-transform: capitalize'>
+              {{partners.key.replace('_', ' ')}}
+            </div>
           </div>
-        </div>
-        <div class="general-partners">
-          <div>
-            <app-partner-image
-              src='https://user-images.githubusercontent.com/32234926/64077425-38477280-ccee-11e9-9798-b06f872d6f61.png'>
+
+          <div *ngFor='let partner of partners.data' class="col-xs-12 col-md-6 col-lg-4">
+            <app-partner-image [src]='partner.image' [url]='partner.url' [name]='partner.name'>
             </app-partner-image>
           </div>
-          <div>
-            <app-partner-image
-              src='https://user-images.githubusercontent.com/32234926/64077431-41d0da80-ccee-11e9-995c-d7ea4302049a.png'>
-            </app-partner-image>
-          </div>
-          <div>
-            <app-partner-image
-              src='https://user-images.githubusercontent.com/32234926/64077457-4c8b6f80-ccee-11e9-8756-218c03fd92fe.png'>
-            </app-partner-image>
-          </div>
-        </div>
-      </div>
-      <div class="design-partner">
-        <div class="col-xs-12 col-md-12">
-          <div class="sub-title" style='line-height:50px;font-size:
-            1.5em;margin-bottom: 20px'>
-            Design Partner
-          </div>
-        </div>
-        <div>
-          <app-partner-image class="design-image"
-            src='https://user-images.githubusercontent.com/32234926/64077403-fe766c00-cced-11e9-9360-547575715a8f.png'>
-          </app-partner-image>
         </div>
       </div>
     </div>

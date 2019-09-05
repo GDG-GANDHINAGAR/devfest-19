@@ -29,7 +29,13 @@ export interface VenuePartner {
   image?: any;
   name: string;
 }
-
+export interface User {
+  uid: string;
+  email: string;
+  photoURL?: string;
+  displayName?: string;
+  myCustomData?: string;
+}
 export interface Sponsors {
   design_partners: DesignPartner[];
   general_partners: GeneralPartner[];
@@ -72,13 +78,6 @@ export interface HomePageData {
   event_details: EventDetails;
   footer: Footer;
 }
-class HomePageDataModel implements HomePageData {
-  meta: Meta;
-  sponsors: Sponsors;
-  venue: Venue;
-  event_details: EventDetails;
-  footer: Footer;
-}
 
 export interface PreviousSpeakerDetails {
   desc: string;
@@ -100,8 +99,6 @@ export interface PreviousSpeakers {
 export interface Enabled {
   value: boolean;
 }
-
-
 
 export interface Speakers {
   data?: any;

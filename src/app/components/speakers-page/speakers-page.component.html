@@ -10,10 +10,26 @@
       who are building the future of cloud. Check back often
       as we add more speakers, including our customers and partners.
     </div>
+<<<<<<< HEAD
     <div class="col-xs-12" style='height: 250px'>
       <div class="sub-title" style='line-height:250px;font-size: 2.5em'>
         <p> Speakers Coming Soon !</p>
       </div>
     </div>
+=======
+    <div class="col-xs-12" *ngIf="!(speakers.enabled &&
+            speakers.enabled.value)">
+      <div class="sub-title" style='line-height:250px;font-size: 2.5em'>
+        <p> Rockstars🤘 are on the way! </p>
+      </div>
+    </div>
+    <ng-container *ngIf="(speakers.enabled &&
+        speakers.enabled.value)">
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" *ngFor='let data of
+            speakers?.data'>
+        <app-speaker-card [isHomePage]='true'></app-speaker-card>
+      </div>
+    </ng-container>
+>>>>>>> b3613a33ea602e1a4eacd9c762c13594f7d0f84e
   </div>
 </div>

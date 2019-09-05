@@ -44,7 +44,12 @@
             <app-data-icon title='Speakers' color='#2BB673' data='10+'></app-data-icon>
           </div>
           <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 diagram">
+<<<<<<< HEAD
             <app-data-icon title='Tracks' color='#FFC927' data='3+'></app-data-icon>
+=======
+            <app-data-icon title='Tracks' color='#FFC927' data='{{homePageData?.event_details?.tracks }}'>
+            </app-data-icon>
+>>>>>>> b3613a33ea602e1a4eacd9c762c13594f7d0f84e
           </div>
 
         </div>
@@ -60,7 +65,11 @@
       <div class="col-xs-12">
         <app-homepage-title title='Rockstar Speakers' color='#2BB673'></app-homepage-title>
       </div>
+<<<<<<< HEAD
       <div class="col-xs-12" style='height: 250px'>
+=======
+      <div class="col-xs-12" *ngIf="!(speakers.enabled && speakers.enabled.value)">
+>>>>>>> b3613a33ea602e1a4eacd9c762c13594f7d0f84e
         <div class="sub-title" style='line-height:250px;font-size: 2.5em'>
           <p> Rockstars🤘 are on the way! </p>
         </div>
@@ -75,7 +84,12 @@
         <app-speaker-card [isHomePage]='true'></app-speaker-card>
       </div>
       <div class="col-xs-12">
+<<<<<<< HEAD
         <button mat-raised-button isRoundButton='true' color='#2BB673'>See More</button>
+=======
+        <button mat-raised-button isRoundButton='true' color='#2BB673'
+          *ngIf="(speakers.enabled && speakers.enabled.value)">See More</button>
+>>>>>>> b3613a33ea602e1a4eacd9c762c13594f7d0f84e
       </div>
     </div>
     <div class='row center-lg center-xs center-md'>
@@ -206,6 +220,7 @@
       middle-xs'>
         <div class="col-xs-12 col-md-12" style='height: max-content;font-weight:
         bold'>
+<<<<<<< HEAD
           <br>
           <div class="sub-title" style='line-height:50px;font-size: 2em'>
             Contact Us
@@ -231,6 +246,33 @@
             <a mat-icon-button class="btn-youtube" href="mailto:{{$email}}"><i class="fa fa-envelope fa-lg"></i></a>
           </div>
         </div>
+=======
+        <br>
+        <div class="sub-title" style='line-height:50px;font-size: 2em'>
+          Contact Us
+        </div>
+        <div class="sub-title" style='line-height:70px;font-size: 1.4em'>
+          <a target="_blank" href="mailto:gdggandhinagar@gmail.com" style="color: #fff">gdggandhinagar@gmail.com</a>
+        </div>
+        <div class="sub-title" style='line-height:70px;font-size: 2.2em'>
+          Subscribe for Updates
+        </div>
+        <div class="col-xs-12" style='line-height:70px'>
+          <button mat-raised-button isRoundButton='true' (click)='usersub()' color='#2BB673'>Subscribe</button>
+        </div>
+        <div style="text-align:center">
+          <a mat-icon-button *ngFor='let icon of homePageData?.meta?.social'
+            class="{{'btn-'+icon.name+ ' mat-icon-button'}}" target="_blank" [href]="icon.url"><i
+              [class]="icon.icon"></i></a>
+          <!-- <a mat-icon-button class="btn-slack" target="_blank" href="https://gdg-gandhinagar.slack.com/"><i
+              class="fa fa-slack fa-lg"></i></a>
+          <a mat-icon-button class="btn-facebook" target="_blank" href="https://www.facebook.com/GDGGandhinagar/"><i
+              class="fa fa-facebook-f fa-lg"></i></a>
+          <a mat-icon-button class="btn-twitter" target="_blank" href="https://twitter.com/GDG_Gandhinagar"><i
+              class="fa fa-twitter fa-lg"></i></a>
+          <a mat-icon-button class="btn-youtube" target="_blank" href="mailto:$email"><i
+              class="fa fa-envelope fa-lg"></i></a> -->
+>>>>>>> b3613a33ea602e1a4eacd9c762c13594f7d0f84e
 
       </div>
     </div>
@@ -239,6 +281,7 @@
     <div id='partners' class="section-block">
       <div class='row center-lg center-xs center-md middle-lg middle-md middle-sm
       middle-xs'>
+<<<<<<< HEAD
         <div class="col-xs-12">
           <app-homepage-title title='Partners' color='#00AEEF'></app-homepage-title>
         </div>
@@ -277,6 +320,22 @@
           <div>
             <app-partner-image class="design-image"
               src='https://user-images.githubusercontent.com/32234926/64077403-fe766c00-cced-11e9-9360-547575715a8f.png'>
+=======
+      <div class="col-xs-12">
+        <app-homepage-title title='Partners' color='#00AEEF'></app-homepage-title>
+      </div>
+      <div>
+        <div *ngFor='let partners of sponsors' class='row around-lg around-xs around-md'>
+          <div class="col-xs-12 col-md-12">
+            <div class="sub-title" style='line-height:50px;font-size:
+              1.5em;margin-bottom: 20px; text-transform: capitalize'>
+              {{partners.key.replace('_', ' ')}}
+            </div>
+          </div>
+
+          <div *ngFor='let partner of partners.data' class="col-xs-12 col-md-6 col-lg-4">
+            <app-partner-image [src]='partner.image' [url]='partner.url' [name]='partner.name'>
+>>>>>>> b3613a33ea602e1a4eacd9c762c13594f7d0f84e
             </app-partner-image>
           </div>
         </div>

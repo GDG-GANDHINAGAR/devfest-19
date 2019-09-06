@@ -38,7 +38,7 @@ export class HomePageComponent implements OnInit {
 
   }
    async usersub() {
-    await this.auth.googleSignin();
+    // await this.auth.googleSignin();
   }
   ngOnInit() {
   }

@@ -38,10 +38,7 @@ import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
-
-import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
 
 @NgModule({
   declarations: [
@@ -91,7 +88,6 @@ import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
   ],
   providers: [
     { provide: MAT_RIPPLE_GLOBAL_OPTIONS, useValue: globalRippleConfig },
-    AngularFireAuthGuard
   ],
   bootstrap: [
     AppComponent

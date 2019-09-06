@@ -14,22 +14,22 @@ export class TeamCardComponent implements OnInit {
 
   constructor(public dialog: MatDialog) { }
 
-  openDialog(): void {
-    const dialogRef = this.dialog.open(SpeakerDialogueComponent, {
-      width: '95%',
-      height: '80%',
-      panelClass: 'mat-dialog',
-      maxWidth: '1000px',
-      maxHeight: '600px',
-      autoFocus: false,
-      minWidth: '300px',
-      data: { ...this.config }
-    });
+  // openDialog(): void {
+  //   const dialogRef = this.dialog.open(SpeakerDialogueComponent, {
+  //     width: '95%',
+  //     height: '80%',
+  //     panelClass: 'mat-dialog',
+  //     maxWidth: '1000px',
+  //     maxHeight: '600px',
+  //     autoFocus: false,
+  //     minWidth: '300px',
+  //     data: { ...this.config }
+  //   });
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-    });
-  }
+  //   dialogRef.afterClosed().subscribe(result => {
+  //     console.log('The dialog was closed');
+  //   });
+  // }
 
   ngOnInit() { }
 }

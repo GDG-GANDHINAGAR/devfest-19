@@ -33,7 +33,8 @@
           <h3>{{(auth.user$ | async)?.displayName | uppercase}}</h3>
         </mat-card-title>
       </mat-card-header>
-      <img mat-card-image src="{{(auth.user$ | async)?.photoURL}}" alt="{{(auth.user$ | async)?.displayName | uppercase}}">
+      <img mat-card-image src="{{(auth.user$ | async)?.photoURL}}"
+        alt="{{(auth.user$ | async)?.displayName | uppercase}}">
 
     </mat-card>
 
@@ -50,7 +51,8 @@
       <mat-list-item>
         <mat-card-actions>
           <br>
-          <button mat-raised-button isRoundButton='true' (click)="auth.signOut()"> Logout </button>
+          <button mat-raised-button isRoundButton='true' (click)="auth.signOut()" style="background: red"> Logout
+          </button>
         </mat-card-actions>
       </mat-list-item>
     </mat-list>

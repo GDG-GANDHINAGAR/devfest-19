@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from '../../services/auth.service'
 
 @Component({
   selector: 'app-user-profile',
@@ -6,11 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./user-profile.component.sass']
 })
 export class UserProfileComponent {
-
-  name = 'Arif'
-  description = "Hi my name is arif and I'm a Web developer"
-  date = '6 September 2019'
-  constructor() {
+  email: String;
+  displayName: String;
+  photoURL: String;
+  constructor(public auth: AuthService) {
   }
-
+  async usersub() {
+    await this.auth.googleSignin();
+  }
 }

@@ -257,44 +257,20 @@
         <app-homepage-title title='Partners' color='#00AEEF'></app-homepage-title>
       </div>
       <div>
-        <div class="col-xs-12 col-md-12">
-          <div class="sub-title" style='line-height:50px;font-size:
-              1.5em;margin-bottom: 20px'>
-            Organizers
-          </div>
-        </div>
-        <div class="general-partners">
-          <div>
-            <app-partner-image
-              src='https://user-images.githubusercontent.com/32234926/64077425-38477280-ccee-11e9-9798-b06f872d6f61.png'>
-            </app-partner-image>
-          </div>
-          <div>
-            <app-partner-image
-              src='https://user-images.githubusercontent.com/32234926/64077431-41d0da80-ccee-11e9-995c-d7ea4302049a.png'>
-            </app-partner-image>
-          </div>
-          <div>
-            <app-partner-image
-              src='https://user-images.githubusercontent.com/32234926/64077457-4c8b6f80-ccee-11e9-8756-218c03fd92fe.png'>
-            </app-partner-image>
-          </div>
-        </div>
-        <div>
-          <div *ngFor='let partners of sponsors' class='row around-lg around-xs around-md'>
-            <div class="col-xs-12 col-md-12">
-              <div class="sub-title" style='line-height:50px;font-size:
+        <div *ngFor='let partners of sponsors' class='row around-lg around-xs around-md'>
+          <div class="col-xs-12 col-md-12">
+            <div class="sub-title" style='line-height:50px;font-size:
               1.5em;margin-bottom: 20px; text-transform: capitalize'>
-                {{partners.key.replace('_', ' ')}}
-              </div>
+              {{partners.key.replace('_', ' ')}}
             </div>
+          </div>
 
-            <div *ngFor='let partner of partners.data' class="col-xs-12 col-md-6 col-lg-4">
-              <app-partner-image [src]='partner.image' [url]='partner.url' [name]='partner.name'>
-              </app-partner-image>
-            </div>
+          <div *ngFor='let partner of partners.data' class="col-xs-12 col-md-6 col-lg-4">
+            <app-partner-image [src]='partner.image' [url]='partner.url' [name]='partner.name'>
+            </app-partner-image>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>

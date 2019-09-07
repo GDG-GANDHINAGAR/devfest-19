@@ -8,12 +8,14 @@ import { SpeakersPageComponent } from './components/speakers-page/speakers-page.
 import { AboutPageComponent } from './components/about-page/about-page.component';
 import { HomePageHeaderComponent } from './elements/home-page-header/home-page-header.component';
 
+
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomePageComponent },
   { path: 'team', component: TeamPageComponent },
   { path: 'speakers', component: SpeakersPageComponent },
   { path: 'about', component: AboutPageComponent },
+  { path: 'sign-in', component: UserProfileComponent },
 ];
 
 @NgModule({

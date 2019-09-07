@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { MatGridListModule } from '@angular/material/grid-list';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -69,6 +69,7 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
     FormsModule,
     BrowserAnimationsModule,
     MatListModule,
+    MatGridListModule,
     MatCardModule,
     MatRippleModule,
     MatToolbarModule,

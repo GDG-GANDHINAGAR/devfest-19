@@ -25,9 +25,10 @@ body
   text-align: center
 
 .container
-  margin: 0 auto
+  margin: auto
   max-width: 1280px
   width: 90%
+
 
   @media #{$medium-and-up}
   width: 85%
@@ -49,14 +50,14 @@ body
     flex-direction: column
     overflow-x: hidden
 
-// ::-webkit-scrollbar
-//   width: 10px
-// ::-webkit-scrollbar-track
-//   background: #000
-// ::-webkit-scrollbar-thumb
-//   background: #888
-//   &:hover
-//     background: #555
+::-webkit-scrollbar
+  width: 10px
+::-webkit-scrollbar-track
+  background: #000
+::-webkit-scrollbar-thumb
+  background: #888
+  &:hover
+    background: #555
 
 .mat-raised-button
   font-family: 'Open Sans', 'Arial', sans-serif

@@ -12,6 +12,7 @@ import { auth } from 'firebase';
   styleUrls: ['./home-page.component.sass']
 })
 export class HomePageComponent implements OnInit {
+  $email = 'gdggandhinagar@gmail.com'
   homePageData: HomePageData = <HomePageData>{};
   previousSpeakers: PreviousSpeakers = <PreviousSpeakers>{};
   speakers: Speakers = <Speakers>{};
@@ -44,4 +45,3 @@ export class HomePageComponent implements OnInit {
   }
 
 }
-

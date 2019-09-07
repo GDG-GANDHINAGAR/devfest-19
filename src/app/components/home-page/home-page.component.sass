@@ -16,13 +16,34 @@
   .content
     display: flex
     height: 100%
+    flex-direction: column
+    justify-content: center
+    align-content: center
+    align-items: center
+    position: relative
+    z-index: 500
+    .date
+      font-family: "Product Sans"
+      font-size: 3em
+      margin-bottom: 50px
+      text-align: center
+      @media screen and (max-width: 930px)
+        font-size: 2em
+        margin-bottom: 20px
+    .subscribe
+      button
+        margin: 0 10px
+    .organizers
+      display: flex
+      justify-content: center
+      flex-direction: row
 
   .gdg-image
-    height: 12rem
-    margin: auto
-    font-family: "Product Sans"
+    max-width: 300px
     @media screen and (max-width: 930px)
-        height: 9rem
+      max-width: 200px
+    object-fit: contain
+    margin-bottom: 50px
 
 #about
   .wrapper
@@ -142,60 +163,6 @@
   margin: 10px 20px
   i
     line-height: 40px
-
-.Path-46
-//   width: 62.3px
-//   transform: translate(1050.7px, 120px)
-  display: none
-//   @media screen and (max-width: 930px)
-
-.Path-47
-//   width: 92.3px
-//   transform: translate(-280.7px, 650px)
-  display: none
-//   @media screen and (max-width: 930px)
-
-.Path-48
-//   width: 92.3px
-//   transform: translate(-220.7px, 550px)
-  display: none
-//   @media screen and (max-width: 930px)
-
-.Path-49
-//   width: 62.3px
-//   transform: translate(1050.7px, 100px)
-  display: none
-//   @media screen and (max-width: 930px)
-
-.e-27
-//   width: 32.3px
-//   transform: translate(-180px, 370px)
-  display: none
-//   @media screen and (max-width: 930px)
-
-.Path-50
-//   width: 52.3px
-//   transform: translate(1100.7px, 170px)
-  display: none
-//   @media screen and (max-width: 930px)
-
-.e-26
-//   width: 32.3px
-//   transform: translate(980px, 250px)
-  display: none
-//   @media screen and (max-width: 930px)
-
-.Path-51
-//   width: 72.3px
-//   transform: translate(-60.7px, 180px)
-  display: none
-//   @media screen and (max-width: 930px)
-
-.Path-23
-//   width: 42.3px
-//   transform: translate(630.7px, 580px)
-  display: none
-//   @media screen and (max-width: 930px)
 
 p
   @media screen and (max-width: 610px)

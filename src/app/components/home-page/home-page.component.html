@@ -1,6 +1,29 @@
 <div id="header">
   <div class="content">
     <img class="gdg-image" src="assets/images/Group-64.png" alt="">
+    <div class="date"> 13 October, 2019</div>
+    <div class="subscribe">
+      <button mat-raised-button isRoundButton='true' (click)='usersub()' color='#2BB673'>Subscribe</button>
+      <a mat-raised-button isRoundButton='true' target="_blank" href='https://docs.google.com/forms/d/e/1FAIpQLSeOWGThPktBFHATmC2TCe4UaXn4g1ru0Pmi2kgU71ehYgCkCA/viewform?usp=sf_link'
+      routerLinkActive="router-link-active" color='#2BB673'>Call for Papers</a>
+    </div>
+    <div class="organizers">
+      <div>
+        <app-partner-image
+          src='https://user-images.githubusercontent.com/32234926/64077425-38477280-ccee-11e9-9798-b06f872d6f61.png'>
+        </app-partner-image>
+      </div>
+      <div>
+        <app-partner-image
+          src='https://user-images.githubusercontent.com/32234926/64077431-41d0da80-ccee-11e9-995c-d7ea4302049a.png'>
+        </app-partner-image>
+      </div>
+      <div>
+        <app-partner-image
+          src='https://user-images.githubusercontent.com/32234926/64077457-4c8b6f80-ccee-11e9-8756-218c03fd92fe.png'>
+        </app-partner-image>
+      </div>
+    </div>
   </div>
   <div class="bg">
     <app-home-page-header></app-home-page-header>

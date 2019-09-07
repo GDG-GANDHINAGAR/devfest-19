@@ -24,7 +24,7 @@ export class AuthService {
       switchMap(user => {
         // Logged in
         if (user) {
-          console.log(user)
+          console.log(user);
 
           return this.afs.doc<User>(`users/${user.uid}`).valueChanges();
         } else {
@@ -49,9 +49,9 @@ export class AuthService {
       email: user.email,
       displayName: user.displayName,
       photoURL: user.photoURL
-    }
+    };
 
-    return userRef.set(data, { merge: true })
+    return userRef.set(data, { merge: true });
 
   }
 

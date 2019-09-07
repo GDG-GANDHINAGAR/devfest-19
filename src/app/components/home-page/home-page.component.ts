@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { config } from 'util/keyConfig';
-import { Observable } from 'rxjs';
 import { HomePageData, PreviousSpeakers, Speakers } from 'src/app/models/interfaces';
 import { AuthService } from 'src/app/services/auth.service';
-import { auth } from 'firebase';
 
 @Component({
   selector: 'app-home-page',
@@ -12,12 +9,31 @@ import { auth } from 'firebase';
   styleUrls: ['./home-page.component.sass']
 })
 export class HomePageComponent implements OnInit {
-  $email = 'gdggandhinagar@gmail.com'
   homePageData: HomePageData = <HomePageData>{};
   previousSpeakers: PreviousSpeakers = <PreviousSpeakers>{};
   speakers: Speakers = <Speakers>{};
   sponsors = [];
+  hasData: boolean;
+  isLoggedin: boolean;
+  email: string;
+  displayName: string;
+  uid: string;
+  isSubscribed: unknown;
   constructor(private db: AngularFirestore, private auth: AuthService) {
+    this.auth.user.subscribe(userData => {
+      this.hasData = true;
+      if (userData) {
+        this.isLoggedin = true;
+        console.log(userData);
+        this.uid = userData.uid;
+        this.auth.isSubscribed(userData.uid).subscribe(isSubscribed => {
+          console.log(`sub: ${isSubscribed}`);
+          this.isSubscribed = isSubscribed;
+        });
+      } else {
+        this.isLoggedin = false;
+      }
+    });
     db.doc<HomePageData>('homepage/data').valueChanges().subscribe(data => {
       this.homePageData = data;
       this.sponsors = [];
@@ -38,8 +54,16 @@ export class HomePageComponent implements OnInit {
     });
 
   }
-   async usersub() {
-    await this.auth.googleSignin();
+  sub() {
+    // this.auth.subscribe();
+    this.auth.user.subscribe(userData => {
+      if (userData) {
+        this.auth.subscribe(userData.uid, true).subscribe(data => { });
+      }
+    });
+  }
+  usersub() {
+    this.auth.googleSignin().subscribe(userData => { });
   }
   ngOnInit() {
   }

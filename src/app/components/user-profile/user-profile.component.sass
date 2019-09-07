@@ -1,24 +1,47 @@
+.container
+  position: relative
+  min-height: 400px
+  .wrapper
+    display: flex
+    flex-direction: row
+    align-items: center
+.spinner
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%,-50%)
 img
-    height: 18em
-    width: 18em
-    transform: translate(-3em,-1em)
-    
+  height: 18em
+  width: 18em
+  transform: translate(-3em,-1em)
+
 mat-card
-    margin-top: 1em
-    padding: 0.5em
-    width: 18em
-    height: max-content
-    background: #6B50D3
+  margin: 1em auto
+  width: 18em
+  height: max-content
+  background: #6B50D3
+  border-radius: 20px
+  padding: 20px
+  img
+    background: #000
+    border-radius: 20px
 
 .container
-    display: flex
-    align-items: center
-    justify-content: center
-    @media screen and (max-width : 1000px)
-        display: block
+  display: flex
+  align-items: center
+  justify-content: center
+  @media screen and (max-width : 1000px)
+      display: block
 
-mat-list
-    margin-left: 5em
-    @media screen and (max-width : 1000px)
-        margin-left: 0em
-        display: flex
+ul
+  list-style: none
+  margin: 0
+  padding: 30px
+  display: flex
+  flex-direction: column
+  @media screen and (max-width : 1000px)
+    padding: 0px
+    justify-content: center
+    align-items: center
+  li
+    padding: 20px

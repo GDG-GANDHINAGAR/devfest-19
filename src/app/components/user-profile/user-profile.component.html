@@ -1,60 +1,33 @@
-<!-- <div *ngIf="(auth.user$ | async)?| async; then authenticated else guest"> -->
-<!-- template will replace this div -->
-<!-- </div> -->
+<div class="container">
+  <div class="wrapper" *ngIf='hasData else loading;'>
+    <div *ngIf="isLoggedin">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>
+            <h3>{{displayName | uppercase}}</h3>
+          </mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="{{photoURL}}" alt="{{displayName | uppercase}}">
+      </mat-card>
 
-<!-- User NOT logged in -->
-<!-- <ng-template #guest>
-    <h3>Hello, GUEST</h3>
-    <p>Login to get started...</p>
-
-    <button (click)="auth.googleLogin()">
-        <i class="fa fa-google"></i> Connect Google
-    </button>
-
-</ng-template> -->
-
-<!-- User logged in -->
-<!-- <ng-template #authenticated>
-    <div *ngIf="(auth.user$ | async)?| async as user">
-        <h3>Hey, {{user.displayName}}</h3>
-        <img [src]="user.photoURL">
-        <p>UID: {{user.uid}}</p>
-        <button (click)="auth.signOut()">Logout</button>
     </div>
-</ng-template> -->
 
-<div class="container" fxLayout="row" fxLayout.sm="column" fxLayout.xs="column"
-  fxLayoutAlign.gt-md="space-around center" fxLayoutGap="10px" fxLayoutGap.xs="0">
-
-  <div fxFlex="40">
-    <mat-card>
-      <mat-card-header>
-        <mat-card-title>
-          <h3>{{(auth.user$ | async)?.displayName | uppercase}}</h3>
-        </mat-card-title>
-      </mat-card-header>
-      <img mat-card-image src="{{(auth.user$ | async)?.photoURL}}"
-        alt="{{(auth.user$ | async)?.displayName | uppercase}}">
-
-    </mat-card>
-
-  </div>
-
-  <div fxFlex="50">
-    <mat-list>
-      <mat-list-item>
-        <mat-card-actions>
-          <br><button mat-raised-button isRoundButton='true' (click)="userSub()">Subscribe</button>
-
-        </mat-card-actions>
-      </mat-list-item>
-      <mat-list-item>
-        <mat-card-actions>
-          <br>
-          <button mat-raised-button isRoundButton='true' (click)="auth.signOut()" style="background: red"> Logout
+    <div>
+      <ul>
+        <li>
+          <button mat-raised-button isRoundButton='true' *ngIf="isLoggedin"
+            (click)="subscribe()">{{isSubscribed?  'Unsubscribe' :'Subscribe'}}</button>
+        </li>
+        <li>
+          <button mat-raised-button isRoundButton='true' (click)="isLoggedin ? signOut() : signIn()"
+            style="background: red">{{isLoggedin ?  'Logout' : 'Login'}}
           </button>
-        </mat-card-actions>
-      </mat-list-item>
-    </mat-list>
+
+        </li>
+      </ul>
+    </div>
   </div>
+  <ng-template #loading>
+    <mat-progress-spinner color='white' class='spinner' mode="indeterminate"></mat-progress-spinner>
+  </ng-template>
 </div>

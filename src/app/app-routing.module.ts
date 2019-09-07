@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: 'team', component: TeamPageComponent },
   { path: 'speakers', component: SpeakersPageComponent },
   { path: 'about', component: AboutPageComponent },
-  { path: 'sign-in', component: UserProfileComponent },
+  { path: 'profile', component: UserProfileComponent },
 ];
 
 @NgModule({

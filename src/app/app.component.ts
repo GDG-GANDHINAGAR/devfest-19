@@ -15,18 +15,37 @@ export class AppComponent implements OnInit {
   events: string[] = [];
   opened = false;
   isScrolled;
+  email: String;
+  displayName: String;
+  photoURL: String;
+  hasData = false;
+  isLoggedin = false;
+  uid = '';
   isMobile: boolean;
+  isSubscribed: unknown;
   @HostListener('scroll', ['$event'])
   onScroll(e) {
-    // console.log(e.target);
     if (e.target.scrollTop >= 200) {
       this.isScrolled = true;
     } else {
       this.isScrolled = false;
     }
-    // console.log(e.target['scrollingElement'].scrollTop);
   }
   constructor(private breakpointObserver: BreakpointObserver, public auth: AuthService) {
+
+    auth.user.subscribe(userData => {
+      this.hasData = true;
+      if (userData) {
+        this.isLoggedin = true;
+        this.displayName = userData.displayName;
+        this.photoURL = userData.photoURL;
+        auth.isSubscribed(userData.uid).subscribe(isSubscribed => {
+          this.isSubscribed = isSubscribed;
+        });
+      } else {
+        this.isLoggedin = false;
+      }
+    });
     const layoutChanges = breakpointObserver.observe([
       '(orientation: portrait)',
       '(orientation: landscape)',
@@ -47,5 +66,19 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.isScrolled = window.pageYOffset >= 200;
+  }
+  subscribe() {
+    this.auth.subscribe(this.uid, !this.isSubscribed);
+
+  }
+  signIn() {
+    this.auth.googleSignin().subscribe(data => {
+
+    });
+  }
+  signOut() {
+    this.auth.signOut().subscribe(data => {
+
+    });
   }
 }

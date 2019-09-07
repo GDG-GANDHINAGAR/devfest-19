@@ -6,13 +6,13 @@ import { auth } from 'firebase/app';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 
-import { Observable, of } from 'rxjs';
+import { Observable, of, Subject } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
 
-  user$: Observable<User>;
+  user: Observable<User>;
 
   constructor(
     private afAuth: AngularFireAuth,
@@ -20,7 +20,7 @@ export class AuthService {
     private router: Router
   ) {
     // Get the auth state, then fetch the Firestore user document or return null
-    this.user$ = this.afAuth.authState.pipe(
+    this.user = this.afAuth.authState.pipe(
       switchMap(user => {
         // Logged in
         if (user) {
@@ -32,31 +32,52 @@ export class AuthService {
           return of(null);
         }
       })
-    )
+    );
   }
-  async googleSignin() {
+  googleSignin() {
+    const sub = new Subject();
     const provider = new auth.GoogleAuthProvider();
-    const credential = await this.afAuth.auth.signInWithPopup(provider);
-    return this.updateUserData(credential.user);
+    this.afAuth.auth.signInWithPopup(provider).then(data => {
+      sub.next(this.updateUserData(data.user));
+    });
+    return sub.asObservable();
+  }
+  subscribe(uid, val) {
+    const sub = new Subject();
+    const userRef: AngularFirestoreDocument = this.afs.doc(`users/${uid}`);
+    const data = {
+      isSubscribed: val,
+    };
+    sub.next(userRef.update(data));
+    return sub.asObservable();
+  }
+  isSubscribed(uid) {
+    const sub = new Subject();
+    this.afs.doc(`users/${uid}`).valueChanges().subscribe(data => {
+      if (data['isSubscribed']) {
+        sub.next(true);
+      } else {
+        sub.next(false);
+      }
+    });
+    return sub.asObservable();
   }
 
   private updateUserData(user) {
     // Sets user data to firestore on login
     const userRef: AngularFirestoreDocument<User> = this.afs.doc(`users/${user.uid}`);
-
     const data = {
       uid: user.uid,
       email: user.email,
       displayName: user.displayName,
-      photoURL: user.photoURL
+      photoURL: user.photoURL,
+      isSubscribed: true
     };
-
     return userRef.set(data, { merge: true });
 
   }
 
-  async signOut() {
-    await this.afAuth.auth.signOut();
-    this.router.navigate(['/']);
+  signOut() {
+    return of(this.afAuth.auth.signOut());
   }
 }

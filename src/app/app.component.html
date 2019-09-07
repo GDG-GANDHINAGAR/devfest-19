@@ -1,78 +1,91 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div class="toolbar-wrapper">
-  <mat-toolbar class="mat-toolbar" [ngClass]="{'isScrolled': isScrolled}">
-    <div class="content-wrapper" [ngClass]="{'container': !isMobile}">
-      <mat-icon aria-hidden="false" aria-label="home icon" class="mat-icon" *ngIf="isMobile" (click)="opened = !opened">
-        <img style="height: 1rem" src="assets/images/Group-62.svg" alt="">
-      </mat-icon>
-      <!-- <span class="spacer" *ngIf="isMobile"></span> -->
-      <div [routerLink]='["home"]' class="logo-wrppper" [ngClass]="{'center': isMobile}">
+<div class="wrapper" *ngIf="hasData;else loading">
+
+  <div class="toolbar-wrapper">
+    <mat-toolbar class="mat-toolbar" [ngClass]="{'isScrolled': isScrolled}">
+      <div class="content-wrapper" [ngClass]="{'container': !isMobile}">
+        <mat-icon aria-hidden="false" aria-label="home icon" class="mat-icon" *ngIf="isMobile"
+          (click)="opened = !opened">
+          <img style="height: 1rem" src="assets/images/Group-62.svg" alt="">
+        </mat-icon>
+        <!-- <span class="spacer" *ngIf="isMobile"></span> -->
+        <div [routerLink]='["home"]' class="logo-wrppper" [ngClass]="{'center': isMobile}">
+          <img src="assets/images/logo_white.svg" alt="">
+        </div>
+        <span class="spacer" *ngIf="!isMobile"></span>
+        <div class="links-wrapper" *ngIf="!isMobile">
+          <ul>
+            <li><a [ngClass]="{'isScrolled': isScrolled}" [routerLink]='["home"]' routerLinkActive="active">Home</a>
+            </li>
+            <li><a [ngClass]="{'isScrolled': isScrolled}" [routerLink]='["speakers"]'
+                routerLinkActive="active">Speakers</a></li>
+            <li><a [ngClass]="{'isScrolled': isScrolled}" [routerLink]='["team"]' routerLinkActive="active">Team</a>
+            </li>
+            <li><a [ngClass]="{'isScrolled': isScrolled}" [routerLink]='["about"]' routerLinkActive="active">About</a>
+            </li>
+            <li *ngIf="isLoggedin; then authenticated else guest">
+              <!-- template will replace this li -->
+            </li>
+            <!-- User NOT logged in -->
+            <ng-template #guest>
+              <button mat-raised-button isRoundButton='true' [ngClass]="{'isScrolled': isScrolled}"
+                (click)="auth.googleSignin()">Sign In</button>
+            </ng-template>
+            <!-- User logged in -->
+            <ng-template #authenticated>
+              <button mat-raised-button class='userBtn' [routerLink]='["profile"]' class="btn">
+                <img src="{{photoURL}}" alt="{{displayName | uppercase}}" class="signed-in">
+                <span class="text" style='padding-left: 20px'>
+                  {{displayName | uppercase}}
+                </span>
+              </button>
+            </ng-template>
+          </ul>
+        </div>
+      </div>
+    </mat-toolbar>
+  </div>
+
+
+  <mat-sidenav-container class="example-container">
+    <mat-sidenav #sidenav mode="over" *ngIf="isMobile" class="sidenav" [(opened)]="opened">
+      <div [routerLink]='["home"]' class="image-container">
         <img src="assets/images/logo_white.svg" alt="">
       </div>
-      <span class="spacer" *ngIf="!isMobile"></span>
-      <div class="links-wrapper" *ngIf="!isMobile">
-        <ul>
-          <li><a [ngClass]="{'isScrolled': isScrolled}" [routerLink]='["home"]' routerLinkActive="active">Home</a></li>
-          <li><a [ngClass]="{'isScrolled': isScrolled}" [routerLink]='["speakers"]'
-              routerLinkActive="active">Speakers</a></li>
-          <li><a [ngClass]="{'isScrolled': isScrolled}" [routerLink]='["team"]' routerLinkActive="active">Team</a></li>
-          <li><a [ngClass]="{'isScrolled': isScrolled}" [routerLink]='["about"]' routerLinkActive="active">About</a>
-          </li>
-          <li *ngIf="auth.user$ | async; then authenticated else guest">
-            <!-- template will replace this li -->
-          </li>
-          <!-- User NOT logged in -->
-          <ng-template #guest>
-            <button mat-raised-button isRoundButton='true' [ngClass]="{'isScrolled': isScrolled}"
-              (click)="auth.googleSignin()">Sign In</button>
-          </ng-template>
-          <!-- User logged in -->
-          <ng-template #authenticated>
-            <button mat-raised-button [ngClass]="{'isScrolled': isScrolled}" [routerLink]='["sign-in"]'
-              routerLinkActive="active" class="btn">
-              <img mat-card-image src="{{(auth.user$ | async)?.photoURL}}"
-                alt="{{(auth.user$ | async)?.displayName | uppercase}}" class="signed-in"></button>
-          </ng-template>
-        </ul>
+      <mat-list>
+        <mat-list-item [routerLink]='["home"]' routerLinkActive="active"> <a
+            [ngClass]="{'isScrolled': isScrolled}">Home</a> </mat-list-item>
+        <mat-list-item [routerLink]='["speakers"]' routerLinkActive="active"> <a
+            [ngClass]="{'isScrolled': isScrolled}">Speakers</a>
+        </mat-list-item>
+        <mat-list-item [routerLink]='["team"]' routerLinkActive="active"> <a
+            [ngClass]="{'isScrolled': isScrolled}">Team</a> </mat-list-item>
+        <mat-list-item [routerLink]='["about"]' routerLinkActive="active"> <a
+            [ngClass]="{'isScrolled': isScrolled}">About</a> </mat-list-item>
+        <mat-list-item *ngIf="auth.user | async; then authenticated else guest">
+          <!-- template will replace this li -->
+        </mat-list-item>
+      </mat-list>
+      <!-- User NOT logged in -->
+      <ng-template #guest>
+        <a [ngClass]="{'isScrolled': isScrolled}" (click)="auth.googleSignin()">Sign In</a>
+      </ng-template>
+      <!-- User logged in -->
+      <ng-template #authenticated>
+        <button mat-raised-button isRoundButton='true' [ngClass]="{'isScrolled': isScrolled}" [routerLink]='["profile"]'
+          routerLinkActive="active" class="btn">
+          <img mat-card-image src="{{photoURL}}" alt="{{displayName | uppercase}}" class="signed-in"></button>
+      </ng-template>
+    </mat-sidenav>
+    <mat-sidenav-content (scroll)="onScroll($event)">
+      <div class="outlet-wrapper">
+        <router-outlet></router-outlet>
       </div>
-    </div>
-  </mat-toolbar>
+      <app-footer></app-footer>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
 </div>
 
-
-<mat-sidenav-container class="example-container">
-  <mat-sidenav #sidenav mode="over" *ngIf="isMobile" class="sidenav" [(opened)]="opened">
-    <div [routerLink]='["home"]' class="image-container">
-      <img src="assets/images/logo_white.svg" alt="">
-    </div>
-    <mat-list>
-      <mat-list-item [routerLink]='["home"]' routerLinkActive="active"> <a
-          [ngClass]="{'isScrolled': isScrolled}">Home</a> </mat-list-item>
-      <mat-list-item [routerLink]='["speakers"]' routerLinkActive="active"> <a
-          [ngClass]="{'isScrolled': isScrolled}">Speakers</a>
-      </mat-list-item>
-      <mat-list-item [routerLink]='["team"]' routerLinkActive="active"> <a
-          [ngClass]="{'isScrolled': isScrolled}">Team</a> </mat-list-item>
-      <mat-list-item [routerLink]='["about"]' routerLinkActive="active"> <a
-          [ngClass]="{'isScrolled': isScrolled}">About</a> </mat-list-item>
-      <mat-list-item *ngIf="auth.user$ | async; then authenticated else guest">
-        <!-- template will replace this li -->
-      </mat-list-item>
-    </mat-list>
-    <!-- User NOT logged in -->
-    <ng-template #guest>
-      <a [ngClass]="{'isScrolled': isScrolled}" (click)="auth.googleSignin()">Sign In</a>
-    </ng-template>
-    <!-- User logged in -->
-    <ng-template #authenticated>
-      <button mat-raised-button isRoundButton='true' [ngClass]="{'isScrolled': isScrolled}" [routerLink]='["sign-in"]'
-        routerLinkActive="active" class="btn">
-        <img mat-card-image src="{{(auth.user$ | async)?.photoURL}}"
-          alt="{{(auth.user$ | async)?.displayName | uppercase}}" class="signed-in"></button>
-    </ng-template>
-  </mat-sidenav>
-  <mat-sidenav-content (scroll)="onScroll($event)">
-    <router-outlet></router-outlet>
-    <app-footer></app-footer>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+<ng-template #loading>
+  <mat-progress-spinner color='white' class='spinner' mode="indeterminate"></mat-progress-spinner>
+</ng-template>

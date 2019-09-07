@@ -7,7 +7,7 @@
       </mat-icon>
       <!-- <span class="spacer" *ngIf="isMobile"></span> -->
       <div [routerLink]='["home"]' class="logo-wrppper" [ngClass]="{'center': isMobile}">
-        <img src="assets/images/logo_white.svg" alt="">
+        <img src="assets/images/logo_white.png" alt="">
       </div>
       <span class="spacer" *ngIf="!isMobile"></span>
       <div class="links-wrapper" *ngIf="!isMobile">
@@ -43,7 +43,7 @@
 <mat-sidenav-container class="example-container">
   <mat-sidenav #sidenav mode="over" *ngIf="isMobile" class="sidenav" [(opened)]="opened">
     <div [routerLink]='["home"]' class="image-container">
-      <img src="assets/images/logo_white.svg" alt="">
+      <img src="assets/images/logo_white.png" alt="">
     </div>
     <mat-list>
       <mat-list-item [routerLink]='["home"]' routerLinkActive="active"> <a

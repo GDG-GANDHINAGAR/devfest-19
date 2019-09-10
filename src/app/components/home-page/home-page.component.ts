@@ -26,6 +26,7 @@ export class HomePageComponent implements OnInit {
         this.isLoggedin = true;
         console.log(userData);
         this.uid = userData.uid;
+        this.email = userData.email;
         this.auth.isSubscribed(userData.uid).subscribe(isSubscribed => {
           console.log(`sub: ${isSubscribed}`);
           this.isSubscribed = isSubscribed;

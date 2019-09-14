@@ -1,13 +1,15 @@
 <footer>
   <div class="container">
     <div class="links row"  >
-      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" *ngFor='let row of footerData'>
-        <div class="col-title" style='text-transform: capitalize'>
-          {{row.key.replace('_',' ')}}
+      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" *ngFor='let row of footerData'>
+        <div style="margin: auto; width: fit-content;">
+          <div class="col-title" style='text-transform: capitalize'>
+            {{row.key.replace('_',' ')}}
+          </div>
+          <ul class="col-list">
+            <li *ngFor='let link of row.data'><a [href]="link.url">{{link.text}}</a></li>
+          </ul>
         </div>
-        <ul class="col-list">
-          <li *ngFor='let link of row.data'><a [href]="link.url">{{link.text}}</a></li>
-        </ul>
       </div>
    
 

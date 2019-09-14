@@ -131,12 +131,12 @@
         <app-gallery-image src='assets/images/g{{item}}.JPG'></app-gallery-image>
       </div>
       <div class="col-xs-12" style='margin-top: 50px'>
-        <a mat-raised-button isRoundButton='true' target="_blank" href='https://photos.app.goo.gl/CojnpJaXwuLuqeV66'
+        <a mat-raised-button isRoundButton='true' class="button" target="_blank" href='https://photos.app.goo.gl/CojnpJaXwuLuqeV66'
           color='#2BB673'>View More</a>
       </div>
     </div>
   </div>
-  <div id="tickets" class="section-block" style="margin-bottom: 0">
+  <div id="tickets" class="section-block">
     <div class='row center-lg center-xs center-md middle-lg middle-md middle-sm
       middle-xs'>
       <div class="col-xs-12">
@@ -149,7 +149,7 @@
       </div>
     </div>
   </div>
-  <div id="venue" class="section-block" style="margin-bottom: 0">
+  <div id="venue" class="section-block">
     <div class='row center-lg center-xs center-md middle-lg middle-md middle-sm
       middle-xs'>
       <div class="col-xs-12">
@@ -200,7 +200,7 @@
                 Gandhinagar
               </div>
               <div class="btn">
-                <a mat-raised-button isRoundButton='true' target="_blank" [routerLink]="['/team']"
+                <a mat-raised-button isRoundButton='true' class="button" target="_blank" [routerLink]="['/team']"
                   routerLinkActive="router-link-active" color='#2BB673'>View
                   More</a>
               </div>
@@ -217,7 +217,7 @@
                 share experience about Google technologies with a passion
               </div>
               <div class="btn">
-                <a mat-raised-button isRoundButton='true' target="_blank" [routerLink]="['/about']"
+                <a mat-raised-button isRoundButton='true' class="button" target="_blank" [routerLink]="['/about']"
                   routerLinkActive="router-link-active" color='#2BB673'>View
                   More</a>
               </div>
@@ -243,7 +243,7 @@
           Subscribe for Updates
         </div>
         <div class="col-xs-12" style='line-height:70px'>
-          <button mat-raised-button isRoundButton='true' (click)='usersub()' color='#2BB673'>Subscribe</button>
+          <button mat-raised-button isRoundButton='true' class="button" (click)='usersub()' color='#2BB673'>Subscribe</button>
         </div>
         <div style="text-align:center">
           <a mat-icon-button *ngFor='let icon of homePageData?.meta?.social'
@@ -271,7 +271,7 @@
       </div>
       <div>
 
-        <div *ngFor='let partners of sponsors' class='row around-lg around-xs around-md'>
+        <div *ngFor='let partners of sponsors' class='partner-section row around-lg around-xs around-md'>
           <div class="col-xs-12 col-md-12">
             <div class="sub-title" style='line-height:50px;font-size:
               1.5em;margin-bottom: 20px; text-transform: capitalize'>

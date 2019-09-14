@@ -50,8 +50,7 @@
             [ngClass]="{'isScrolled': isScrolled}">Team</a> </mat-list-item>
         <mat-list-item (click)="sidenav.close()" [routerLink]='["about"]' routerLinkActive="active"> <a
             [ngClass]="{'isScrolled': isScrolled}">About</a> </mat-list-item>
-      </mat-list>
-    </mat-sidenav>
+      </mat-list>    </mat-sidenav>
     <mat-sidenav-content (scroll)="onScroll($event)">
       <div class="outlet-wrapper">
         <router-outlet></router-outlet>

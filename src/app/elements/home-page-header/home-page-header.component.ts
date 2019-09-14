@@ -59,9 +59,9 @@ export class HomePageHeaderComponent implements OnInit, AfterViewInit {
         anime.remove(e.nativeElement);
         // console.log(e.nativeElement);
         e.nativeElement.setAttribute('stroke-dasharray', e.nativeElement.getTotalLength());
-        let exraduration = 3000 + (Math.random() * 1500);
+        const exraduration = 3000 + (Math.random() * 1500);
         // console.log(exraduration);
-        let tl = anime({
+        const tl = anime({
           easing: 'cubicBezier(0.650, 0.050, 0.490, 0.880)',
           duration: exraduration,
           round: 10,
@@ -82,9 +82,9 @@ export class HomePageHeaderComponent implements OnInit, AfterViewInit {
         anime.remove(e.nativeElement);
         // console.log(e.nativeElement);
         e.nativeElement.setAttribute('stroke-dasharray', e.nativeElement.getTotalLength());
-        let exraduration = 3000 + (Math.random() * 1500);
+        const exraduration = 3000 + (Math.random() * 1500);
         // console.log(exraduration);
-        let tl = anime({
+        const tl = anime({
           easing: 'cubicBezier(0.650, 0.050, 0.490, 0.880)',
           duration: exraduration,
           round: 10,

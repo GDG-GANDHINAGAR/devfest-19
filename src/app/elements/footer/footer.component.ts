@@ -12,11 +12,11 @@ export class FooterComponent implements OnInit {
 
   subscribeForm: FormGroup;
   homePageData: HomePageData;
-  footerData= [];
+  footerData = [];
   constructor(private db: AngularFirestore) {
     db.doc<HomePageData>('homepage/data').valueChanges().subscribe(data => {
       this.homePageData = data;
-      this.footerData= [];
+      this.footerData = [];
       Object.keys(this.homePageData.footer).forEach(key => {
         const sponsorData = {
           key: key,

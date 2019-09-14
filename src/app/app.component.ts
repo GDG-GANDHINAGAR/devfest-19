@@ -2,7 +2,7 @@ import { Component, HostListener, OnInit } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
-import { AuthService } from './services/auth.service'
+import { AuthService } from './services/auth.service';
 
 export interface Item { name: string; }
 

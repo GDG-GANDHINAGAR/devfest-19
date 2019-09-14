@@ -6,7 +6,7 @@ import { config } from '../../util/keyConfig';
 
 export const environment = {
   production: true,
-  firebaseConfig : config
+  firebaseConfig: config
 };
 
 /*

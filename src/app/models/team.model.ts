@@ -1,5 +1,8 @@
 export interface TeamConfig {
   name: String;
+  job: String;
+  team: String;
+  website: String;
   contribution: String;
   image: String;
   github_url?: String;

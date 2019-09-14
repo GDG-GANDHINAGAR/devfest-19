@@ -40,7 +40,8 @@
       </div> -->
       <mat-list>
         <mat-list-item *ngIf="isLoggedin; then authenticated_mob else guest_mob">
-              <!-- template will replace this item --></mat-list-item>
+              <!-- template will replace this item -->
+        </mat-list-item>
         <mat-list-item (click)="sidenav.close()" [routerLink]='["home"]' routerLinkActive="active"> <a
             [ngClass]="{'isScrolled': isScrolled}">Home</a> </mat-list-item>
         <mat-list-item (click)="sidenav.close()" [routerLink]='["speakers"]' routerLinkActive="active"> <a
@@ -87,9 +88,10 @@
 <ng-template #authenticated_mob>
     <div [routerLink]='["profile"]' routerLinkActive="active">
         <button mat-raised-button isRoundButton='true' class="btn">
-        <img mat-card-image src="{{photoURL}}" class="signed-in">
-        </button>{{displayName | uppercase}}
-        </div>
+          <img mat-card-image src="{{photoURL}}" class="signed-in">
+        </button>
+        {{displayName | uppercase}}
+    </div>
 </ng-template>
 
 <ng-template #loading>

@@ -23,23 +23,9 @@
             </li>
             <li><a [ngClass]="{'isScrolled': isScrolled}" [routerLink]='["about"]' routerLinkActive="active">About</a>
             </li>
-            <li *ngIf="isLoggedin; then authenticated else guest">
+            <li *ngIf="isLoggedin; then authenticated_web else guest_web">
               <!-- template will replace this li -->
             </li>
-            <!-- User NOT logged in -->
-            <ng-template #guest>
-              <button mat-raised-button isRoundButton='true' [ngClass]="{'isScrolled': isScrolled}"
-                (click)="auth.googleSignin()">Sign In</button>
-            </ng-template>
-            <!-- User logged in -->
-            <ng-template #authenticated>
-              <button mat-raised-button class='userBtn' [routerLink]='["profile"]' class="btn">
-                <img src="{{photoURL}}" alt="{{displayName | uppercase}}" class="signed-in">
-                <span class="text" style='padding-left: 20px'>
-                  {{displayName | uppercase}}
-                </span>
-              </button>
-            </ng-template>
           </ul>
         </div>
       </div>
@@ -49,33 +35,22 @@
 
   <mat-sidenav-container class="example-container">
     <mat-sidenav #sidenav mode="over" *ngIf="isMobile" class="sidenav" [(opened)]="opened">
-      <div [routerLink]='["home"]' class="image-container">
+      <!-- <div [routerLink]='["home"]' class="image-container">
         <img src="assets/images/logo_white.svg" alt="">
-      </div>
+      </div> -->
       <mat-list>
-        <mat-list-item [routerLink]='["home"]' routerLinkActive="active"> <a
+        <mat-list-item *ngIf="isLoggedin; then authenticated_mob else guest_mob">
+              <!-- template will replace this item --></mat-list-item>
+        <mat-list-item (click)="sidenav.close()" [routerLink]='["home"]' routerLinkActive="active"> <a
             [ngClass]="{'isScrolled': isScrolled}">Home</a> </mat-list-item>
-        <mat-list-item [routerLink]='["speakers"]' routerLinkActive="active"> <a
+        <mat-list-item (click)="sidenav.close()" [routerLink]='["speakers"]' routerLinkActive="active"> <a
             [ngClass]="{'isScrolled': isScrolled}">Speakers</a>
         </mat-list-item>
-        <mat-list-item [routerLink]='["team"]' routerLinkActive="active"> <a
+        <mat-list-item (click)="sidenav.close()" [routerLink]='["team"]' routerLinkActive="active"> <a
             [ngClass]="{'isScrolled': isScrolled}">Team</a> </mat-list-item>
-        <mat-list-item [routerLink]='["about"]' routerLinkActive="active"> <a
+        <mat-list-item (click)="sidenav.close()" [routerLink]='["about"]' routerLinkActive="active"> <a
             [ngClass]="{'isScrolled': isScrolled}">About</a> </mat-list-item>
-        <mat-list-item *ngIf="auth.user | async; then authenticated else guest">
-          <!-- template will replace this li -->
-        </mat-list-item>
       </mat-list>
-      <!-- User NOT logged in -->
-      <ng-template #guest>
-        <a [ngClass]="{'isScrolled': isScrolled}" (click)="auth.googleSignin()">Sign In</a>
-      </ng-template>
-      <!-- User logged in -->
-      <ng-template #authenticated>
-        <button mat-raised-button isRoundButton='true' [ngClass]="{'isScrolled': isScrolled}" [routerLink]='["profile"]'
-          routerLinkActive="active" class="btn">
-          <img mat-card-image src="{{photoURL}}" alt="{{displayName | uppercase}}" class="signed-in"></button>
-      </ng-template>
     </mat-sidenav>
     <mat-sidenav-content (scroll)="onScroll($event)">
       <div class="outlet-wrapper">
@@ -85,6 +60,38 @@
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>
+
+<!-- User NOT logged in -->
+<ng-template #guest_web>
+    <button mat-raised-button isRoundButton='true' [ngClass]="{'isScrolled': isScrolled}"
+      (click)="auth.googleSignin()">Sign In</button>
+</ng-template>
+
+<ng-template #guest_mob>
+    <div (click)="auth.googleSignin()">
+        <button mat-raised-button class="btn" style="outline:none !important">
+        <i class="fa fa-user-circle fa-3x"></i>
+        </button>SIGN IN
+      </div>
+</ng-template>
+
+<!-- User logged in -->
+<ng-template #authenticated_web>
+    <button mat-raised-button class='userBtn' [routerLink]='["profile"]' class="btn">
+      <img src="{{photoURL}}" alt="{{displayName | uppercase}}" class="signed-in">
+      <span class="text" style='padding-left: 20px'>
+        {{displayName | uppercase}}
+      </span>
+    </button>
+</ng-template>
+
+<ng-template #authenticated_mob>
+    <div [routerLink]='["profile"]' routerLinkActive="active">
+        <button mat-raised-button isRoundButton='true' class="btn">
+        <img mat-card-image src="{{photoURL}}" class="signed-in">
+        </button>{{displayName | uppercase}}
+        </div>
+</ng-template>
 
 <ng-template #loading>
   <mat-progress-spinner color='white' class='spinner' mode="indeterminate"></mat-progress-spinner>

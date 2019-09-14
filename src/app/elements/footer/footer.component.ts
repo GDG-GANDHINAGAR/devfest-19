@@ -35,7 +35,7 @@ export class FooterComponent implements OnInit {
 
   subscribe() {
     if (this.subscribeForm.valid) {
-      console.log(this.subscribeForm.controls['email']);
+      // console.log(this.subscribeForm.controls['email']);
       // let result = this.email.addEmails({ 'EmailId': this.subscribeForm.controls['email'].value });
       // M.toast({ html: 'Thank you for subscribing!' })
     } else {

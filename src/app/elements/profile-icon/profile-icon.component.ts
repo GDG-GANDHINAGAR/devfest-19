@@ -18,7 +18,7 @@ export class ProfileIconComponent implements OnInit, AfterViewInit {
   ngOnInit() {
   }
   ngAfterViewInit() {
-    // console.log(this.width);
+    // // console.log(this.width);
     this.width = parseInt(this.width, 0);
     this.circleR = parseInt(this.width, 0) / 2;
     this.renderer.setStyle(this.wrapper.nativeElement, 'width', `${this.width + 8}px`);
@@ -40,9 +40,9 @@ export class ProfileIconComponent implements OnInit, AfterViewInit {
     circle.y = ((this.circleR * Math.cos(randomAngle1)) + this.circleR) < this.circleR ? ((this.circleR * Math.cos(randomAngle1)) + this.circleR) - 5 : ((this.circleR * Math.cos(randomAngle1)) + this.circleR);
     square.x = ((this.circleR * Math.sin(randomAngle2)) + this.circleR) < this.circleR ? ((this.circleR * Math.sin(randomAngle2)) + this.circleR) - 5 : ((this.circleR * Math.sin(randomAngle2)) + this.circleR) + 10;
     square.y = ((this.circleR * Math.cos(randomAngle2)) + this.circleR) < this.circleR ? ((this.circleR * Math.cos(randomAngle2)) + this.circleR) - 5 : ((this.circleR * Math.cos(randomAngle2)) + this.circleR) + 10;
-    // console.log(this.circleR);
-    // console.log(circle);
-    // console.log(square);
+    // // console.log(this.circleR);
+    // // console.log(circle);
+    // // console.log(square);
     this.renderer.setStyle(this.square.nativeElement, 'top', `${circle.x}px`);
     this.renderer.setStyle(this.square.nativeElement, 'left', `${circle.y + 10}px`);
     this.renderer.setStyle(this.circle.nativeElement, 'top', `${square.x}px`);

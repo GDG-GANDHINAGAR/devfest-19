@@ -33,7 +33,7 @@ export class HomePageHeaderComponent implements OnInit, AfterViewInit {
   ngAfterViewInit() {
 
     this.layoutChanges.subscribe(result => {
-      console.log(result.breakpoints['(orientation: landscape)'] ? 'landscape' : 'portrait');
+      // console.log(result.breakpoints['(orientation: landscape)'] ? 'landscape' : 'portrait');
       this.isLandScape = result.breakpoints['(orientation: landscape)'];
       if (this.isLandScape) {
         // this.renderer.setStyle(this.svgH.nativeElement, 'opacity', '1');
@@ -57,10 +57,10 @@ export class HomePageHeaderComponent implements OnInit, AfterViewInit {
     if (this.isLandScape) {
       this.path.forEach(e => {
         anime.remove(e.nativeElement);
-        // console.log(e.nativeElement);
+        // // console.log(e.nativeElement);
         e.nativeElement.setAttribute('stroke-dasharray', e.nativeElement.getTotalLength());
         const exraduration = 3000 + (Math.random() * 1500);
-        // console.log(exraduration);
+        // // console.log(exraduration);
         const tl = anime({
           easing: 'cubicBezier(0.650, 0.050, 0.490, 0.880)',
           duration: exraduration,
@@ -80,10 +80,10 @@ export class HomePageHeaderComponent implements OnInit, AfterViewInit {
     } else {
       this.pathH.forEach(e => {
         anime.remove(e.nativeElement);
-        // console.log(e.nativeElement);
+        // // console.log(e.nativeElement);
         e.nativeElement.setAttribute('stroke-dasharray', e.nativeElement.getTotalLength());
         const exraduration = 3000 + (Math.random() * 1500);
-        // console.log(exraduration);
+        // // console.log(exraduration);
         const tl = anime({
           easing: 'cubicBezier(0.650, 0.050, 0.490, 0.880)',
           duration: exraduration,

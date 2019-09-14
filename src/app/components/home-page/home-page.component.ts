@@ -24,11 +24,11 @@ export class HomePageComponent implements OnInit {
       this.hasData = true;
       if (userData) {
         this.isLoggedin = true;
-        console.log(userData);
+        // console.log(userData);
         this.uid = userData.uid;
         this.email = userData.email;
         this.auth.isSubscribed(userData.uid).subscribe(isSubscribed => {
-          console.log(`sub: ${isSubscribed}`);
+          // console.log(`sub: ${isSubscribed}`);
           this.isSubscribed = isSubscribed;
         });
       } else {
@@ -43,7 +43,7 @@ export class HomePageComponent implements OnInit {
           key: key,
           data: this.homePageData.sponsors[key]
         };
-        console.log(sponsorData);
+        // console.log(sponsorData);
         this.sponsors.push(sponsorData);
       });
     });

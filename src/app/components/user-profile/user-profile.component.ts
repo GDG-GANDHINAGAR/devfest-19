@@ -19,13 +19,13 @@ export class UserProfileComponent {
       this.hasData = true;
       if (userData) {
         this.isLoggedin = true;
-        console.log(userData);
+        // console.log(userData);
         this.email = userData.email;
         this.displayName = userData.displayName;
         this.photoURL = userData.photoURL;
         this.uid = userData.uid;
         auth.isSubscribed(userData.uid).subscribe(isSubscribed => {
-          console.log(`sub: ${isSubscribed}`);
+          // console.log(`sub: ${isSubscribed}`);
           this.isSubscribed = isSubscribed;
         });
       } else {

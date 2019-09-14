@@ -16,7 +16,7 @@ export class TeamPageComponent implements OnInit {
     this.teamDocRef = this.afs.doc<TeamModel>('team/data');
     this.teamDocRef.valueChanges().subscribe(data => {
       this.team = data;
-      console.log(this.team);
+      // console.log(this.team);
     });
   }
   ngOnInit() {

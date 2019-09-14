@@ -12,7 +12,9 @@ export class SpeakerDialogueComponent implements OnInit {
 
   constructor(
     public dialogRef: MatDialogRef<SpeakerDialogueComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: SpeakerConfig) {// console.log(data); }
+    @Inject(MAT_DIALOG_DATA) public data: SpeakerConfig) {
+
+  }
 
   onNoClick(): void {
     this.dialogRef.close();

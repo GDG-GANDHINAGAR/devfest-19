@@ -50,3 +50,6 @@ Thumbs.db
 .runtimeconfig.json
 .firebase/
 /util/keyConfig.ts
+
+# package-lock.json
+package-lock.json

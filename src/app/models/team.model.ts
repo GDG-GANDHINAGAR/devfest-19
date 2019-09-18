@@ -2,6 +2,7 @@ export interface TeamConfig {
   name: String;
   job: String;
   team: String;
+  core: boolean;
   website: String;
   contribution: String;
   image: String;

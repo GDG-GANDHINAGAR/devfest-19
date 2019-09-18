@@ -11,11 +11,20 @@ import { Observable } from 'rxjs/Observable';
 export class TeamPageComponent implements OnInit {
   teamDocRef: AngularFirestoreDocument<TeamModel>;
   team: TeamModel;
+  core = [];
 
   constructor(private afs: AngularFirestore) {
     this.teamDocRef = this.afs.doc<TeamModel>('team/data');
     this.teamDocRef.valueChanges().subscribe(data => {
-      this.team = data;
+      this.team = {
+        data: data.data.filter(ele => {
+          if (ele.core) {
+            this.core.push(ele);
+            return false;
+          }
+          return true;
+        })
+      };
       // console.log(this.team);
     });
   }

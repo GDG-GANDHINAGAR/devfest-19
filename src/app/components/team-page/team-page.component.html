@@ -16,6 +16,16 @@
         or just have some random questions, feel free to reach any of us on social media.
         We'd love to help! </p>
 
+      <div class="col-xs-12">
+        <app-homepage-title title='Core Team' color='#419BF9'></app-homepage-title>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" *ngFor="let member of core">
+        <app-team-card isHomePage='false' [config]='member'></app-team-card>
+      </div>
+
+      <div class="col-xs-12">
+        <app-homepage-title title='Team' color='#419BF9'></app-homepage-title>
+      </div>
       <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" *ngFor="let member of team?.data">
         <app-team-card isHomePage='false' [config]='member'></app-team-card>
       </div>

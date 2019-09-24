@@ -55,14 +55,14 @@ export class HomePageComponent implements OnInit {
     });
 
   }
-  sub() {
-    // this.auth.subscribe();
-    this.auth.user.subscribe(userData => {
-      if (userData) {
-        this.auth.subscribe(userData.uid, true).subscribe(data => { });
-      }
-    });
-  }
+  // sub() {
+  //   // this.auth.subscribe();
+  //   this.auth.user.subscribe(userData => {
+  //     if (userData) {
+  //       this.auth.subscribe(userData.uid, true).subscribe(data => { });
+  //     }
+  //   });
+  // }
   usersub() {
     this.auth.googleSignin().subscribe(userData => { });
   }

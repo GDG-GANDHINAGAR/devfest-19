@@ -3,9 +3,11 @@
     <img class="gdg-image" src="assets/images/Group-64.png" alt="">
     <div class="date"> 13 October, 2019</div>
     <div class="subscribe">
-      <button mat-raised-button isRoundButton='true' *ngIf='!isSubscribed' (click)='usersub()' color='#2BB673'>Subscribe</button>
-      <!-- <a mat-raised-button isRoundButton='true' target="_blank" href='https://docs.google.com/forms/d/e/1FAIpQLSeOWGThPktBFHATmC2TCe4UaXn4g1ru0Pmi2kgU71ehYgCkCA/viewform?usp=sf_link'
-      routerLinkActive="router-link-active" color='#2BB673'>Call for Papers</a> -->
+      <button mat-raised-button isRoundButton='true' *ngIf='!isSubscribed' (click)='sub()'
+        color='#2BB673'>Subscribe</button>
+      <a mat-raised-button isRoundButton='true' target="_blank"
+        href='https://docs.google.com/forms/d/e/1FAIpQLSeOWGThPktBFHATmC2TCe4UaXn4g1ru0Pmi2kgU71ehYgCkCA/viewform?usp=sf_link'
+        routerLinkActive="router-link-active" color='#2BB673'>Call for Papers</a>
     </div>
     <div class="organizers">
       <div>
@@ -80,6 +82,8 @@
   </div>
 
   <div id="speakers">
+    <img src="/assets/images/Path 46.png" class='Path-46'>
+    <img src="/assets/images/Path 47.png" class='Path-47'>
     <div class='row center-lg center-xs center-md middle-lg middle-md middle-sm
       middle-xs'>
       <div class="col-xs-12">
@@ -121,6 +125,7 @@
 
 
   <div id="gallery" class="section-block">
+    <img src="/assets/images/Path 48.png" class='Path-48'>
     <div class='row center-lg center-xs center-md middle-lg middle-md middle-sm
       middle-xs'>
       <div class="col-xs-12">
@@ -131,11 +136,13 @@
         <app-gallery-image src='assets/images/g{{item}}.JPG'></app-gallery-image>
       </div>
       <div class="col-xs-12" style='margin-top: 50px'>
-        <a mat-raised-button isRoundButton='true' class="button" target="_blank" href='https://photos.app.goo.gl/CojnpJaXwuLuqeV66'
-          color='#2BB673'>View More</a>
+        <a mat-raised-button isRoundButton='true' class="button" target="_blank"
+          href='https://photos.app.goo.gl/CojnpJaXwuLuqeV66' color='#2BB673'>View More</a>
       </div>
     </div>
   </div>
+
+  <img src="/assets/images/Path 49.png" class='Path-49'>
   <div id="tickets" class="section-block">
     <div class='row center-lg center-xs center-md middle-lg middle-md middle-sm
       middle-xs'>
@@ -149,6 +156,7 @@
       </div>
     </div>
   </div>
+  <img src="/assets/images/Ellipse 27.png" class='e-27'>
   <div id="venue" class="section-block">
     <div class='row center-lg center-xs center-md middle-lg middle-md middle-sm
       middle-xs'>
@@ -174,6 +182,7 @@
   </div>
 
 
+  <img src="/assets/images/Path 50.png" class='Path-50'>
   <div id="team" class="section-block">
     <div class='row center-lg center-xs center-md middle-lg middle-md middle-sm
       middle-xs'>
@@ -227,14 +236,15 @@
       </div>
     </div>
   </div>
+  <img src="/assets/images/Ellipse 26.png" class='e-26'>
   <div id="subscribe" class="section-block">
     <div class='row center-lg center-xs center-md middle-lg middle-md middle-sm
       middle-xs'>
       <div class="col-xs-12 col-md-12" style='height: max-content;font-weight:
         bold'>
         <br>
-        <div class="sub-title" style='line-height:50px;font-size: 2em'>
-          Contact Us
+        <div class="col-xs-12">
+          <app-homepage-title title='Contact us' color='#00AEEF'></app-homepage-title>
         </div>
         <div class="sub-title" style='line-height:70px;font-size: 1.4em'>
           <a target="_blank" href="mailto:gdggandhinagar@gmail.com" style="color: #fff">gdggandhinagar@gmail.com</a>
@@ -243,7 +253,8 @@
           Subscribe for Updates
         </div>
         <div class="col-xs-12" style='line-height:70px'>
-          <button mat-raised-button isRoundButton='true' class="button" (click)='usersub()' color='#2BB673'>Subscribe</button>
+          <button mat-raised-button isRoundButton='true' class="button" (click)='usersub()'
+            color='#2BB673'>Subscribe</button>
         </div>
         <div style="text-align:center">
           <a mat-icon-button *ngFor='let icon of homePageData?.meta?.social'
@@ -263,6 +274,8 @@
 
     </div>
   </div>
+  <img src="/assets/images/Group 50.png" class='Path-51'>
+  <img src="/assets/images/Path 23.png" class='Path-23'>
   <div id='partners' class="section-block">
     <div class='row center-lg center-xs center-md middle-lg middle-md middle-sm
       middle-xs'>

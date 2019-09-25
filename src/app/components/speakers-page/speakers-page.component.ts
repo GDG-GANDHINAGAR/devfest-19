@@ -10,9 +10,20 @@ import { SpeakerCardComponent } from 'src/app/elements/speaker-card/speaker-card
 })
 export class SpeakersPageComponent implements OnInit {
   speakers: Speakers = <Speakers>{};
+  team: Speakers;
+  core = [];
+
   constructor(private db: AngularFirestore) {
     db.doc<Speakers>('speakers/data').valueChanges().subscribe(data => {
-      this.speakers = data;
+      // this.speakers = {
+      //   data: data.data.filter(elem => {
+      //     if(elem.core) {
+      //       this.core.push(elem);
+      //       return false;
+      //     }
+      //     return true;
+      //   })
+      // };
     });
   }
 

@@ -1,27 +1,19 @@
 
 export interface SpeakerConfig {
-  name: String;
-  session: String;
-  JobTitle: String;
-  socialMediaLinks: SocialMediaObject[];
-  company?: String;
-  image: string;
-  bio?: string;
-  sessionData?: string;
-  isFeatured?: boolean;
-  tag: string;
-}
-
-export interface SocialMediaObject {
-  link: String;
-  kind: SocialMediaKind;
-}
-
-export enum SocialMediaKind {
-  github = 'GitHub',
-  linkedin = 'LinkedIn',
-  insta = 'Instagram',
-  fb = 'Facebook',
-  twitter = 'Twitter',
-  Stackoverflow = 'Stackoverflow'
+  fb_url?: String;
+  github_url?: String;
+  twitter_url?: String;
+  linkedin_url?: String; 
+  session_id: String;
+  company: String;
+  speaker_desc: String;
+  speaker_bio: String;
+  session_details: String;
+  speaker_image: String;
+  speaker_name: String;
+  session_level: String;
+  speaker_session: String;
+  is_featured?: boolean;
+  show: boolean;
+  tag: String;
 }

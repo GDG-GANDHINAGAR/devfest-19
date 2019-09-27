@@ -4,10 +4,10 @@
   <div class="title-wrapper">
 
     <div class="img-wrapper">
-      <img [src]="data.image" alt="">
+      <img [src]="data.speaker_image" alt="data.speaker_name">
     </div>
     <div class="name col">
-      {{data.name}}
+      {{data.speaker_name}}
     </div>
   </div>
 </div>
@@ -15,17 +15,17 @@
   <div class="modal-content">
     <div class="about">
       <div class="job-title">
-        {{data.JobTitle}}
+        {{data.speaker_desc}}
       </div>
       <div class="work-place">
         {{data.company}}
       </div>
       <div class="bio">
         <div class="title">
-          A bit about Path
+          A bit about {{ data.speaker_name.split(' ')[0]}}
         </div>
         <div class="bio-text">
-          {{data.bio}}
+          {{data.speaker_bio}}
         </div>
       </div>
       <!-- <div class="links">
@@ -38,10 +38,10 @@
           Session
         </div>
         <div class="session-title">
-          {{data.session}}
+          {{data.speaker_session}}
         </div>
         <div class="session-text">
-          {{data.sessionData}}
+          {{data.session_details}}
         </div>
       </div>
     </div>

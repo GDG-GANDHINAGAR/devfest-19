@@ -37,9 +37,9 @@ export interface User {
   myCustomData?: string;
 }
 export interface Sponsors {
-  design_partners: DesignPartner[];
   general_partners: GeneralPartner[];
   venue_partners: VenuePartner[];
+  design_partners: DesignPartner[];
 }
 
 export interface Venue {

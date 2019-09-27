@@ -1,28 +1,44 @@
 <div class="wrapper">
-  <div matRipple matRippleColor='#ffffff40' class="card-container" (click)="openDialog()">
+  <div matRipple matRippleColor='#ffffff40' class="card-container"
+    (click)="!isHomePage && openDialog()">
     <div class="picture-wrapper">
-      <app-profile-icon [src]='config.image' width='150'></app-profile-icon>
+      <app-profile-icon [src]='config.speaker_image' width='150'></app-profile-icon>
     </div>
     <div class="session-name center-align">
-      {{config.session}}
+      {{config.speaker_session}}
     </div>
     <div class="speaker-name center-align">
-      {{config.name}}
+      {{config.speaker_name}}
     </div>
     <div class="tag center-align">
       {{config.tag}}
     </div>
     <div class="job-title center-align" *ngIf="!isHomePage">
-      {{config.session}}
+      {{config.speaker_desc}}
     </div>
-    <div class="icons-row center-align" *ngIf="!isHomePage">
-      <div class="icon-wrapper" *ngFor="let item of config.socialMediaLinks">
-        <div [ngSwitch]="item.kind">
-          <div *ngSwitchCase="'Github'">
-            <a [href]="item.link"><span class='icon'>icon</span></a>
-          </div>
-        </div>
-      </div>
+    <div class="icons-row center-align" *ngIf="config.github_url &&
+      !isHomePage">
+      <a *ngIf="config.linkedin_url" mat-icon-button class="btn-linkedin"
+        target="_blank" href="{{config.linkedin_url}}">
+        <i class="fa fa-linkedin fa-lg"></i>
+      </a>
+      <a *ngIf="config.fb_url" mat-icon-button class="btn-facebook"
+        target="_blank" href="{{config.fb_url}}">
+        <i class="fa fa-facebook-f fa-lg"></i>
+      </a>
+      <a *ngIf="config.twitter_url" mat-icon-button class="btn-twitter"
+        target="_blank" href={{config.twitter_url}}>
+        <i class="fa fa-twitter fa-lg"></i>
+      </a>
+      <a *ngIf="config.twitter_url" mat-icon-button class="btn-github"
+        target="_blank" href="{{config.github_url}}">
+        <i class="fa fa-github fa-lg"></i>
+      </a>
+      <a *ngIf="config.website" mat-icon-button class="btn-globe"
+        target="_blank"
+        href="{{config.website}}">
+        <i class="fa fa-globe fa-lg"></i>
+      </a>
     </div>
   </div>
 </div>

@@ -18,7 +18,7 @@ export class HomePageComponent implements OnInit {
   email: string;
   displayName: string;
   uid: string;
-  isSubscribed: unknown;
+  isSubscribed: any = false;
   constructor(private db: AngularFirestore, private auth: AuthService) {
     this.auth.user.subscribe(userData => {
       this.hasData = true;

@@ -20,7 +20,7 @@ export class HomePageComponent implements OnInit {
   uid: string;
   isSubscribed: any = false;
   regLink: string;
-  registration: boolean = false;
+  registration = false;
   elseString: string;
   constructor(private db: AngularFirestore, private auth: AuthService) {
     this.auth.user.subscribe(userData => {

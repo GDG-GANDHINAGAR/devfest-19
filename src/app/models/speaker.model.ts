@@ -15,5 +15,5 @@ export interface SpeakerConfig {
   speaker_session: String;
   is_featured?: boolean;
   show: boolean;
-  tag: String;
+  track: String;
 }

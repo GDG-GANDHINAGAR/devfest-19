@@ -169,7 +169,7 @@
           <div class="sub-title" style='line-height:42px;font-size: 2.5em;padding-bottom: 30px;'>
             Grab your tickets now
           </div>
-          <a mat-raised-button isRoundButton='true' target="_blank"
+          <a mat-raised-button isRoundButton='true' target="_blank" rel="noreferrer"
             [href]='regLink'
             routerLinkActive="router-link-active" color='#2BB673'>Get Tickets
             Now</a>
@@ -232,7 +232,7 @@
               </div>
               <div class="btn">
                 <a mat-raised-button isRoundButton='true' class="button"
-                  target="_blank" [routerLink]="['/team']"
+                [routerLink]="['/team']"
                   routerLinkActive="router-link-active" color='#2BB673'>View
                   More</a>
               </div>
@@ -250,7 +250,7 @@
               </div>
               <div class="btn">
                 <a mat-raised-button isRoundButton='true' class="button"
-                  target="_blank" [routerLink]="['/about']"
+                [routerLink]="['/about']"
                   routerLinkActive="router-link-active" color='#2BB673'>View
                   More</a>
               </div>
@@ -270,7 +270,7 @@
           <app-homepage-title title='Contact us' color='#00AEEF'></app-homepage-title>
         </div>
         <div class="sub-title" style='line-height:70px;font-size: 1.4em'>
-          <a target="_blank" href="mailto:gdggandhinagar@gmail.com"
+          <a target="_blank" rel="noreferrer" href="mailto:gdggandhinagar@gmail.com"
             style="color: #fff">gdggandhinagar@gmail.com</a>
         </div>
 
@@ -286,7 +286,7 @@
 
         <div style="text-align:center">
           <a mat-icon-button *ngFor='let icon of homePageData?.meta?.social'
-            class="{{'btn-'+icon.name+ ' mat-icon-button'}}" target="_blank"
+            class="{{'btn-'+icon.name+ ' mat-icon-button'}}" target="_blank" rel="noreferrer"
             [href]="icon.url"><i
               [class]="icon.icon"></i></a>
           <!-- <a mat-icon-button class="btn-slack" target="_blank" href="https://gdg-gandhinagar.slack.com/"><i

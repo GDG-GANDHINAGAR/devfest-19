@@ -7,7 +7,7 @@
             {{row.key.replace('_',' ')}}
           </div>
           <ul class="col-list">
-            <li *ngFor='let link of row.data'><a [href]="link.url">{{link.text}}</a></li>
+            <li *ngFor='let link of row.data'><a target="_blank" rel="noreferrer" [href]="link.url">{{link.text}}</a></li>
           </ul>
         </div>
       </div>

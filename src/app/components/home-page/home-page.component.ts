@@ -19,6 +19,9 @@ export class HomePageComponent implements OnInit {
   displayName: string;
   uid: string;
   isSubscribed: any = false;
+  regLink: string;
+  registration: boolean = false;
+  elseString: string;
   constructor(private db: AngularFirestore, private auth: AuthService) {
     this.auth.user.subscribe(userData => {
       this.hasData = true;
@@ -38,6 +41,9 @@ export class HomePageComponent implements OnInit {
     db.doc<HomePageData>('homepage/data').valueChanges().subscribe(data => {
       this.homePageData = data;
       this.sponsors = [];
+      this.registration = data.registration;
+      this.regLink = data.regLink;
+      this.elseString = data.elseString;
       Object.keys(this.homePageData.sponsors).forEach(key => {
         const sponsorData = {
           key: key,
@@ -53,7 +59,6 @@ export class HomePageComponent implements OnInit {
     db.doc<Speakers>('speakers/data').valueChanges().subscribe(data => {
       this.speakers = data;
     });
-
   }
   // sub() {
   //   // this.auth.subscribe();

@@ -77,6 +77,9 @@ export interface HomePageData {
   venue: Venue;
   event_details: EventDetails;
   footer: Footer;
+  registration: boolean;
+  regLink: string;
+  elseString: string;
 }
 
 export interface PreviousSpeakerDetails {

@@ -9,7 +9,6 @@
 
       <!-- <a mat-raised-button isRoundButton='true' target="_blank" href=''
       routerLinkActive="router-link-active" color='#2BB673'>Get Tickets Now</a> -->
-
     </div>
     <div class="organizers">
       <div>
@@ -112,11 +111,12 @@
       </ng-container>
 
       <div class="col-xs-12">
-        <button mat-raised-button [routerLink]="['/speakers']" isRoundButton='true' color='#2BB673'
+        <button mat-raised-button [routerLink]="['/speakers']"
+          isRoundButton='true' color='#2BB673'
           *ngIf="(speakers.enabled && speakers.enabled.value)">See More</button>
       </div>
     </div>
-    
+
     <div class='row center-lg center-xs center-md'>
       <div class="col-xs-12">
 
@@ -161,9 +161,19 @@
         <app-homepage-title title='Tickets' color='#00AEEF'></app-homepage-title>
       </div>
       <div class="col-xs-12" style='height: 250px'>
-        <div class="sub-title" style='line-height:250px;font-size: 2.5em'>
-          Coming Soon!
+        <div class="sub-title" style='line-height:250px;font-size: 2.5em'
+          *ngIf='!registration'>
+          {{ elseString }}
         </div>
+        <ng-container *ngIf="(registration)">
+          <div class="sub-title" style='line-height:250px;font-size: 2.5em'>
+            Grab your tickets now
+          </div>
+          <a mat-raised-button isRoundButton='true' target="_blank"
+            [href]='reg_link'
+            routerLinkActive="router-link-active" color='#2BB673'>Get Tickets
+            Now</a>
+        </ng-container>
       </div>
     </div>
   </div>

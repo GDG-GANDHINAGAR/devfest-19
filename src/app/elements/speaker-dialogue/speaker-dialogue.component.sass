@@ -68,16 +68,40 @@ $grad5: radial-gradient(farthest-side at 80% 0, rgba(#0085FC, .8), rgba(#0085FC,
         .title
           line-height: 30px
           font-size: 1.5em
+          display: flex
+          align-items: center
+          &:after
+            content: ""
+            display: block
+            margin-left: 15px
+            height: 5px
+            width: 100px
+            border-top-right-radius: 100px
+            border-bottom-right-radius: 100px 
         .session-title
           line-height: 30px
           font-size: 1em
           font-weight: bold
+          display: flex
+          align-items: center
+          .session-title-icon
+            margin-left: 5px
         .bio-text,.session-text
-          // line-height: 30px
+          line-height: 1.6em
           font-size: 1em
           margin-bottom: 20px
           margin-top: 10px
           font-weight: lighter
+      .bio
+        .title
+          &::after
+            background-color: rgb(43, 182, 115)
+      
+      .session
+        .title
+          &::after
+            background-color: rgb(0, 174, 239)
+      
       .links
         margin: 30px 0
         a
@@ -95,6 +119,3 @@ $grad5: radial-gradient(farthest-side at 80% 0, rgba(#0085FC, .8), rgba(#0085FC,
           i
             font-size: 30px
             vertical-align: top
-
-.cdk-overlay-dark-backdrop
-  background-color: rgba(255, 255, 255, 0.3)!important

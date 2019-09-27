@@ -1,6 +1,6 @@
 <div class="wrapper">
   <div matRipple matRippleColor='#ffffff40' class="card-container"
-    (click)="openDialog()">
+    (click)="!isHomePage && openDialog()">
     <div class="picture-wrapper">
       <app-profile-icon [src]='config.speaker_image' width='150'></app-profile-icon>
     </div>

@@ -40,6 +40,21 @@
         </div>
         <div class="session-title">
           {{data.speaker_session}}
+
+          <div class="session-title-icon" [ngSwitch]="data.track">
+            <a *ngSwitchCase="'mobile'" mat-icon-button class="btn-mobile">
+              <i class="fa fa-mobile fa-3x"></i>
+            </a>
+            <a *ngSwitchCase="'web'" mat-icon-button class="btn-mobile">
+              <i class="fa fa-chrome fa-2x"></i>
+            </a>
+            <a *ngSwitchCase="'ml'" mat-icon-button class="btn-mobile">
+              <i class="fa fa-cogs fa-2x"></i>
+            </a>
+            <a *ngSwitchCase="'cloud'" mat-icon-button class="btn-mobile">
+              <i class="fa fa-cloud fa-2x"></i>
+            </a>
+          </div>
         </div>
         <div class="session-text">
           {{data.session_details}}

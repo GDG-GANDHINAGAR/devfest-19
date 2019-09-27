@@ -8,6 +8,7 @@
 
   @media screen and (max-width: 930px)
   font-size: 1.5em
+  
 
 #header
   width: 99vw
@@ -68,32 +69,28 @@
       font-size: 1.3em
       padding-left: 20px
       position: relative
+      &:after
+        content: ""
+        position: absolute
+        left: 0
+        top: 0
+        width: 3px
+        border-radius: 10px
+        height: 100%
+        background: #EE2A7B
       @media screen and (max-width: 610px)
         margin-bottom: 50px
-        &:after
-          content: ""
-          position: absolute
-          left: 0
-          top: 0
-          width: 3px
-          border-radius: 10px
-          height: 100%
-          background: #EE2A7B
 
       .section
         margin-bottom: 20px
   .diagram
     margin-bottom: 3rem
 
-.section-block
-  margin-bottom: 100px
-
 #tickets
   margin-bottom: 0px
   padding: 30px auto
 
 #speakers
-  margin: 100px 0
   p
     @media screen and (max-width: 930px)
       font-size: 0.8em
@@ -101,6 +98,7 @@
   .sub-title
     &.previous
       margin-bottom: 40px
+      margin-top: 5rem
 
 #team
   text-align: left

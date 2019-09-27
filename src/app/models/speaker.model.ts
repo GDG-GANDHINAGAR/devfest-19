@@ -3,7 +3,7 @@ export interface SpeakerConfig {
   fb_url?: String;
   github_url?: String;
   twitter_url?: String;
-  linkedin_url?: String; 
+  linkedin_url?: String;
   session_id: String;
   company: String;
   speaker_desc: String;
@@ -16,4 +16,6 @@ export interface SpeakerConfig {
   is_featured?: boolean;
   show: boolean;
   track: String;
+  start_time: String;
+  total_time: String;
 }

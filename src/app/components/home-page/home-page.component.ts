@@ -52,6 +52,10 @@ export class HomePageComponent implements OnInit {
         // console.log(sponsorData);
         this.sponsors.push(sponsorData);
       });
+      const a = this.sponsors[0];
+      this.sponsors[0] = this.sponsors[1];
+      this.sponsors[1] = a;
+
     });
     db.doc<PreviousSpeakers>('previous_speakers/data').valueChanges().subscribe(data => {
       this.previousSpeakers = data;

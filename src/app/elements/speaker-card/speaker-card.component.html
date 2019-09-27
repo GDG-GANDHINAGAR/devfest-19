@@ -10,17 +10,17 @@
     <div class="speaker-name center-align">
       {{config.speaker_name}}
     </div>
-    <div class="icons-row center-align">
-      <a *ngIf="config.track === 'mobile'" mat-icon-button class="btn-mobile">
+    <div class="icons-row center-align" [ngSwitch]="config.track">
+      <a *ngSwitchCase="'mobile'" mat-icon-button class="btn-mobile">
         <i class="fa fa-mobile fa-3x"></i>
       </a>
-      <a *ngIf="config.track === 'web'" mat-icon-button class="btn-mobile">
+      <a *ngSwitchCase="'web'" mat-icon-button class="btn-mobile">
         <i class="fa fa-chrome fa-2x"></i>
       </a>
-      <a *ngIf="config.track === 'ml'" mat-icon-button class="btn-mobile">
+      <a *ngSwitchCase="'ml'" mat-icon-button class="btn-mobile">
         <i class="fa fa-cogs fa-2x"></i>
       </a>
-      <a *ngIf="config.track === 'cloud'" mat-icon-button class="btn-mobile">
+      <a *ngSwitchCase="'cloud'" mat-icon-button class="btn-mobile">
         <i class="fa fa-cloud fa-2x"></i>
       </a>
     </div>

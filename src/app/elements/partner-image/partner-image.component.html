@@ -1,10 +1,10 @@
-<a class="wrapper" [href]='url' *ngIf='url'>
+<a target="_blank" rel="noreferrer" class="wrapper" [href]='url' *ngIf='url'>
   <img [src]="src? src: 'assets/images/logo_white.svg'" alt="">
   <div class="name">
     {{name}}
   </div>
 </a>
-<a class="wrapper" *ngIf='!url'>
+<a target="_blank" rel="noreferrer" class="wrapper" *ngIf='!url'>
   <img [src]="src? src: 'assets/images/logo_white.svg'" alt="">
   <div class="name">
     {{name}}

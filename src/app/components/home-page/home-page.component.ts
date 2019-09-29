@@ -78,4 +78,8 @@ export class HomePageComponent implements OnInit {
   ngOnInit() {
   }
 
+  scrollTickets() {
+    document.querySelector('#tickets').scrollIntoView({ behavior: 'smooth', block: 'center' });
+ }
+
 }

@@ -103,7 +103,7 @@
 
       <ng-container *ngIf="(speakers.enabled && speakers.enabled.value)">
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" *ngFor='let data of
-          speakers?.data | EnabledSpeaker | FeaturedSpeaker'>
+          speakers?.data | FeaturedSpeaker'>
           <ng-container *ngIf="(data.is_featured && data.show)">
             <app-speaker-card [isHomePage]='true' [config]=data></app-speaker-card>
           </ng-container>

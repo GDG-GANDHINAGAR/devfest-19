@@ -64,7 +64,7 @@ export class FeaturedSpeaker {
   transform(objects: any[]): any[] {
       if(objects) {
           return objects.filter(object => {
-              return object.is_featured;
+              return object.is_featured && object.show;
           });
       }
   }

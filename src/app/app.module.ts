@@ -40,6 +40,8 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { EnabledSpeaker } from '../app/elements/speaker-card/speaker-card.component'
+import { FeaturedSpeaker } from '../app/elements/speaker-card/speaker-card.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,7 +61,9 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     GalleryImageComponent,
     PartnerImageComponent,
     HomePageHeaderComponent,
-    FooterComponent
+    FooterComponent,
+    EnabledSpeaker,
+    FeaturedSpeaker,
   ],
   imports: [
     BrowserModule,

@@ -18,7 +18,10 @@ export class HomePageComponent implements OnInit {
   email: string;
   displayName: string;
   uid: string;
-  isSubscribed: unknown;
+  isSubscribed: any = false;
+  regLink: string;
+  registration = false;
+  elseString: string;
   constructor(private db: AngularFirestore, private auth: AuthService) {
     this.auth.user.subscribe(userData => {
       this.hasData = true;
@@ -38,6 +41,9 @@ export class HomePageComponent implements OnInit {
     db.doc<HomePageData>('homepage/data').valueChanges().subscribe(data => {
       this.homePageData = data;
       this.sponsors = [];
+      this.registration = data.registration;
+      this.regLink = data.regLink;
+      this.elseString = data.elseString;
       Object.keys(this.homePageData.sponsors).forEach(key => {
         const sponsorData = {
           key: key,
@@ -46,6 +52,10 @@ export class HomePageComponent implements OnInit {
         // console.log(sponsorData);
         this.sponsors.push(sponsorData);
       });
+      const a = this.sponsors[0];
+      this.sponsors[0] = this.sponsors[1];
+      this.sponsors[1] = a;
+
     });
     db.doc<PreviousSpeakers>('previous_speakers/data').valueChanges().subscribe(data => {
       this.previousSpeakers = data;
@@ -53,16 +63,15 @@ export class HomePageComponent implements OnInit {
     db.doc<Speakers>('speakers/data').valueChanges().subscribe(data => {
       this.speakers = data;
     });
-
   }
-  sub() {
-    // this.auth.subscribe();
-    this.auth.user.subscribe(userData => {
-      if (userData) {
-        this.auth.subscribe(userData.uid, true).subscribe(data => { });
-      }
-    });
-  }
+  // sub() {
+  //   // this.auth.subscribe();
+  //   this.auth.user.subscribe(userData => {
+  //     if (userData) {
+  //       this.auth.subscribe(userData.uid, true).subscribe(data => { });
+  //     }
+  //   });
+  // }
   usersub() {
     this.auth.googleSignin().subscribe(userData => { });
   }

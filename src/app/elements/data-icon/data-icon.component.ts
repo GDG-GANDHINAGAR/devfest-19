@@ -33,10 +33,12 @@ export class DataIconComponent implements OnInit, AfterViewInit {
     const circle = { x: 0, y: 0 };
     const square = { x: 0, y: 0 };
     const randomAngle1 = Math.round(Math.random() * 360);
-    let randomAngle2 = Math.round(Math.random() * 360);
+    // let randomAngle2 = Math.round(Math.random() * 360);
+    let randomAngle2 = randomAngle1 + 2.35619;
+    // randomAngle2 = 
     let scale = Math.random();
     scale = scale < 0.4 ? (scale + 0.4) : scale;
-    randomAngle2 = Math.abs(randomAngle1 - randomAngle2) > 180 ? randomAngle2 : randomAngle1 + 180;
+    // randomAngle2 = Math.abs(randomAngle1 - randomAngle2) > 180 ? randomAngle2 : randomAngle1 + 180;
     // tslint:disable: max-line-length
     circle.x = ((this.circleR * Math.sin(randomAngle1)) + this.circleR) < this.circleR ? ((this.circleR * Math.sin(randomAngle1)) + this.circleR) - 7.5 : ((this.circleR * Math.sin(randomAngle1)) + this.circleR) + 10;
     circle.y = ((this.circleR * Math.cos(randomAngle1)) + this.circleR) < this.circleR ? ((this.circleR * Math.cos(randomAngle1)) + this.circleR) - 7.5 : ((this.circleR * Math.cos(randomAngle1)) + this.circleR) + 10;

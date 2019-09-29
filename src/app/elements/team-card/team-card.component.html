@@ -14,22 +14,22 @@
       {{config.team}}
     </div>
     <a *ngIf="config.linkedin_url" mat-icon-button class="btn-linkedin"
-      target="_blank" href="{{config.linkedin_url}}">
+      target="_blank" rel="noreferrer" href="{{config.linkedin_url}}">
       <i class="fa fa-linkedin fa-lg"></i>
     </a>
     <a *ngIf="config.fb_url" mat-icon-button class="btn-facebook"
-      target="_blank" href="{{config.fb_url}}">
+      target="_blank" rel="noreferrer" href="{{config.fb_url}}">
       <i class="fa fa-facebook-f fa-lg"></i>
     </a>
     <a *ngIf="config.twitter_url" mat-icon-button class="btn-twitter"
-      target="_blank" href={{config.twitter_url}}>
+      target="_blank" rel="noreferrer" href={{config.twitter_url}}>
       <i class="fa fa-twitter fa-lg"></i>
     </a>
-    <a *ngIf="config.twitter_url" mat-icon-button class="btn-github"
-      target="_blank" href="{{config.github_url}}">
+    <a *ngIf="config.github_url" mat-icon-button class="btn-github"
+      target="_blank" rel="noreferrer" href="{{config.github_url}}">
       <i class="fa fa-github fa-lg"></i>
     </a>
-    <a *ngIf="config.website" mat-icon-button class="btn-globe" target="_blank"
+    <a *ngIf="config.website" mat-icon-button class="btn-globe" target="_blank" rel="noreferrer"
       href="{{config.website}}">
       <i class="fa fa-globe fa-lg"></i>
     </a>

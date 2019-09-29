@@ -2,30 +2,31 @@
   <div class="bg">
   </div>
   <div class="title-wrapper">
-
     <div class="img-wrapper">
-      <img [src]="data.image" alt="">
+      <img [src]="data.speaker_image" alt="data.speaker_name">
     </div>
-    <div class="name col">
-      {{data.name}}
+    <div class="col">
+      <div class="name">
+        {{data.speaker_name}}
+      </div>
+      <div class="job-title">
+        {{data.speaker_desc}}
+      </div>
+      <div class="work-place" style="font-weight: normal">
+        {{data.company}}
+      </div>
     </div>
   </div>
 </div>
 <div mat-dialog-content class='mat-dialog-content'>
   <div class="modal-content">
     <div class="about">
-      <div class="job-title">
-        {{data.JobTitle}}
-      </div>
-      <div class="work-place">
-        {{data.company}}
-      </div>
       <div class="bio">
         <div class="title">
-          A bit about Path
+          A bit about {{ data.speaker_name.split(' ')[0]}}
         </div>
         <div class="bio-text">
-          {{data.bio}}
+          {{data.speaker_bio}}
         </div>
       </div>
       <!-- <div class="links">
@@ -38,10 +39,25 @@
           Session
         </div>
         <div class="session-title">
-          {{data.session}}
+          {{data.speaker_session}}
+
+          <div class="session-title-icon" [ngSwitch]="data.track">
+            <a *ngSwitchCase="'mobile'" mat-icon-button class="btn-mobile">
+              <i class="fa fa-mobile fa-3x"></i>
+            </a>
+            <a *ngSwitchCase="'web'" mat-icon-button class="btn-mobile">
+              <i class="fa fa-chrome fa-2x"></i>
+            </a>
+            <a *ngSwitchCase="'ml'" mat-icon-button class="btn-mobile">
+              <i class="fa fa-cogs fa-2x"></i>
+            </a>
+            <a *ngSwitchCase="'cloud'" mat-icon-button class="btn-mobile">
+              <i class="fa fa-cloud fa-2x"></i>
+            </a>
+          </div>
         </div>
         <div class="session-text">
-          {{data.sessionData}}
+          {{data.session_details}}
         </div>
       </div>
     </div>
@@ -49,5 +65,5 @@
 </div>
 <div mat-dialog-actions align="center">
   <!-- <button mat-button (click)="onNoClick()">No Thanks</button> -->
-  <button mat-button [mat-dialog-close]="'hi'" cdkFocusInitial>Cool!</button>
+  <button mat-raised-button [mat-dialog-close]="'hi'" cdkFocusInitial>Cool!</button>
 </div>

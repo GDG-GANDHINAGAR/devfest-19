@@ -3,9 +3,12 @@
     <img class="gdg-image" src="assets/images/Group-64.png" alt="">
     <div class="date"> 13 October, 2019</div>
     <div class="subscribe">
-      <button mat-raised-button isRoundButton='true' *ngIf='!isSubscribed' (click)='sub()' color='#2BB673'>Subscribe</button>
-      <a mat-raised-button isRoundButton='true' target="_blank" href='https://docs.google.com/forms/d/e/1FAIpQLSeOWGThPktBFHATmC2TCe4UaXn4g1ru0Pmi2kgU71ehYgCkCA/viewform?usp=sf_link'
-      routerLinkActive="router-link-active" color='#2BB673'>Call for Papers</a>
+
+      <button mat-raised-button isRoundButton='true' *ngIf='!isSubscribed'
+        (click)='usersub()' color='#2BB673'>Subscribe</button>
+
+      <!-- <a mat-raised-button isRoundButton='true' target="_blank" href=''
+      routerLinkActive="router-link-active" color='#2BB673'>Get Tickets Now</a> -->
     </div>
     <div class="organizers">
       <div>
@@ -58,19 +61,23 @@
         <div class="row middle-sm center-sm middle-md center-md middle-lg
           center-lg">
           <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 diagram">
-            <app-data-icon title='Attendees' color='#D7DF23' data='{{homePageData?.event_details?.attendees }}'>
+            <app-data-icon title='Attendees' color='#D7DF23'
+              data='{{homePageData?.event_details?.attendees }}'>
             </app-data-icon>
           </div>
           <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 diagram">
-            <app-data-icon title='Sessions' color='#1B75BC' data='{{homePageData?.event_details?.sessions }}'>
+            <app-data-icon title='Sessions' color='#1B75BC'
+              data='{{homePageData?.event_details?.sessions }}'>
             </app-data-icon>
           </div>
           <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 diagram">
-            <app-data-icon title='Speakers' color='#2BB673' data='{{homePageData?.event_details?.speakers }}'>
+            <app-data-icon title='Speakers' color='#2BB673'
+              data='{{homePageData?.event_details?.speakers }}'>
             </app-data-icon>
           </div>
           <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 diagram">
-            <app-data-icon title='Tracks' color='#FFC927' data='{{homePageData?.event_details?.tracks }}'>
+            <app-data-icon title='Tracks' color='#FFC927'
+              data='{{homePageData?.event_details?.tracks }}'>
             </app-data-icon>
           </div>
 
@@ -80,39 +87,46 @@
   </div>
 
   <div id="speakers">
+    <img src="/assets/images/Path 46.png" class='Path-46'>
+    <img src="/assets/images/Path 47.png" class='Path-47'>
     <div class='row center-lg center-xs center-md middle-lg middle-md middle-sm
       middle-xs'>
       <div class="col-xs-12">
         <app-homepage-title title='Rockstar Speakers' color='#2BB673'></app-homepage-title>
       </div>
-      <div class="col-xs-12" *ngIf="!(speakers.enabled && speakers.enabled.value)">
+      <div class="col-xs-12" *ngIf="!(speakers.enabled &&
+        speakers.enabled.value)">
         <div class="sub-title" style='line-height:250px;font-size: 2.5em'>
           <p> Rockstars🤘 are on the way! </p>
         </div>
       </div>
-      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" *ngIf="speakers.enabled && speakers.enabled.value">
-        <app-speaker-card [isHomePage]='true'></app-speaker-card>
-      </div>
-      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" *ngIf="speakers.enabled && speakers.enabled.value">
-        <app-speaker-card [isHomePage]='true'></app-speaker-card>
-      </div>
-      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" *ngIf="speakers.enabled && speakers.enabled.value">
-        <app-speaker-card [isHomePage]='true'></app-speaker-card>
-      </div>
+
+      <ng-container *ngIf="(speakers.enabled && speakers.enabled.value)">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" *ngFor='let data of
+          speakers?.data | FeaturedSpeaker'>
+          <ng-container *ngIf="(data.is_featured && data.show)">
+            <app-speaker-card [isHomePage]='true' [config]=data></app-speaker-card>
+          </ng-container>
+        </div>
+      </ng-container>
+
       <div class="col-xs-12">
-        <button mat-raised-button isRoundButton='true' color='#2BB673'
+        <button mat-raised-button [routerLink]="['/speakers']"
+          isRoundButton='true' color='#2BB673'
           *ngIf="(speakers.enabled && speakers.enabled.value)">See More</button>
       </div>
     </div>
+
     <div class='row center-lg center-xs center-md'>
       <div class="col-xs-12">
 
-        <h3 class="sub-title Previous">Previous Rockstars Speakers</h3>
+        <h3 class="sub-title previous">Previous Rockstars Speakers</h3>
 
       </div>
     </div>
     <div class='row center-lg center-xs center-md'>
-      <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" *ngFor='let data of previousSpeakers?.data'>
+      <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" *ngFor='let data of
+        previousSpeakers?.data'>
         <app-profile-icon width=100 [src]='data.image'>
         </app-profile-icon>
       </div>
@@ -121,6 +135,7 @@
 
 
   <div id="gallery" class="section-block">
+    <img src="/assets/images/Path 48.png" class='Path-48'>
     <div class='row center-lg center-xs center-md middle-lg middle-md middle-sm
       middle-xs'>
       <div class="col-xs-12">
@@ -131,24 +146,38 @@
         <app-gallery-image src='assets/images/g{{item}}.JPG'></app-gallery-image>
       </div>
       <div class="col-xs-12" style='margin-top: 50px'>
-        <a mat-raised-button isRoundButton='true' class="button" target="_blank" href='https://photos.app.goo.gl/CojnpJaXwuLuqeV66'
+        <a mat-raised-button isRoundButton='true' class="button" target="_blank"
+          href='https://photos.app.goo.gl/CojnpJaXwuLuqeV66'
           color='#2BB673'>View More</a>
       </div>
     </div>
   </div>
+
+  <img src="/assets/images/Path 49.png" class='Path-49'>
   <div id="tickets" class="section-block">
     <div class='row center-lg center-xs center-md middle-lg middle-md middle-sm
       middle-xs'>
       <div class="col-xs-12">
         <app-homepage-title title='Tickets' color='#00AEEF'></app-homepage-title>
       </div>
-      <div class="col-xs-12" style='height: 250px'>
-        <div class="sub-title" style='line-height:250px;font-size: 2.5em'>
-          Coming Soon!
+      <div class="col-xs-12">
+        <div class="sub-title" style='line-height:250px;font-size: 2.5em'
+          *ngIf='!registration'>
+          {{ elseString }}
         </div>
+        <ng-container *ngIf="(registration)">
+          <div class="sub-title" style='line-height:42px;font-size: 2.5em;padding-bottom: 30px;'>
+            Grab your tickets now
+          </div>
+          <a mat-raised-button isRoundButton='true' target="_blank" rel="noreferrer"
+            [href]='regLink'
+            routerLinkActive="router-link-active" color='#2BB673'>Get Tickets
+            Now</a>
+        </ng-container>
       </div>
     </div>
   </div>
+  <img src="/assets/images/Ellipse 27.png" class='e-27'>
   <div id="venue" class="section-block">
     <div class='row center-lg center-xs center-md middle-lg middle-md middle-sm
       middle-xs'>
@@ -159,7 +188,8 @@
         <div class='map-wrapper'>
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3667.497127784073!2d72.62684071493652!3d23.18854688486926!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395c2a3c9618d2c5%3A0xc54de484f986b1fa!2sDhirubhai%20Ambani%20Institute%20of%20Information%20and%20Communication%20Technology!5e0!3m2!1sen!2sin!4v1567362841953!5m2!1sen!2sin"
-            width="850" height="350" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+            width="850" height="350" frameborder="0" style="border:0;"
+            allowfullscreen=""></iframe>
         </div>
         <div class="sub-title" style='line-height:50px;font-size: 1.5em'>
           <p>
@@ -174,6 +204,7 @@
   </div>
 
 
+  <img src="/assets/images/Path 50.png" class='Path-50'>
   <div id="team" class="section-block">
     <div class='row center-lg center-xs center-md middle-lg middle-md middle-sm
       middle-xs'>
@@ -200,7 +231,8 @@
                 Gandhinagar
               </div>
               <div class="btn">
-                <a mat-raised-button isRoundButton='true' class="button" target="_blank" [routerLink]="['/team']"
+                <a mat-raised-button isRoundButton='true' class="button"
+                [routerLink]="['/team']"
                   routerLinkActive="router-link-active" color='#2BB673'>View
                   More</a>
               </div>
@@ -217,7 +249,8 @@
                 share experience about Google technologies with a passion
               </div>
               <div class="btn">
-                <a mat-raised-button isRoundButton='true' class="button" target="_blank" [routerLink]="['/about']"
+                <a mat-raised-button isRoundButton='true' class="button"
+                [routerLink]="['/about']"
                   routerLinkActive="router-link-active" color='#2BB673'>View
                   More</a>
               </div>
@@ -227,27 +260,34 @@
       </div>
     </div>
   </div>
+  <img src="/assets/images/Ellipse 26.png" class='e-26'>
   <div id="subscribe" class="section-block">
     <div class='row center-lg center-xs center-md middle-lg middle-md middle-sm
       middle-xs'>
-      <div class="col-xs-12 col-md-12" style='height: max-content;font-weight:
-        bold'>
+      <div class="col-xs-12 col-md-12" style='height: max-content;'>
         <br>
-        <div class="sub-title" style='line-height:50px;font-size: 2em'>
-          Contact Us
+        <div class="col-xs-12">
+          <app-homepage-title title='Contact us' color='#00AEEF'></app-homepage-title>
         </div>
         <div class="sub-title" style='line-height:70px;font-size: 1.4em'>
-          <a target="_blank" href="mailto:gdggandhinagar@gmail.com" style="color: #fff">gdggandhinagar@gmail.com</a>
+          <a target="_blank" rel="noreferrer" href="mailto:gdggandhinagar@gmail.com"
+            style="color: #fff">gdggandhinagar@gmail.com</a>
         </div>
-        <div class="sub-title" style='line-height:70px;font-size: 2.2em'>
-          Subscribe for Updates
+
+        <div *ngIf="!isSubscribed">
+          <div class="sub-title" style='line-height:70px;font-size: 2.2em'>
+            Subscribe for Updates
+          </div>
+          <div class="col-xs-12" style='line-height:70px'>
+            <button mat-raised-button isRoundButton='true' class="button"
+              (click)='usersub()' color='#2BB673'>Subscribe</button>
+          </div>
         </div>
-        <div class="col-xs-12" style='line-height:70px'>
-          <button mat-raised-button isRoundButton='true' class="button" (click)='usersub()' color='#2BB673'>Subscribe</button>
-        </div>
+
         <div style="text-align:center">
           <a mat-icon-button *ngFor='let icon of homePageData?.meta?.social'
-            class="{{'btn-'+icon.name+ ' mat-icon-button'}}" target="_blank" [href]="icon.url"><i
+            class="{{'btn-'+icon.name+ ' mat-icon-button'}}" target="_blank" rel="noreferrer"
+            [href]="icon.url"><i
               [class]="icon.icon"></i></a>
           <!-- <a mat-icon-button class="btn-slack" target="_blank" href="https://gdg-gandhinagar.slack.com/"><i
               class="fa fa-slack fa-lg"></i></a>
@@ -257,12 +297,13 @@
               class="fa fa-twitter fa-lg"></i></a>
           <a mat-icon-button class="btn-youtube" target="_blank" href="mailto:$email"><i
               class="fa fa-envelope fa-lg"></i></a> -->
-
         </div>
       </div>
 
     </div>
   </div>
+  <img src="/assets/images/Group 50.png" class='Path-51'>
+  <img src="/assets/images/Path 23.png" class='Path-23'>
   <div id='partners' class="section-block">
     <div class='row center-lg center-xs center-md middle-lg middle-md middle-sm
       middle-xs'>
@@ -271,7 +312,8 @@
       </div>
       <div>
 
-        <div *ngFor='let partners of sponsors' class='partner-section row around-lg around-xs around-md'>
+        <div *ngFor='let partners of sponsors' class='partner-section row
+          around-lg around-xs around-md'>
           <div class="col-xs-12 col-md-12">
             <div class="sub-title" style='line-height:50px;font-size:
               1.5em;margin-bottom: 20px; text-transform: capitalize'>
@@ -279,8 +321,10 @@
             </div>
           </div>
 
-          <div *ngFor='let partner of partners.data' class="col-xs-12 col-md-6 col-lg-4">
-            <app-partner-image [src]='partner.image' [url]='partner.url' [name]='partner.name'>
+          <div *ngFor='let partner of partners.data' class="col-xs-12 col-md-6
+            col-lg-4">
+            <app-partner-image [src]='partner.image' [url]='partner.url'
+              [name]='partner.name'>
             </app-partner-image>
           </div>
         </div>

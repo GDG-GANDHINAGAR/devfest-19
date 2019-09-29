@@ -1,3 +1,5 @@
+<div class="Rectangle-1"></div>
+<div class="Rectangle-2"></div>
 <div class="container">
   <div class='row center-lg center-xs center-md'>
     <div class="col-xs-12">
@@ -14,11 +16,10 @@
         <p> Rockstars🤘 are on the way! </p>
       </div>
     </div>
-    <ng-container *ngIf="(speakers.enabled &&
-        speakers.enabled.value)">
+    <ng-container *ngIf="(speakers.enabled && speakers.enabled.value)">
       <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" *ngFor='let data of
-            speakers?.data'>
-        <app-speaker-card [isHomePage]='true'></app-speaker-card>
+            speakers?.data | EnabledSpeaker'>
+        <app-speaker-card [isHomePage]='false' [config]=data></app-speaker-card>
       </div>
     </ng-container>
   </div>

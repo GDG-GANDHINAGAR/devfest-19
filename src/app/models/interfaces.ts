@@ -37,9 +37,9 @@ export interface User {
   myCustomData?: string;
 }
 export interface Sponsors {
-  design_partners: DesignPartner[];
   general_partners: GeneralPartner[];
   venue_partners: VenuePartner[];
+  design_partners: DesignPartner[];
 }
 
 export interface Venue {
@@ -77,6 +77,9 @@ export interface HomePageData {
   venue: Venue;
   event_details: EventDetails;
   footer: Footer;
+  registration: boolean;
+  regLink: string;
+  elseString: string;
 }
 
 export interface PreviousSpeakerDetails {

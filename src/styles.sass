@@ -52,6 +52,8 @@ body
 
 ::-webkit-scrollbar
   width: 10px
+  @media screen and (max-width: 930px)
+    width: 7px
 ::-webkit-scrollbar-track
   background: #000
 ::-webkit-scrollbar-thumb
@@ -63,3 +65,22 @@ body
   font-family: 'Open Sans', 'Arial', sans-serif
   font-weight: bold
   text-transform: uppercase
+
+.cdk-overlay-dark-backdrop
+  background-color: rgba(255, 255, 255, 0.1)!important
+
+.mat-progress-spinner
+  svg
+    circle
+      stroke-width: 4%!important
+      animation: mat-progress-spinner-stroke-rotate-100 5s ease infinite, spinnergradient 5s ease infinite!important
+
+@keyframes spinnergradient
+  0%, 20%
+    stroke: rgb(238, 42, 124)
+
+  66%
+    stroke: rgb(214, 223, 35)
+
+  80%, 100%
+    stroke: rgb(27, 118, 188)

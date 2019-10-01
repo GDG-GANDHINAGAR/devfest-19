@@ -9,16 +9,56 @@
       Hear from the <b>Googlers, Partners, and Guest Speakers</b>
       who are building the future of cloud. Check back often
       as we add more speakers, including our customers and partners.
+      <br>
+      <br>
+      <button mat-button (click)="webActive(1)">Web</button>
+      <button mat-button (click)="mobileActive(1)">Mobile</button>
+      <button mat-button (click)="mlActive(1)">Machine Learning</button>
+      <button mat-button (click)="cloudActive(1)">Cloud</button>
+      <button mat-button (click)="othersActive(1)">Others</button>
     </div>
+
+
     <div class="col-xs-12" *ngIf="!(speakers.enabled &&
             speakers.enabled.value)">
       <div class="sub-title" style='line-height:250px;font-size: 2.5em'>
         <p> Rockstars🤘 are on the way! </p>
       </div>
     </div>
-    <ng-container *ngIf="(speakers.enabled && speakers.enabled.value)">
+    <ng-container
+      *ngIf="(speakers.enabled && speakers.enabled.value && !web_Active && !mobile_Active && !ml_Active && !cloud_Active && !others_Active)">
       <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" *ngFor='let data of
             speakers?.data | EnabledSpeaker'>
+        <app-speaker-card [isHomePage]='false' [config]=data></app-speaker-card>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="(web_Active)">
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" *ngFor='let data of
+            web'>
+        <app-speaker-card [isHomePage]='false' [config]=data></app-speaker-card>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="(mobile_Active)">
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" *ngFor='let data of
+            mobile'>
+        <app-speaker-card [isHomePage]='false' [config]=data></app-speaker-card>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="(ml_Active)">
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" *ngFor='let data of
+            ml'>
+        <app-speaker-card [isHomePage]='false' [config]=data></app-speaker-card>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="(cloud_Active)">
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" *ngFor='let data of
+            cloud'>
+        <app-speaker-card [isHomePage]='false' [config]=data></app-speaker-card>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="(others_Active)">
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" *ngFor='let data of
+            others'>
         <app-speaker-card [isHomePage]='false' [config]=data></app-speaker-card>
       </div>
     </ng-container>

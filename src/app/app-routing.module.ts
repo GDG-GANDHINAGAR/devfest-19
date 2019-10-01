@@ -7,6 +7,7 @@ import { TeamPageComponent } from './components/team-page/team-page.component';
 import { SpeakersPageComponent } from './components/speakers-page/speakers-page.component';
 import { AboutPageComponent } from './components/about-page/about-page.component';
 import { HomePageHeaderComponent } from './elements/home-page-header/home-page-header.component';
+import { SchedulerComponent } from './components/scheduler/scheduler.component';
 
 
 const routes: Routes = [
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'speakers', component: SpeakersPageComponent },
   { path: 'about', component: AboutPageComponent },
   { path: 'profile', component: UserProfileComponent },
+  { path: 'schedule', component: SchedulerComponent },
 ];
 
 @NgModule({

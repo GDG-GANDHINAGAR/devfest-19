@@ -5,11 +5,14 @@
     <div class="picture-wrapper">
       <app-profile-icon [src]='config.speaker_image' width='150'></app-profile-icon>
     </div>
-    <div class="session-name center-align">
-      {{config.speaker_session}}
-    </div>
     <div class="speaker-name center-align">
       {{config.speaker_name}}
+    </div>
+    <div class="job-title center-align"   *ngIf="!isHomePage">
+      {{config.speaker_desc}}
+    </div>
+    <div class="session-name center-align">
+      {{config.speaker_session}}
     </div>
     <div class="icons-row center-align" [ngSwitch]="config.track">
       <a *ngSwitchCase="'mobile'" mat-icon-button class="btn-mobile">
@@ -24,9 +27,6 @@
       <a *ngSwitchCase="'cloud'" mat-icon-button class="btn-mobile">
         <i class="fa fa-cloud fa-2x"></i>
       </a>
-    </div>
-    <div class="job-title center-align" *ngIf="!isHomePage">
-      {{config.speaker_desc}}
     </div>
     </div>
     <div class="icons-row center-align" *ngIf="!isHomePage">

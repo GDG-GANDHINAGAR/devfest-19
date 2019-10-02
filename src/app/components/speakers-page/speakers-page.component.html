@@ -11,13 +11,29 @@
       as we add more speakers, including our customers and partners.
       <br>
       <br>
-      <button mat-button (click)="webActive(1)">Web</button>
-      <button mat-button (click)="mobileActive(1)">Mobile</button>
-      <button mat-button (click)="mlActive(1)">Machine Learning</button>
-      <button mat-button (click)="cloudActive(1)">Cloud</button>
-      <button mat-button (click)="othersActive(1)">Others</button>
+      <br>
+      <ng-container Layout="column" layout-align="space-between start">
+        <div flex>
+          <mat-grid-list cols="5" rowHeight="2rem" class="check">
+            <mat-grid-tile>
+              <mat-checkbox [(ngModel)]="web_Active">Web</mat-checkbox>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <mat-checkbox [(ngModel)]="mobile_Active">Mobile</mat-checkbox>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <mat-checkbox [(ngModel)]="ml_Active">ML</mat-checkbox>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <mat-checkbox [(ngModel)]="cloud_Active">Cloud</mat-checkbox>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <mat-checkbox [(ngModel)]="others_Active">Others</mat-checkbox>
+            </mat-grid-tile>
+          </mat-grid-list>
+        </div>
+      </ng-container>
     </div>
-
 
     <div class="col-xs-12" *ngIf="!(speakers.enabled &&
             speakers.enabled.value)">

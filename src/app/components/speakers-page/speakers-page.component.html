@@ -16,19 +16,19 @@
         <div flex>
           <mat-grid-list cols="5" rowHeight="2rem" class="check">
             <mat-grid-tile>
-              <mat-checkbox [(ngModel)]="web_Active">Web</mat-checkbox>
+              <mat-checkbox [(ngModel)]="webActive">Web</mat-checkbox>
             </mat-grid-tile>
             <mat-grid-tile>
-              <mat-checkbox [(ngModel)]="mobile_Active">Mobile</mat-checkbox>
+              <mat-checkbox [(ngModel)]="mobileActive">Mobile</mat-checkbox>
             </mat-grid-tile>
             <mat-grid-tile>
-              <mat-checkbox [(ngModel)]="ml_Active">ML</mat-checkbox>
+              <mat-checkbox [(ngModel)]="mlActive">ML</mat-checkbox>
             </mat-grid-tile>
             <mat-grid-tile>
-              <mat-checkbox [(ngModel)]="cloud_Active">Cloud</mat-checkbox>
+              <mat-checkbox [(ngModel)]="cloudActive">Cloud</mat-checkbox>
             </mat-grid-tile>
             <mat-grid-tile>
-              <mat-checkbox [(ngModel)]="others_Active">Others</mat-checkbox>
+              <mat-checkbox [(ngModel)]="othersActive">Others</mat-checkbox>
             </mat-grid-tile>
           </mat-grid-list>
         </div>
@@ -42,37 +42,37 @@
       </div>
     </div>
     <ng-container
-      *ngIf="(speakers.enabled && speakers.enabled.value && !web_Active && !mobile_Active && !ml_Active && !cloud_Active && !others_Active)">
+      *ngIf="(speakers.enabled && speakers.enabled.value && !webActive && !mobileActive && !mlActive && !cloudActive && !othersActive)">
       <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" *ngFor='let data of
             speakers?.data | EnabledSpeaker'>
         <app-speaker-card [isHomePage]='false' [config]=data></app-speaker-card>
       </div>
     </ng-container>
-    <ng-container *ngIf="(web_Active)">
+    <ng-container *ngIf="(webActive)">
       <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" *ngFor='let data of
             web'>
         <app-speaker-card [isHomePage]='false' [config]=data></app-speaker-card>
       </div>
     </ng-container>
-    <ng-container *ngIf="(mobile_Active)">
+    <ng-container *ngIf="(mobileActive)">
       <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" *ngFor='let data of
             mobile'>
         <app-speaker-card [isHomePage]='false' [config]=data></app-speaker-card>
       </div>
     </ng-container>
-    <ng-container *ngIf="(ml_Active)">
+    <ng-container *ngIf="(mlActive)">
       <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" *ngFor='let data of
             ml'>
         <app-speaker-card [isHomePage]='false' [config]=data></app-speaker-card>
       </div>
     </ng-container>
-    <ng-container *ngIf="(cloud_Active)">
+    <ng-container *ngIf="(cloudActive)">
       <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" *ngFor='let data of
             cloud'>
         <app-speaker-card [isHomePage]='false' [config]=data></app-speaker-card>
       </div>
     </ng-container>
-    <ng-container *ngIf="(others_Active)">
+    <ng-container *ngIf="(othersActive)">
       <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" *ngFor='let data of
             others'>
         <app-speaker-card [isHomePage]='false' [config]=data></app-speaker-card>

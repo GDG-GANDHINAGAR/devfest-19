@@ -15,34 +15,28 @@ export class SpeakersPageComponent implements OnInit {
     cloud = [];
     ml = [];
     others = [];
-    web_Active;
-    mobile_Active;
-    ml_Active;
-    cloud_Active;
-    others_Active;
+    webActive;
+    mobileActive;
+    mlActive;
+    cloudActive;
+    othersActive;
     constructor(private db: AngularFirestore) {
         db.doc<Speakers>('speakers/data').valueChanges().subscribe(data => {
             this.speakers = {
                 enabled: data.enabled,
                 data: data.data.filter(ele => {
-                    // console.log(ele);
                     if (ele.track == 'mobile') {
-                        console.log(ele.track);
                         this.mobile.push(ele);
                     }
                     else if (ele.track == 'web') {
-                        console.log(ele.track);
                         this.web.push(ele);
                     }
                     else if (ele.track == 'cloud') {
-                        console.log(ele.track);
                         this.cloud.push(ele);
                     }
                     else if (ele.track == 'ml') {
-                        console.log(ele.track);
                         this.ml.push(ele);
                     } else {
-                        console.log(ele.track);
                         this.others.push(ele);
                     }
                     return true
@@ -54,11 +48,11 @@ export class SpeakersPageComponent implements OnInit {
 
 
     ngOnInit() {
-        this.web_Active = false;
-        this.mobile_Active = false;
-        this.ml_Active = false;
-        this.cloud_Active = false;
-        this.others_Active = false;
+        this.webActive = false;
+        this.mobileActive = false;
+        this.mlActive = false;
+        this.cloudActive = false;
+        this.othersActive = false;
     }
 
 }

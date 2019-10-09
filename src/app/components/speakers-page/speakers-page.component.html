@@ -14,21 +14,21 @@
       <br>
       <ng-container Layout="column" layout-align="space-between start">
         <div flex>
-          <mat-grid-list cols="5" rowHeight="2rem" class="check">
+          <mat-grid-list [cols]="isMobile ? 1 : 5" rowHeight="2rem" class="check">
             <mat-grid-tile>
-              <mat-checkbox [(ngModel)]="webActive" color="#00aaf5">Web</mat-checkbox>
+              <mat-checkbox [(ngModel)]="webActive">Web</mat-checkbox>
             </mat-grid-tile>
             <mat-grid-tile>
-              <mat-checkbox [(ngModel)]="mobileActive" color="#00aaf5">Mobile</mat-checkbox>
+              <mat-checkbox [(ngModel)]="mobileActive">Mobile</mat-checkbox>
             </mat-grid-tile>
             <mat-grid-tile>
-              <mat-checkbox [(ngModel)]="mlActive" color="#00aaf5">ML</mat-checkbox>
+              <mat-checkbox [(ngModel)]="mlActive">ML</mat-checkbox>
             </mat-grid-tile>
             <mat-grid-tile>
-              <mat-checkbox [(ngModel)]="cloudActive" color="#00aaf5">Cloud</mat-checkbox>
+              <mat-checkbox [(ngModel)]="cloudActive">Cloud</mat-checkbox>
             </mat-grid-tile>
             <mat-grid-tile>
-              <mat-checkbox [(ngModel)]="othersActive" color="#00aaf5">Others</mat-checkbox>
+              <mat-checkbox [(ngModel)]="othersActive">Others</mat-checkbox>
             </mat-grid-tile>
           </mat-grid-list>
         </div>

@@ -1,6 +1,5 @@
 export interface TeamConfig {
   name: String;
-  index: Number;
   job: String;
   team: String;
   core: boolean;

@@ -32,7 +32,7 @@
       <div class="col-xs-12">
         <app-homepage-title title='Team' color='#419BF9'></app-homepage-title>
       </div>
-      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" *ngFor="let member of teams">
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" *ngFor="let member of team?.data">
         <app-team-card isHomePage='false' [config]='member'></app-team-card>
       </div>
     </div>

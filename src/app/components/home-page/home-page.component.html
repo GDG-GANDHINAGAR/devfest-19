@@ -6,8 +6,8 @@
 
       <button mat-raised-button isRoundButton='true' *ngIf='!isSubscribed'
         (click)='usersub()' color='#2BB673'>Subscribe</button>
-      <button mat-raised-button isRoundButton='true' (click)='scrollTickets()' color='#2BB673'>
-        Get Tickets</button>
+      <button mat-raised-button isRoundButton='true' (click)='scrollApp()' color='#2BB673'>
+        Download the Devfest App</button>
       <!-- <a mat-raised-button isRoundButton='true' target="_blank" href=''
       routerLinkActive="router-link-active" color='#2BB673'>Get Tickets Now</a> -->
     </div>
@@ -155,26 +155,24 @@
   </div>
 
   <img src="/assets/images/Path 49.png" class='Path-49'>
-  <div id="tickets" class="section-block">
+  <div id="app" class="section-block">
     <div class='row center-lg center-xs center-md middle-lg middle-md middle-sm
       middle-xs'>
       <div class="col-xs-12">
-        <app-homepage-title title='Tickets' color='#00AEEF'></app-homepage-title>
+        <app-homepage-title title='Android App' color='#00AEEF'></app-homepage-title>
       </div>
       <div class="col-xs-12">
-        <div class="sub-title" style='line-height:250px;font-size: 2.5em'
+        <!-- <div class="sub-title" style='line-height:250px;font-size: 2.5em'
           *ngIf='!registration'>
           {{ elseString }}
-        </div>
-        <ng-container *ngIf="(registration)">
+        </div> -->
           <div class="sub-title" style='line-height:42px;font-size: 2.5em;padding-bottom: 30px;'>
-            Grab your tickets now
+            Download the DevFest Gandhinagar Android App 📱 now!
           </div>
           <a mat-raised-button isRoundButton='true' target="_blank" rel="noreferrer"
-            [href]='regLink'
-            routerLinkActive="router-link-active" color='#2BB673'>Get Tickets
+            href='{{appLink}}'
+            routerLinkActive="router-link-active" color='#2BB673'>Download the App
             Now</a>
-        </ng-container>
       </div>
     </div>
   </div>

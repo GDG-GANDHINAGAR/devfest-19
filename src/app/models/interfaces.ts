@@ -80,6 +80,7 @@ export interface HomePageData {
   registration: boolean;
   regLink: string;
   elseString: string;
+  appLink: string;
 }
 
 export interface PreviousSpeakerDetails {

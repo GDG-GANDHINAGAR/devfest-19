@@ -33,9 +33,6 @@ export class SpeakersPageComponent implements OnInit {
                     else if (ele.track == 'web') {
                         this.web.push(ele);
                     }
-                    else if (ele.track == 'cloud') {
-                        this.cloud.push(ele);
-                    }
                     else if (ele.track == 'ml') {
                         this.ml.push(ele);
                     } else {

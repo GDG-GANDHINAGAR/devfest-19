@@ -22,6 +22,7 @@ export class HomePageComponent implements OnInit {
   regLink: string;
   registration = false;
   elseString: string;
+  appLink: string;
   constructor(private db: AngularFirestore, private auth: AuthService) {
     this.auth.user.subscribe(userData => {
       this.hasData = true;
@@ -44,6 +45,7 @@ export class HomePageComponent implements OnInit {
       this.registration = data.registration;
       this.regLink = data.regLink;
       this.elseString = data.elseString;
+      this.appLink = data.appLink;
       Object.keys(this.homePageData.sponsors).forEach(key => {
         const sponsorData = {
           key: key,
@@ -77,5 +79,9 @@ export class HomePageComponent implements OnInit {
   }
   ngOnInit() {
   }
+
+  scrollApp() {
+    document.querySelector('#app').scrollIntoView({ behavior: 'smooth', block: 'center' });
+ }
 
 }

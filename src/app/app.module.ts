@@ -41,7 +41,9 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { EnabledSpeaker } from '../app/elements/speaker-card/speaker-card.component'
-import { FeaturedSpeaker } from '../app/elements/speaker-card/speaker-card.component'
+import { FeaturedSpeaker } from '../app/elements/speaker-card/speaker-card.component';
+import { SchedulerComponent } from './components/scheduler/scheduler.component'
+import { MatCheckboxModule } from '@angular/material/checkbox'
 @NgModule({
   declarations: [
     AppComponent,
@@ -64,9 +66,11 @@ import { FeaturedSpeaker } from '../app/elements/speaker-card/speaker-card.compo
     FooterComponent,
     EnabledSpeaker,
     FeaturedSpeaker,
+    SchedulerComponent,
   ],
   imports: [
     BrowserModule,
+    MatCheckboxModule,
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,

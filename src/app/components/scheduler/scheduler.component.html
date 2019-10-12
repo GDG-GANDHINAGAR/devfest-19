@@ -5,29 +5,14 @@
     </div>
   </div>
 
-  <ng-container Layout="column" layout-align="space-between start">
-    <div flex>
-      <mat-grid-list cols="4" rowHeight="4rem">
-        <mat-grid-tile>
-          <h3>Start Time</h3>
-        </mat-grid-tile>
-        <mat-grid-tile>
-          <h3>Speaker</h3>
-        </mat-grid-tile>
-        <mat-grid-tile>
-          <h3>Topic</h3>
-        </mat-grid-tile>
-      </mat-grid-list>
-    </div>
-    <div *ngFor='let data of schedule?.data'>
-      <div flex>
-        <mat-grid-list cols="4" class="box" rowHeight="4rem">
-          <mat-grid-tile>{{data.start_time}}</mat-grid-tile>
-          <mat-grid-tile>{{data.speaker_name}}</mat-grid-tile>
-          <mat-grid-tile>{{data.speaker_session}}</mat-grid-tile>
-        </mat-grid-list>
-      </div>
-    </div>
-  </ng-container>
+  <div class="schedule">
+    <img src="../../../assets/images/web.jpg" width="80%" height="80%" alt="">
+
+  </div>
+  <div class="schedule">
+    <img src="../../../assets/images/mobile.jpg" width="80%" height="80%" alt="">
+
+  </div>
+
 
 </div>
